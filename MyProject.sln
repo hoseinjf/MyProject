@@ -15,13 +15,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Endpoint", "Endpoint", "{9D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{ED9D0657-1BE5-408E-8054-E825958E21C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppDomainCore", "AppDomainCore\AppDomainCore.csproj", "{EF9D984C-1965-4D99-B71A-4EE8482AE0B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppDomainCore", "AppDomainCore\AppDomainCore.csproj", "{EF9D984C-1965-4D99-B71A-4EE8482AE0B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainAppService", "DomainAppService\DomainAppService.csproj", "{C544B436-46DF-4843-B5B9-11626ACC67E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainAppService", "DomainAppService\DomainAppService.csproj", "{C544B436-46DF-4843-B5B9-11626ACC67E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainService", "DomainService\DomainService.csproj", "{9EE9D957-7A88-4A18-8041-512A2B8E7034}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainService", "DomainService\DomainService.csproj", "{9EE9D957-7A88-4A18-8041-512A2B8E7034}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppDataRepository", "AppDataRepository\AppDataRepository.csproj", "{66BAD26A-C566-432B-8D84-950E08D89CF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppDataRepository", "AppDataRepository\AppDataRepository.csproj", "{66BAD26A-C566-432B-8D84-950E08D89CF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppEndpoint_MVC", "AppEndpoint_MVC\AppEndpoint_MVC.csproj", "{6BD5296B-517F-4BB4-B974-B31B7F0BBCC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{66BAD26A-C566-432B-8D84-950E08D89CF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66BAD26A-C566-432B-8D84-950E08D89CF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66BAD26A-C566-432B-8D84-950E08D89CF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BD5296B-517F-4BB4-B974-B31B7F0BBCC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BD5296B-517F-4BB4-B974-B31B7F0BBCC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BD5296B-517F-4BB4-B974-B31B7F0BBCC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BD5296B-517F-4BB4-B974-B31B7F0BBCC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +65,7 @@ Global
 		{C544B436-46DF-4843-B5B9-11626ACC67E1} = {9F79D1BF-C950-486F-8550-7EA445B15252}
 		{9EE9D957-7A88-4A18-8041-512A2B8E7034} = {9F79D1BF-C950-486F-8550-7EA445B15252}
 		{66BAD26A-C566-432B-8D84-950E08D89CF3} = {ED9D0657-1BE5-408E-8054-E825958E21C1}
+		{6BD5296B-517F-4BB4-B974-B31B7F0BBCC0} = {9DD635DD-644C-474C-B916-3D00545D819F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {416B0426-FBC3-4D27-9F75-1AD21F4A13F0}

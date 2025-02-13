@@ -7,22 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Admins\" />
-    <Folder Include="Categorys\" />
-    <Folder Include="Comments\" />
-    <Folder Include="CustomersRequests\" />
-    <Folder Include="Customers\" />
-    <Folder Include="Db\" />
-    <Folder Include="ExpertsRequests\" />
-    <Folder Include="Experts\" />
-    <Folder Include="Provinces\" />
-    <Folder Include="Roles\" />
-    <Folder Include="SubCategorys\" />
-    <Folder Include="Users\" />
-    <Folder Include="Works\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.11">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -32,6 +16,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AppDomainCore\AppDomainCore.csproj" />
   </ItemGroup>
 
 </Project>

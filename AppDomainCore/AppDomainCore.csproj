@@ -6,4 +6,18 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Admins\Enum\" />
+    <Folder Include="Categorys\Enum\" />
+    <Folder Include="Comments\Enum\" />
+    <Folder Include="Customers\Enum\" />
+    <Folder Include="ExpertsRequests\Enum\" />
+    <Folder Include="Experts\Enum\" />
+    <Folder Include="Provinces\Enum\" />
+    <Folder Include="Roles\Enum\" />
+    <Folder Include="SubCategorys\Enum\" />
+    <Folder Include="Users\Enum\" />
+    <Folder Include="Works\Enum\" />
+  </ItemGroup>
+
 </Project>
