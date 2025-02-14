@@ -28,6 +28,7 @@ namespace AppDataRepository.CustomersRequests
         public async Task<bool> Delete(int id, CancellationToken cancellationToken)
         {
             var request = await _db.CustomersRequests.FirstOrDefaultAsync(x => x.Id == id,cancellationToken);
+            if (request == null) { return false; }
             _db.CustomersRequests.Remove(request);
             await _db.SaveChangesAsync(cancellationToken);
             return true;

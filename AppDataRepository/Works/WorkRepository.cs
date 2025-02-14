@@ -28,6 +28,7 @@ namespace AppDataRepository.Works
         public async Task<bool> Delete(int id, CancellationToken cancellationToken)
         {
             var work = await _db.Works.FirstOrDefaultAsync(x => x.Id == id,cancellationToken);
+            if (work == null) { return false; }
             _db.Works.Remove(work);
             await _db.SaveChangesAsync(cancellationToken);
             return true;

@@ -27,6 +27,7 @@ namespace AppDataRepository.Admins
         public async Task<bool> Delete(int id, CancellationToken cancellationToken)
         {
             var admin = await _db.Admins.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+            if (admin == null) { return false; }
             _db.Admins.Remove(admin);
             await _db.SaveChangesAsync(cancellationToken);
             return true;

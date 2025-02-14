@@ -28,6 +28,7 @@ namespace AppDataRepository.Users
         public async Task<bool> Delete(int id, CancellationToken cancellationToken)
         {
             var user = await _db.Users.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+            if (user == null) return false;
             _db.Users.Remove(user);
             await _db.SaveChangesAsync(cancellationToken);
             return true;

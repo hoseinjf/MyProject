@@ -28,6 +28,7 @@ namespace AppDataRepository.ExpertsRequests
         public async Task<bool> Delete(int id, CancellationToken cancellationToken)
         {
             var request = await _db.ExpertsRequests.FirstOrDefaultAsync(x => x.Id == id,cancellationToken);
+            if (request == null) { return false; }
             await _db.SaveChangesAsync(cancellationToken);
             return true;
         }

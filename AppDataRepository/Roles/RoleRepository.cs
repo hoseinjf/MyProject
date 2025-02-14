@@ -28,6 +28,7 @@ namespace AppDataRepository.Roles
         public async Task<bool> Delete(int id, CancellationToken cancellationToken)
         {
             var role = await _db.Roles.FirstOrDefaultAsync(x=>x.Id==id, cancellationToken);
+            if (role == null) { return false; }
             _db.Roles.Remove(role);
             await _db.SaveChangesAsync(cancellationToken);
             return true;

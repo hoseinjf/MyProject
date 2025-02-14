@@ -28,6 +28,7 @@ namespace AppDataRepository.Experts
         public async Task<bool> Delete(int id, CancellationToken cancellationToken)
         {
             var expert = await _db.Experts.FirstOrDefaultAsync(x => x.Id == id,cancellationToken);
+            if (expert == null) { return false; }
             _db.Experts.Remove(expert);
             await _db.SaveChangesAsync(cancellationToken);
             return true;

@@ -27,6 +27,7 @@ namespace AppDataRepository.Categorys
         public async Task<bool> Delete(int id, CancellationToken cancellationToken)
         {
             var category = await _db.Categories.FirstOrDefaultAsync(x=>x.Id==id,cancellationToken);
+            if (category == null) { return false; }
             _db.Categories.Remove(category);
             await _db.SaveChangesAsync(cancellationToken);
             return true;

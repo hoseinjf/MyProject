@@ -28,6 +28,7 @@ namespace AppDataRepository.Provinces
         public async Task<bool> Delete(int id, CancellationToken cancellationToken)
         {
             var pr = await _db.Provinces.FirstOrDefaultAsync(x => x.Id == id,cancellationToken);
+            if (pr == null) { return false; }
             _db.Provinces.Remove(pr);
             await _db.SaveChangesAsync(cancellationToken);
             return true;

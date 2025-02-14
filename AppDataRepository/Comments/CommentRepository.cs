@@ -27,6 +27,7 @@ namespace AppDataRepository.Comments
         public async Task<bool> Delete(int id, CancellationToken cancellationToken)
         {
             var comment = await _db.Comments.FirstOrDefaultAsync(c => c.Id == id,cancellationToken);
+            if (comment == null) { return false; }
             _db.Comments.Remove(comment);
             await _db.SaveChangesAsync(cancellationToken);
             return true;

@@ -27,6 +27,7 @@ namespace AppDataRepository.Customers
         public async Task<bool> Delete(int id, CancellationToken cancellationToken)
         {
             var customer = await _db.Customers.FirstOrDefaultAsync(x => x.Id == id,cancellationToken);  
+            if (customer == null) { return false; }
             _db.Customers.Remove(customer);
             await _db.SaveChangesAsync(cancellationToken);
             return true;
