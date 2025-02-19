@@ -1,6 +1,7 @@
 ﻿using AppDomainCore.Comments.Entity;
 using AppDomainCore.Customers.Entity;
 using AppDomainCore.CustomersRequests.Enum;
+using AppDomainCore.Photos.Entity;
 using AppDomainCore.Works.Entity;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace AppDomainCore.CustomersRequests.Entity
         public int Id { get; set; }
         public DateTime DateWork { get; set; }
         public string Description { get; set; }
-        public List<string?> Photo { get; set; }
+        public List<Photo>? Photo { get; set; } = new List<Photo>();
         public int WorkId { get; set; }
         public Work Work { get; set; }
         public int CustomerId { get; set; }

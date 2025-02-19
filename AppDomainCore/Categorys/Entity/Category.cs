@@ -1,4 +1,5 @@
-﻿using AppDomainCore.SubCategorys.Entity;
+﻿using AppDomainCore.Photos.Entity;
+using AppDomainCore.SubCategorys.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,11 @@ namespace AppDomainCore.Categorys.Entity
     {
         public int Id { get; set; }
         public string Title { get; set; }
-        public string? Photo { get; set; }
+        public Photo? Photo { get; set; }
+        public int? PhotoId { get; set; }
         public DateTime CreateAt { get; set; }
         public DateTime UpdateAt { get; set; }
         public bool IsDelete { get; set; } = false;
-        public List<SubCategory>? subCategories { get; set; }
+        public List<SubCategory>? subCategories { get; set; } = new List<SubCategory>();
     }
 }

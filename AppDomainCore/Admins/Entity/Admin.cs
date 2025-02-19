@@ -1,5 +1,4 @@
 ﻿using AppDomainCore.Provinces.Entity;
-using AppDomainCore.Roles.Entity;
 using AppDomainCore.Users.Entity;
 using System;
 using System.Collections.Generic;
@@ -12,8 +11,6 @@ namespace AppDomainCore.Admins.Entity
     public class Admin
     {
         public int Id { get; set; }
-
-
 
         public int UserId { get; set; }
         public User user { get; set; }

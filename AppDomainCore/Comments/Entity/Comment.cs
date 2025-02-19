@@ -16,9 +16,9 @@ namespace AppDomainCore.Comments.Entity
         public string Title { get; set; }
         public string Description { get; set; }
         public int CustomersId { get; set; }
-        public Customer? Customers { get; set; }
+        public Customer Customers { get; set; }
         public int ExpertId { get; set; }
-        public Expert? Experts { get; set; }
+        public Expert Experts { get; set; }
         public bool IsActive { get; set; } = false;
         public DateTime CreateAt { get; set; }
         public DateTime UpdateAt { get; set; }
