@@ -1,4 +1,5 @@
 ﻿using AppDataRepository.Db;
+using AppDomainCore.Admins.Entity;
 using AppDomainCore.Customers.Contract.Repository;
 using AppDomainCore.Customers.Entity;
 using Microsoft.EntityFrameworkCore;
@@ -36,6 +37,7 @@ namespace AppDataRepository.Customers
         public async Task<Customer> Get(int id, CancellationToken cancellationToken)
         {
             var customer = await _db.Customers.FirstOrDefaultAsync(x=>x.Id == id,cancellationToken);
+            if (customer == null) { throw new Exception("کاربر یافت نشد"); }
             return customer;
         }
 
@@ -44,9 +46,14 @@ namespace AppDataRepository.Customers
             return await _db.Customers.ToListAsync(cancellationToken);
         }
 
-        public async Task<Customer> Update(Customer customer, CancellationToken cancellationToken)
+        public async Task<Customer> Update(Customer model, CancellationToken cancellationToken)
         {
-            _db.Customers.Update(customer);
+            var customer = await _db.Customers.Include(x=>x.User).FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
+            if (customer == null) { throw new Exception("کامنت یافت نشد"); }
+
+            customer.Id = model.Id;
+            customer.UserId = model.UserId;
+
             await _db.SaveChangesAsync(cancellationToken);
             return customer;
         }

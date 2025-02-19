@@ -1,4 +1,5 @@
 ﻿using AppDataRepository.Db;
+using AppDomainCore.Admins.Entity;
 using AppDomainCore.Categorys.Contract.Repository;
 using AppDomainCore.Categorys.Entity;
 using Microsoft.EntityFrameworkCore;
@@ -36,6 +37,7 @@ namespace AppDataRepository.Categorys
         public async Task<Category> Get(int id, CancellationToken cancellationToken)
         {
             var category = await _db.Categories.FirstOrDefaultAsync(x=>x.Id==id,cancellationToken);
+            if (category == null) { throw new Exception("دسته بندی یافت نشد"); }
             return category;
         }
 
@@ -44,9 +46,16 @@ namespace AppDataRepository.Categorys
             return await _db.Categories.ToListAsync();
         }
 
-        public async Task<Category> Update(Category category, CancellationToken cancellationToken)
+        public async Task<Category> Update(Category model, CancellationToken cancellationToken)
         {
-            _db.Categories.Update(category);
+            var category = await _db.Categories.FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
+            if (category == null) { throw new Exception("دسته بندی یافت نشد"); }
+
+            category.Id = model.Id;
+            category.Photo = model.Photo;
+            category.Title = model.Title;
+            category.PhotoId = model.PhotoId;
+
             await _db.SaveChangesAsync(cancellationToken);
             return category;
         }

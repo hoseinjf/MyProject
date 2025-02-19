@@ -1,4 +1,5 @@
 ﻿using AppDataRepository.Db;
+using AppDomainCore.Customers.Entity;
 using AppDomainCore.ExpertsRequests.Contract.Repository;
 using AppDomainCore.ExpertsRequests.Entity;
 using Microsoft.EntityFrameworkCore;
@@ -36,6 +37,8 @@ namespace AppDataRepository.ExpertsRequests
         public async Task<ExpertsRequest> Get(int id, CancellationToken cancellationToken)
         {
             var request = await _db.ExpertsRequests.FirstOrDefaultAsync(x=>x.Id == id, cancellationToken);
+            if (request == null) { throw new Exception("درخواستی یافت نشد"); }
+
             return request;
         }
 
@@ -44,9 +47,18 @@ namespace AppDataRepository.ExpertsRequests
             return await _db.ExpertsRequests.ToListAsync(cancellationToken);
         }
 
-        public async Task<ExpertsRequest> Update(ExpertsRequest expertsRequest, CancellationToken cancellationToken)
+        public async Task<ExpertsRequest> Update(ExpertsRequest model, CancellationToken cancellationToken)
         {
-            _db.ExpertsRequests.Update(expertsRequest);
+            var expertsRequest = await _db.ExpertsRequests.FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
+            if (expertsRequest == null) { throw new Exception("درخواستی یافت نشد"); }
+
+            expertsRequest.Id = model.Id;
+            expertsRequest.DateWork = model.DateWork;
+            expertsRequest.Price = model.Price;
+            expertsRequest.Description = model.Description;
+            expertsRequest.CustomersRequestId = model.CustomersRequestId;
+            expertsRequest.ExpertId = model.ExpertId;
+
             await _db.SaveChangesAsync(cancellationToken);
             return expertsRequest;
         }

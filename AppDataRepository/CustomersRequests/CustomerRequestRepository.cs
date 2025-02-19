@@ -1,4 +1,5 @@
 ﻿using AppDataRepository.Db;
+using AppDomainCore.Customers.Entity;
 using AppDomainCore.CustomersRequests.Contract.Repository;
 using AppDomainCore.CustomersRequests.Entity;
 using Microsoft.EntityFrameworkCore;
@@ -37,6 +38,8 @@ namespace AppDataRepository.CustomersRequests
         public async Task<CustomersRequest> Get(int id, CancellationToken cancellationToken)
         {
             var request = await _db.CustomersRequests.FirstOrDefaultAsync(x=>x.Id == id, cancellationToken);
+            if (request == null) { throw new Exception("درخواستی یافت نشد"); }
+
             return request;
         }
 
@@ -45,9 +48,19 @@ namespace AppDataRepository.CustomersRequests
             return await _db.CustomersRequests.ToListAsync(cancellationToken);
         }
 
-        public async Task<CustomersRequest> Update(CustomersRequest customersRequest, CancellationToken cancellationToken)
+        public async Task<CustomersRequest> Update(CustomersRequest model, CancellationToken cancellationToken)
         {
-            _db.CustomersRequests.Update(customersRequest);
+            var customersRequest = await _db.CustomersRequests.Include(x => x.Customer).FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
+            if (customersRequest == null) { throw new Exception("درخواستی یافت نشد"); }
+
+            customersRequest.Id = model.Id;
+            customersRequest.WorkId = model.WorkId;
+            customersRequest.CustomerId = model.CustomerId;
+            customersRequest.Status = model.Status;
+            customersRequest.DateWork = model.DateWork;
+            customersRequest.Description = model.Description;
+            customersRequest.Photo = model.Photo;
+
             await _db.SaveChangesAsync(cancellationToken);
             return customersRequest;
         }

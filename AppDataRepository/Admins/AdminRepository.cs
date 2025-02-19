@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using AppDomainCore.Users.Entity;
 using System.Threading.Tasks;
 
 namespace AppDataRepository.Admins
@@ -36,6 +37,7 @@ namespace AppDataRepository.Admins
         public async Task<Admin> Get(int id, CancellationToken cancellationToken)
         {
             var admin = await _db.Admins.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+            if(admin == null) { throw new Exception("کاربر یافت نشد"); }
             return admin;
         }
 
@@ -44,9 +46,14 @@ namespace AppDataRepository.Admins
             return await _db.Admins.ToListAsync(cancellationToken);
         }
 
-        public async Task<Admin> Update(Admin admin, CancellationToken cancellationToken)
+        public async Task<Admin> Update(Admin model, CancellationToken cancellationToken)
         {
-            _db.Admins.Update(admin);
+            var admin = await _db.Admins.Include(x=>x.user).FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
+            if (admin == null) { throw new Exception("کاربر یافت نشد"); }
+
+            admin.Id = model.Id;
+            admin.UserId = model.UserId;
+
             await _db.SaveChangesAsync(cancellationToken);
             return admin;
         }

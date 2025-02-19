@@ -1,4 +1,5 @@
 ﻿using AppDataRepository.Db;
+using AppDomainCore.SubCategorys.Entity;
 using AppDomainCore.Works.Contract.Repository;
 using AppDomainCore.Works.Entity;
 using Microsoft.EntityFrameworkCore;
@@ -37,6 +38,8 @@ namespace AppDataRepository.Works
         public async Task<Work> Get(int id, CancellationToken cancellationToken)
         {
             var work = await _db.Works.FirstOrDefaultAsync(x=>x.Id == id,cancellationToken);
+            if (work == null) { throw new Exception("سرویس مورد نظر یافت نشد"); }
+
             return work;
         }
 
@@ -45,9 +48,19 @@ namespace AppDataRepository.Works
             return await _db.Works.ToListAsync(cancellationToken);
         }
 
-        public async Task<Work> Update(Work work, CancellationToken cancellationToken)
+        public async Task<Work> Update(Work model, CancellationToken cancellationToken)
         {
-            _db.Works.Update(work);
+            var work = await _db.Works.FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
+            if (work == null) { throw new Exception("سرویس مورد نظر یافت نشد"); }
+
+            work.Id = model.Id;
+            work.SubCategoryId = model.SubCategoryId;
+            work.CorePrice = model.CorePrice;
+            work.Description = model.Description;
+            work.PhotoId = model.PhotoId;
+            work.Title = model.Title;
+            work.Viwe=model.Viwe;
+
             await _db.SaveChangesAsync(cancellationToken);
             return work;
         }

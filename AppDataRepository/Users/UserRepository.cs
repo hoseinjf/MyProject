@@ -1,4 +1,5 @@
 ﻿using AppDataRepository.Db;
+using AppDomainCore.SubCategorys.Entity;
 using AppDomainCore.Users.Contract.Repository;
 using AppDomainCore.Users.Entity;
 using Microsoft.EntityFrameworkCore;
@@ -37,6 +38,8 @@ namespace AppDataRepository.Users
         public async Task<User> Get(int id, CancellationToken cancellationToken)
         {
             var user = await _db.Users.FirstOrDefaultAsync( x => x.Id == id, cancellationToken);
+            if (user == null) { throw new Exception("کاربر یافت نشد"); }
+
             return user;
         }
 
@@ -45,11 +48,18 @@ namespace AppDataRepository.Users
             return await _db.Users.ToListAsync(cancellationToken);
         }
 
-        public async Task<User> Update(User user, CancellationToken cancellationToken)
-        {
-            _db.Users.Update(user);
-            await _db.SaveChangesAsync(cancellationToken);
-            return user;
-        }
+        //public async Task<User> Update(User model, CancellationToken cancellationToken)
+        //{
+        //    var user = await _db.use.Include(x => x.works).FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
+        //    if (subCategory == null) { throw new Exception("زیردسته بندی یافت نشد"); }
+
+        //    subCategory.Id = model.Id;
+        //    subCategory.CategoryId = model.CategoryId;
+        //    subCategory.PhotoId = model.PhotoId;
+        //    subCategory.Title = model.Title;
+
+        //    await _db.SaveChangesAsync(cancellationToken);
+        //    return user;
+        //}
     }
 }

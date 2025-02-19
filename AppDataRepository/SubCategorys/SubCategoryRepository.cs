@@ -1,4 +1,5 @@
 ﻿using AppDataRepository.Db;
+using AppDomainCore.Customers.Entity;
 using AppDomainCore.SubCategorys.Contract.Repository;
 using AppDomainCore.SubCategorys.Entity;
 using Microsoft.EntityFrameworkCore;
@@ -36,6 +37,8 @@ namespace AppDataRepository.SubCategorys
         public async Task<SubCategory> Get(int id, CancellationToken cancellationToken)
         {
             var sub = await _db.SubCategories.FirstOrDefaultAsync(x=>x.Id == id,cancellationToken);
+            if (sub == null) { throw new Exception("زیردسته بندی یافت نشد"); }
+
             return sub;
         }
 
@@ -44,9 +47,16 @@ namespace AppDataRepository.SubCategorys
             return await _db.SubCategories.ToListAsync(cancellationToken);
         }
 
-        public async Task<SubCategory> Update(SubCategory subCategory, CancellationToken cancellationToken)
+        public async Task<SubCategory> Update(SubCategory model, CancellationToken cancellationToken)
         {
-            _db.SubCategories.Update(subCategory);
+            var subCategory = await _db.SubCategories.Include(x => x.works).FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
+            if (subCategory == null) { throw new Exception("زیردسته بندی یافت نشد"); }
+
+            subCategory.Id = model.Id;
+            subCategory.CategoryId = model.CategoryId;
+            subCategory.PhotoId = model.PhotoId;
+            subCategory.Title = model.Title;
+
             await _db.SaveChangesAsync(cancellationToken);
             return subCategory;
         }
