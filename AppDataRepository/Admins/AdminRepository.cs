@@ -1,5 +1,4 @@
-﻿using AppDataRepository.Db;
-using AppDomainCore.Admins.Contract.Repository;
+﻿using AppDomainCore.Admins.Contract.Repository;
 using AppDomainCore.Admins.Entity;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -8,6 +7,7 @@ using System.Linq;
 using System.Text;
 using AppDomainCore.Users.Entity;
 using System.Threading.Tasks;
+using AppDataRepository.Db.Context;
 
 namespace AppDataRepository.Admins
 {
@@ -50,10 +50,7 @@ namespace AppDataRepository.Admins
         {
             var admin = await _db.Admins.Include(x=>x.user).FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
             if (admin == null) { throw new Exception("کاربر یافت نشد"); }
-
-            admin.Id = model.Id;
             admin.UserId = model.UserId;
-
             await _db.SaveChangesAsync(cancellationToken);
             return admin;
         }

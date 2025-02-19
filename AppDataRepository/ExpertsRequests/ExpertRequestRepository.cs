@@ -1,4 +1,4 @@
-﻿using AppDataRepository.Db;
+﻿using AppDataRepository.Db.Context;
 using AppDomainCore.Customers.Entity;
 using AppDomainCore.ExpertsRequests.Contract.Repository;
 using AppDomainCore.ExpertsRequests.Entity;
@@ -52,7 +52,7 @@ namespace AppDataRepository.ExpertsRequests
             var expertsRequest = await _db.ExpertsRequests.FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
             if (expertsRequest == null) { throw new Exception("درخواستی یافت نشد"); }
 
-            expertsRequest.Id = model.Id;
+
             expertsRequest.DateWork = model.DateWork;
             expertsRequest.Price = model.Price;
             expertsRequest.Description = model.Description;

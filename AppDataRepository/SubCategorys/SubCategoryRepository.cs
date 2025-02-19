@@ -1,4 +1,4 @@
-﻿using AppDataRepository.Db;
+﻿using AppDataRepository.Db.Context;
 using AppDomainCore.Customers.Entity;
 using AppDomainCore.SubCategorys.Contract.Repository;
 using AppDomainCore.SubCategorys.Entity;
@@ -52,7 +52,6 @@ namespace AppDataRepository.SubCategorys
             var subCategory = await _db.SubCategories.Include(x => x.works).FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
             if (subCategory == null) { throw new Exception("زیردسته بندی یافت نشد"); }
 
-            subCategory.Id = model.Id;
             subCategory.CategoryId = model.CategoryId;
             subCategory.PhotoId = model.PhotoId;
             subCategory.Title = model.Title;

@@ -1,4 +1,4 @@
-﻿using AppDataRepository.Db;
+﻿using AppDataRepository.Db.Context;
 using AppDomainCore.Admins.Entity;
 using AppDomainCore.Categorys.Contract.Repository;
 using AppDomainCore.Categorys.Entity;
@@ -51,8 +51,7 @@ namespace AppDataRepository.Categorys
             var category = await _db.Categories.FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
             if (category == null) { throw new Exception("دسته بندی یافت نشد"); }
 
-            category.Id = model.Id;
-            category.Photo = model.Photo;
+
             category.Title = model.Title;
             category.PhotoId = model.PhotoId;
 

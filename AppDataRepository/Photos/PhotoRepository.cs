@@ -1,4 +1,4 @@
-﻿using AppDataRepository.Db;
+﻿using AppDataRepository.Db.Context;
 using AppDomainCore.Photos.Contract.Repository;
 using AppDomainCore.Photos.Entity;
 using AppDomainCore.Works.Entity;
@@ -51,7 +51,7 @@ namespace AppDataRepository.Photos
         {
             var photo =await _db.Photo.FirstOrDefaultAsync(x=>x.Id == model.Id,cancellationToken);
             if (photo == null) { throw new Exception("موردی یافت نشد"); }
-            photo.Id = model.Id;
+
             photo.WorkId = model.WorkId;
             photo.SubCategoryId = model.SubCategoryId;
             photo.CategoryId = model.CategoryId;

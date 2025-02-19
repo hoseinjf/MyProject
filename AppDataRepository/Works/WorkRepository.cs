@@ -1,4 +1,4 @@
-﻿using AppDataRepository.Db;
+﻿using AppDataRepository.Db.Context;
 using AppDomainCore.SubCategorys.Entity;
 using AppDomainCore.Works.Contract.Repository;
 using AppDomainCore.Works.Entity;
@@ -53,7 +53,7 @@ namespace AppDataRepository.Works
             var work = await _db.Works.FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
             if (work == null) { throw new Exception("سرویس مورد نظر یافت نشد"); }
 
-            work.Id = model.Id;
+
             work.SubCategoryId = model.SubCategoryId;
             work.CorePrice = model.CorePrice;
             work.Description = model.Description;

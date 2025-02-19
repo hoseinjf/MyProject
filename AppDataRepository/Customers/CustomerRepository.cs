@@ -1,4 +1,4 @@
-﻿using AppDataRepository.Db;
+﻿using AppDataRepository.Db.Context;
 using AppDomainCore.Admins.Entity;
 using AppDomainCore.Customers.Contract.Repository;
 using AppDomainCore.Customers.Entity;
@@ -51,7 +51,7 @@ namespace AppDataRepository.Customers
             var customer = await _db.Customers.Include(x=>x.User).FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
             if (customer == null) { throw new Exception("کامنت یافت نشد"); }
 
-            customer.Id = model.Id;
+
             customer.UserId = model.UserId;
 
             await _db.SaveChangesAsync(cancellationToken);

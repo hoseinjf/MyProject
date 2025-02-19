@@ -1,4 +1,4 @@
-using AppDataRepository.Db;
+using AppDataRepository.Db.Context;
 using AppDomainCore.Users.Entity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;

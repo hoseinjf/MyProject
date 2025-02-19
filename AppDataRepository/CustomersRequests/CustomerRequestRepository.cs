@@ -1,4 +1,4 @@
-﻿using AppDataRepository.Db;
+﻿using AppDataRepository.Db.Context;
 using AppDomainCore.Customers.Entity;
 using AppDomainCore.CustomersRequests.Contract.Repository;
 using AppDomainCore.CustomersRequests.Entity;
@@ -53,7 +53,7 @@ namespace AppDataRepository.CustomersRequests
             var customersRequest = await _db.CustomersRequests.Include(x => x.Customer).FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
             if (customersRequest == null) { throw new Exception("درخواستی یافت نشد"); }
 
-            customersRequest.Id = model.Id;
+
             customersRequest.WorkId = model.WorkId;
             customersRequest.CustomerId = model.CustomerId;
             customersRequest.Status = model.Status;

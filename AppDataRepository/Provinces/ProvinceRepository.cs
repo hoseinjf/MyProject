@@ -1,4 +1,4 @@
-﻿using AppDataRepository.Db;
+﻿using AppDataRepository.Db.Context;
 using AppDomainCore.Provinces.Contract.Repository;
 using AppDomainCore.Provinces.Entity;
 using Microsoft.EntityFrameworkCore;

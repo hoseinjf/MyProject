@@ -1,4 +1,4 @@
-﻿using AppDataRepository.Db;
+﻿using AppDataRepository.Db.Context;
 using AppDomainCore.Admins.Entity;
 using AppDomainCore.Comments.Contract.Repository;
 using AppDomainCore.Comments.Entity;
@@ -51,7 +51,7 @@ namespace AppDataRepository.Comments
             var comment = await _db.Comments.FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
             if (comment == null) { throw new Exception("کامنت یافت نشد"); }
 
-            comment.Id = model.Id;
+
             comment.Title = model.Title;
             comment.CustomersId = model.CustomersId;
             comment.Description = model.Description;
