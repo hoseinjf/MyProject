@@ -15,7 +15,6 @@
     <Folder Include="ExpertsRequests\" />
     <Folder Include="Experts\" />
     <Folder Include="Provinces\" />
-    <Folder Include="Roles\" />
     <Folder Include="SubCategorys\" />
     <Folder Include="Users\" />
     <Folder Include="Works\" />
