@@ -15,7 +15,7 @@ namespace AppDomainCore.CustomersRequests.Entity
         public int Id { get; set; }
         public DateTime DateWork { get; set; }
         public string Description { get; set; }
-        public string? Photo { get; set; }
+        public List<string?> Photo { get; set; }
         public int WorkId { get; set; }
         public Work Work { get; set; }
         public int CustomerId { get; set; }

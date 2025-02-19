@@ -10,6 +10,8 @@ using AppDomainCore.Roles.Entity;
 using AppDomainCore.SubCategorys.Entity;
 using AppDomainCore.Users.Entity;
 using AppDomainCore.Works.Entity;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -19,7 +21,7 @@ using System.Threading.Tasks;
 
 namespace AppDataRepository.Db
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<User,IdentityRole<int>, int>
     {
         public AppDbContext(DbContextOptions<AppDbContext> dbContext) : base(dbContext)
         {
@@ -165,39 +167,39 @@ namespace AppDataRepository.Db
 
 
             #region ادمین
-            modelBuilder.Entity<Admin>().HasData
-                (
-                    new Admin
-                    {
-                        Id = 1,
-                        Email = "admin@admin.com",
-                        Password = "admin",
-                    }
-                );
+            //modelBuilder.Entity<Admin>().HasData
+            //    (
+            //        new Admin
+            //        {
+            //            Id = 1,
+            //            Email = "admin@admin.com",
+            //            Password = "admin",
+            //        }
+            //    );
             #endregion
 
             #region مشتری
-            modelBuilder.Entity<Customer>().HasData
-            (
-                new Customer
-                {
-                    Id = 1,
-                    Email = "ali@ali.com",
-                    Password = "ali", 
-                }
-            );
+            //modelBuilder.Entity<Customer>().HasData
+            //(
+            //    new Customer
+            //    {
+            //        Id = 1,
+            //        Email = "ali@ali.com",
+            //        Password = "ali", 
+            //    }
+            //);
             #endregion
 
             #region کارشناس
-            modelBuilder.Entity<Expert>().HasData
-            (
-                new Expert
-                {
-                    Id = 1,
-                    Email = "hasn@hasan.com",
-                    Password = "hasan",
-                }
-            );
+            //modelBuilder.Entity<Expert>().HasData
+            //(
+            //    new Expert
+            //    {
+            //        Id = 1,
+            //        Email = "hasn@hasan.com",
+            //        Password = "hasan",
+            //    }
+            //);
             #endregion
 
             #region دسته بندی ها
