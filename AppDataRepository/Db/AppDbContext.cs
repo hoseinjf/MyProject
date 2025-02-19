@@ -40,6 +40,7 @@ namespace AppDataRepository.Db
         public DbSet<SubCategory> SubCategories { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Work> Works { get; set; }
+        public DbSet<Photo> Photo { get; set; }
         #endregion
 
 
