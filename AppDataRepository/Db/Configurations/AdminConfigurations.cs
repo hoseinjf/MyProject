@@ -16,8 +16,7 @@ namespace AppDataRepository.Db.Configurations
             builder.HasKey(x => x.Id);
 
             builder.HasOne(x => x.user)
-                .WithMany(x => x.Admins)
-                .HasForeignKey(x => x.UserId)
+                .WithOne(x => x.Admins)
                 .OnDelete(DeleteBehavior.Restrict);
 
             //builder.HasData

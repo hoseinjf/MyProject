@@ -23,6 +23,7 @@ namespace AppDataRepository.Provinces
         public async Task<Province> Get(int id, CancellationToken cancellationToken)
         {
             var pr = await _db.Provinces.FirstOrDefaultAsync(x=>x.Id == id, cancellationToken);
+            if (pr == null) { throw new Exception("موردی یافت نشد"); }
             return pr;
         }
 

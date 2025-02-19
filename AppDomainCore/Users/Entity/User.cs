@@ -26,8 +26,8 @@ namespace AppDomainCore.Users.Entity
         public int PhotoId { get; set; }
         public string? Phone { get; set; }
 
-        public List<Admin>? Admins { get; set; } = new List<Admin>();
-        public List<Customer>? Customers { get; set; } = new List<Customer>();
-        public List<Expert>? Experts { get; set; } = new List<Expert>();
+        public Admin? Admins { get; set; }
+        public Customer? Customers { get; set; }
+        public Expert? Experts { get; set; }
     }
 }
