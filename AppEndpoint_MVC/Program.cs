@@ -10,6 +10,7 @@ using AppDataRepository.Photos;
 using AppDataRepository.Provinces;
 using AppDataRepository.SubCategorys;
 using AppDataRepository.Works;
+using AppDomainCore.Account.AppService;
 using AppDomainCore.Admins.Contract.AppService;
 using AppDomainCore.Admins.Contract.Repository;
 using AppDomainCore.Admins.Contract.Service;
@@ -45,6 +46,7 @@ using AppDomainCore.Users.Entity;
 using AppDomainCore.Works.Contract.AppService;
 using AppDomainCore.Works.Contract.Repository;
 using AppDomainCore.Works.Contract.Service;
+using DomainAppService.Account;
 using DomainAppService.Admins;
 using DomainAppService.Categorys;
 using DomainAppService.Comments;
@@ -90,6 +92,7 @@ builder.Services.AddIdentity<User, IdentityRole<int>>(options =>
 })
 .AddRoles<IdentityRole<int>>()
 .AddEntityFrameworkStores<AppDbContext>()
+.AddSignInManager<SignInManager<User>>()
 .AddDefaultTokenProviders();
 
 builder.Services.AddScoped<IAdminRepository, AdminRepository>();
@@ -139,6 +142,8 @@ builder.Services.AddScoped<IWorkAppService, WorkAppService>();
 builder.Services.AddScoped<IPhotoRepository, PhotoRepository>();
 builder.Services.AddScoped<IPhotoService, PhotoService>();
 builder.Services.AddScoped<IPhotoAppService, PhotoAppService>();
+
+builder.Services.AddScoped<IAccountAppService, AccountAppService>();
 
 var app = builder.Build();
 

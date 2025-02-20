@@ -19,6 +19,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AppDataRepository.Db.Configurations;
+using MaktabNews.Infrastructure.EfCore.Configurations;
 
 namespace AppDataRepository.Db.Context
 {
@@ -54,7 +55,7 @@ namespace AppDataRepository.Db.Context
             modelBuilder.ApplyConfiguration(new ProvincesConfigurations());
             modelBuilder.ApplyConfiguration(new SubCategorysConfigurations());
             modelBuilder.ApplyConfiguration(new WorksConfigurations());
-
+            UserConfigurations.SeedUsers(modelBuilder);
             base.OnModelCreating(modelBuilder);
         }
     }

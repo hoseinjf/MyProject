@@ -16,6 +16,8 @@ namespace DomainAppService.Admins
         {
             _adminService = adminService;
         }
+
+
         public async Task<Admin> Add(Admin admin, CancellationToken cancellationToken)
         {
             return await _adminService.Add(admin, cancellationToken);

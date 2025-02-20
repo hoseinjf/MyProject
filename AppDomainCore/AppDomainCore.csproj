@@ -26,12 +26,11 @@
     <Folder Include="Provinces\Enum\" />
     <Folder Include="SubCategorys\DTO\" />
     <Folder Include="SubCategorys\Enum\" />
-    <Folder Include="Users\DTO\" />
-    <Folder Include="Users\Enum\" />
     <Folder Include="Works\Enum\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.11" />
     <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="8.0.11" />
   </ItemGroup>

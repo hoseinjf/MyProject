@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
 namespace MaktabNews.Infrastructure.EfCore.Configurations;
-public class UserConfigurations
+public static class UserConfigurations
 {
     public static void SeedUsers(ModelBuilder builder)
     {
