@@ -53,7 +53,6 @@ namespace AppDataRepository.Categorys
 
 
             category.Title = model.Title;
-            category.PhotoId = model.PhotoId;
 
             await _db.SaveChangesAsync(cancellationToken);
             return category;

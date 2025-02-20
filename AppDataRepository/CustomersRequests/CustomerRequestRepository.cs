@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace AppDataRepository.CustomersRequests
 {
-    internal class CustomerRequestRepository : ICustomerRequestRepository
+    public class CustomerRequestRepository : ICustomerRequestRepository
     {
         private readonly AppDbContext _db;
         public CustomerRequestRepository(AppDbContext appDbContext)
@@ -50,12 +50,10 @@ namespace AppDataRepository.CustomersRequests
 
         public async Task<CustomersRequest> Update(CustomersRequest model, CancellationToken cancellationToken)
         {
-            var customersRequest = await _db.CustomersRequests.Include(x => x.Customer).FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
+            var customersRequest = await _db.CustomersRequests.FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
             if (customersRequest == null) { throw new Exception("درخواستی یافت نشد"); }
 
 
-            customersRequest.WorkId = model.WorkId;
-            customersRequest.CustomerId = model.CustomerId;
             customersRequest.Status = model.Status;
             customersRequest.DateWork = model.DateWork;
             customersRequest.Description = model.Description;

@@ -49,11 +49,9 @@ namespace AppDataRepository.SubCategorys
 
         public async Task<SubCategory> Update(SubCategory model, CancellationToken cancellationToken)
         {
-            var subCategory = await _db.SubCategories.Include(x => x.works).FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
+            var subCategory = await _db.SubCategories.FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
             if (subCategory == null) { throw new Exception("زیردسته بندی یافت نشد"); }
 
-            subCategory.CategoryId = model.CategoryId;
-            subCategory.PhotoId = model.PhotoId;
             subCategory.Title = model.Title;
 
             await _db.SaveChangesAsync(cancellationToken);

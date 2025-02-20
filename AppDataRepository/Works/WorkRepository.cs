@@ -54,10 +54,8 @@ namespace AppDataRepository.Works
             if (work == null) { throw new Exception("سرویس مورد نظر یافت نشد"); }
 
 
-            work.SubCategoryId = model.SubCategoryId;
             work.CorePrice = model.CorePrice;
             work.Description = model.Description;
-            work.PhotoId = model.PhotoId;
             work.Title = model.Title;
             work.Viwe=model.Viwe;
 

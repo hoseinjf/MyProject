@@ -53,10 +53,8 @@ namespace AppDataRepository.Comments
 
 
             comment.Title = model.Title;
-            comment.CustomersId = model.CustomersId;
             comment.Description = model.Description;
             comment.WorkScore = model.WorkScore;
-            comment.ExpertId = model.ExpertId;
             comment.IsActive = model.IsActive;
 
             await _db.SaveChangesAsync(cancellationToken);

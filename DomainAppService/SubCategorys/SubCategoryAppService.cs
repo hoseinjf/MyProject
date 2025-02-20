@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DomainAppService.SubCategorys
 {
-    internal class SubCategoryAppService : ISubCategoryAppService
+    public class SubCategoryAppService : ISubCategoryAppService
     {
         private readonly ISubCategoryService _subCategoryService;
         public SubCategoryAppService(ISubCategoryService subCategoryService)

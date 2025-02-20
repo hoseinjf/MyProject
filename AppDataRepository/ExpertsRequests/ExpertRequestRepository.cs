@@ -56,8 +56,6 @@ namespace AppDataRepository.ExpertsRequests
             expertsRequest.DateWork = model.DateWork;
             expertsRequest.Price = model.Price;
             expertsRequest.Description = model.Description;
-            expertsRequest.CustomersRequestId = model.CustomersRequestId;
-            expertsRequest.ExpertId = model.ExpertId;
 
             await _db.SaveChangesAsync(cancellationToken);
             return expertsRequest;

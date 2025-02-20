@@ -52,7 +52,6 @@ namespace AppDataRepository.Customers
             if (customer == null) { throw new Exception("کامنت یافت نشد"); }
 
 
-            customer.UserId = model.UserId;
 
             await _db.SaveChangesAsync(cancellationToken);
             return customer;

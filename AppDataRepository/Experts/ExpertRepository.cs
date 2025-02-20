@@ -50,11 +50,10 @@ namespace AppDataRepository.Experts
 
         public async Task<Expert> Update(Expert model, CancellationToken cancellationToken)
         {
-            var expert = await _db.Experts.Include(x => x.Works).FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
+            var expert = await _db.Experts.FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
             if (expert == null) { throw new Exception("کامنت یافت نشد"); }
 
 
-            expert.UserId = model.UserId;
             expert.Biography = model.Biography;
             expert.Score = model.Score;
 

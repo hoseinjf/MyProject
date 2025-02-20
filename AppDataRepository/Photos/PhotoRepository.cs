@@ -52,11 +52,7 @@ namespace AppDataRepository.Photos
             var photo =await _db.Photo.FirstOrDefaultAsync(x=>x.Id == model.Id,cancellationToken);
             if (photo == null) { throw new Exception("موردی یافت نشد"); }
 
-            photo.WorkId = model.WorkId;
-            photo.SubCategoryId = model.SubCategoryId;
-            photo.CategoryId = model.CategoryId;
-            photo.CustomersRequestId = model.CustomersRequestId;
-            photo.ExpertsRequestId = model.ExpertsRequestId;
+
             photo.Src=model.Src;
             photo.UserId = model.UserId;
 

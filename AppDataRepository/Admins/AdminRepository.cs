@@ -50,7 +50,6 @@ namespace AppDataRepository.Admins
         {
             var admin = await _db.Admins.Include(x=>x.user).FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
             if (admin == null) { throw new Exception("کاربر یافت نشد"); }
-            admin.UserId = model.UserId;
             await _db.SaveChangesAsync(cancellationToken);
             return admin;
         }
