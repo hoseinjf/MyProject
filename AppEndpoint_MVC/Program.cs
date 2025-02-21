@@ -97,6 +97,12 @@ builder.Services.AddIdentity<User, IdentityRole<int>>(options =>
 .AddSignInManager<SignInManager<User>>()
 .AddDefaultTokenProviders();
 
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("NotAdmin", policy =>
+        policy.RequireAssertion(context =>
+            !context.User.IsInRole("admin")));
+});
 
 
 

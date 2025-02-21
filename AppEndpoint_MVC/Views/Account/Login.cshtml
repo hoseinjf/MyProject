@@ -1,12 +1,12 @@
 ﻿@using AppDomainCore.Users.DTO
 @using AppDomainCore.Users.Enum
-@model RegisterDto;
+@model LoginDto;
 
 <div class="col-md-6">
     <div class="card">
-        <div class="card-header bg-primary text-white">فرم ثبت نام</div>
+        <div class="card-header bg-primary text-white">فرم ورود </div>
         <div class="card-body">
-            <form asp-action="Register" method="post">
+            <form asp-action="Login" method="post">
                 <div class="mb-3">
                     <label asp-for="Email" class="form-label">ایمیل</label>
                     <input asp-for="Email" type="email" class="form-control" id="signupEmail" placeholder="ایمیل خود را وارد کنید" required>
@@ -16,16 +16,8 @@
                     <input asp-for="Password" type="password" class="form-control" id="signupPassword" placeholder="رمز عبور خود را وارد کنید" required>
                 </div>
 
-                <div class="form-group">
-                    <label asp-for="UserRole">نقش:</label>
-                    <select asp-for="UserRole" asp-items="Html.GetEnumSelectList<EnumRole>()" class="form-control" required>
-                        <option value="">-- انتخاب نقش --</option>
-                    </select>
-                </div>
-
-                <button type="submit" class="btn btn-success w-100">ثبت نام</button>
-                <a asp-controller="Account" asp-action="Login">ورود </a>
-
+                <button type="submit" class="btn btn-success w-100">ورود</button>
+                <a asp-controller="Account" asp-action="Register">ثبت نام</a>
             </form>
         </div>
     </div>

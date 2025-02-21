@@ -5,7 +5,9 @@ using AppDomainCore.Experts.Entity;
 using AppDomainCore.Users.DTO;
 using AppDomainCore.Users.Entity;
 using AppDomainCore.Users.Enum;
+using Microsoft.AspNetCore.Http.Features.Authentication;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,7 +48,7 @@ namespace DomainAppService.Account
                     {
                         UserId = user.Id,
                     };
-                    user.Customers=customer;
+                    user.Customers = customer;
                     customer.User = user;
                     await _userManager.AddToRoleAsync(user, EnumRole.Customer.ToString());
 
@@ -63,7 +65,7 @@ namespace DomainAppService.Account
                     Expert expert = new Expert()
                     {
                         UserId = user.Id,
-                        
+
                     };
                     user.Experts = expert;
                     expert.User = user;
@@ -82,12 +84,22 @@ namespace DomainAppService.Account
             return result;
 
         }
-        public async Task<SignInResult> Login(string Email, string password, CancellationToken cancellationToken)
+        public async Task<SignInResult> Login(LoginDto loginDto, CancellationToken cancellationToken)
         {
-            var result = await _signInManager.PasswordSignInAsync(Email, password, true, false);
+            var result = await _signInManager.PasswordSignInAsync(loginDto.Email, loginDto.Password, true, false);
+
+            if (result.Succeeded)
+            {
+                return result;
+            }
             return result;
+
         }
 
+        public void Logout()
+        {
+            var result = _signInManager.SignOutAsync();
+        }
 
 
     }

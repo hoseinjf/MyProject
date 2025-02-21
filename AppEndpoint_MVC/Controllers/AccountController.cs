@@ -1,6 +1,7 @@
 ﻿using AppDomainCore.Account.AppService;
 using AppDomainCore.Users.DTO;
 using DomainAppService.Account;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AppEndpoint_MVC.Controllers
@@ -13,11 +14,9 @@ namespace AppEndpoint_MVC.Controllers
             _accountAppService = accountAppService;
         }
         public IActionResult Register()
-        
         {
             return View();
         }
-
         [HttpPost]
         public async Task<IActionResult> Register(RegisterDto registerDto, CancellationToken cancellationToken)
         {
@@ -38,9 +37,20 @@ namespace AppEndpoint_MVC.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(string Email, string password, CancellationToken cancellationToken)
+        public async Task<IActionResult> Login(LoginDto loginDto, CancellationToken cancellationToken)
         {
-            var result = _accountAppService.Login(Email, password, cancellationToken);
+            if (ModelState.IsValid) 
+            {
+                var result = await _accountAppService.Login(loginDto, cancellationToken);
+                return RedirectToAction("Index", "Home");
+            }
+            return View(loginDto);
+        }
+
+        public IActionResult Logout()
+        {
+            _accountAppService.Logout();
+            return RedirectToAction("Index", "Home");
         }
 
     }
