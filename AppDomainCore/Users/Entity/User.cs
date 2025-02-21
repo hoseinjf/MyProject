@@ -23,8 +23,12 @@ namespace AppDomainCore.Users.Entity
         public string? AccountCode { get; set; }
         public double? Balance { get; set; }
         public string? Address { get; set; }
-        
-       
+
+
+        public DateTime? CreateAt  { get; set; }
+        public DateTime? UpdateAt  { get; set; }
+        public bool IsDelete { get; set; }=false;
+
         public Photo? Photo { get; set; }
         [ForeignKey(nameof(PhotoId))]
         public int? PhotoId { get; set; }

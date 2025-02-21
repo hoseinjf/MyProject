@@ -2,6 +2,7 @@
 using AppDomainCore.Admins.Entity;
 using AppDomainCore.Customers.Contract.Repository;
 using AppDomainCore.Customers.Entity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -27,23 +28,23 @@ namespace AppDataRepository.Customers
 
         public async Task<bool> Delete(int id, CancellationToken cancellationToken)
         {
-            var customer = await _db.Customers.FirstOrDefaultAsync(x => x.Id == id,cancellationToken);  
+            var customer = await _db.Customers.Include(x=>x.User).FirstOrDefaultAsync(x => x.Id == id,cancellationToken);  
             if (customer == null) { return false; }
-            _db.Customers.Remove(customer);
+            customer.User.IsDelete=true;
             await _db.SaveChangesAsync(cancellationToken);
             return true;
         }
 
         public async Task<Customer> Get(int id, CancellationToken cancellationToken)
         {
-            var customer = await _db.Customers.FirstOrDefaultAsync(x=>x.Id == id,cancellationToken);
+            var customer = await _db.Customers.Where(x=>x.User.IsDelete==false).FirstOrDefaultAsync(x=>x.Id == id,cancellationToken);
             if (customer == null) { throw new Exception("کاربر یافت نشد"); }
             return customer;
         }
 
         public async Task<List<Customer>> GetAll(CancellationToken cancellationToken)
         {
-            return await _db.Customers.ToListAsync(cancellationToken);
+            return await _db.Customers.Include(x=> x.User).Where(x => x.User.IsDelete == false).ToListAsync(cancellationToken);
         }
 
         public async Task<Customer> Update(Customer model, CancellationToken cancellationToken)
