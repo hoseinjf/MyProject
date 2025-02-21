@@ -12,5 +12,6 @@ namespace AppDomainCore.Account.AppService
     public interface IAccountAppService
     {
         public Task<IdentityResult> Register(RegisterDto user, CancellationToken cancellationToken);
+        public  Task<SignInResult> Login(string Email, string password, CancellationToken cancellationToken);
     }
 }

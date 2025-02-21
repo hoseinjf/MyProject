@@ -13,6 +13,7 @@ namespace AppEndpoint_MVC.Controllers
             _accountAppService = accountAppService;
         }
         public IActionResult Register()
+        
         {
             return View();
         }
@@ -25,10 +26,21 @@ namespace AppEndpoint_MVC.Controllers
                 var res = await _accountAppService.Register(registerDto, cancellationToken);
                 if (res.Succeeded) 
                 {
-                    RedirectToAction("Index","Home");
+                    return RedirectToAction("Index","Home");
                 }
             }
             return View(registerDto);
+        }
+
+        public IActionResult Login() 
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(string Email, string password, CancellationToken cancellationToken)
+        {
+            var result = _accountAppService.Login(Email, password, cancellationToken);
         }
 
     }

@@ -18,63 +18,38 @@ namespace DomainAppService.Account
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
-        private readonly RoleManager<IdentityRole> _roleManager;
-        public AccountAppService(UserManager<User> userManager, SignInManager<User> signInManager)
+        private readonly RoleManager<IdentityRole<int>> _roleManager;
+        public AccountAppService(UserManager<User> userManager, SignInManager<User> signInManager, RoleManager<IdentityRole<int>> roleManager)
         {
             _signInManager = signInManager;
             _userManager = userManager;
+            _roleManager = roleManager;
         }
-        //public async Task<IdentityResult> Register(RegisterDto registerDto, CancellationToken cancellationToken)
-        //{
-
-
-        //    var user = new user();
-        //    user.Email = registerDto.Email;
-        //    user.userName = registerDto.Email;
-        //    //var Role = new IdentityRole();
-
-        //    //if (registerDto.AccountRole == EnumRole.Expert)
-        //    //{
-        //    //    Role.Name = EnumRole.Expert.ToString();
-        //    //    user.Experts = new Expert();
-        //    //}
-        //    //if (registerDto.AccountRole == EnumRole.Customer)
-        //    //{
-        //    //    Role.Name = EnumRole.Customer.ToString();
-        //    //    user.Customers = new Customer();
-        //    //}
-
-        //    var result = await _userManager.CreateAsync(user, registerDto.Password);
-
-        //    if (result.Succeeded)
-        //    {
-        //        await _signInManager.SignInAsync(user, isPersistent: false);
-        //    }
-        //    return result;
-
-        //}
-
-
 
         public async Task<IdentityResult> Register(RegisterDto registerDto, CancellationToken cancellationToken)
         {
             var user = new User();
             user.Email = registerDto.Email;
             user.UserName = registerDto.Email;
-            
-            var RoleCu = "Customer";
-            var RoleEx = "Expert";
+
             var result = await _userManager.CreateAsync(user, registerDto.Password);
             if (!result.Succeeded)
             {
                 return result;
             }
 
-            if (registerDto.UserRole==EnumRole.Customer)
+            if (registerDto.UserRole == EnumRole.Customer)
             {
-                if (await _roleManager.RoleExistsAsync("Customer"))
+                if (await _roleManager.RoleExistsAsync(EnumRole.Customer.ToString()))
                 {
-                    await _userManager.AddToRoleAsync(user, "Customer");
+                    Customer customer = new Customer()
+                    {
+                        UserId = user.Id,
+                    };
+                    user.Customers=customer;
+                    customer.User = user;
+                    await _userManager.AddToRoleAsync(user, EnumRole.Customer.ToString());
+
                 }
                 else
                 {
@@ -83,9 +58,16 @@ namespace DomainAppService.Account
             }
             else if (registerDto.UserRole == EnumRole.Expert)
             {
-                if (await _roleManager.RoleExistsAsync("Expert"))
+                if (await _roleManager.RoleExistsAsync(EnumRole.Expert.ToString()))
                 {
-                    await _userManager.AddToRoleAsync(user, "Expert");
+                    Expert expert = new Expert()
+                    {
+                        UserId = user.Id,
+                        
+                    };
+                    user.Experts = expert;
+                    expert.User = user;
+                    await _userManager.AddToRoleAsync(user, EnumRole.Expert.ToString());
                 }
                 else
                 {

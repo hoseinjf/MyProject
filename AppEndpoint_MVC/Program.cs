@@ -70,7 +70,9 @@ using DomainService.Provinces;
 using DomainService.SubCategorys;
 using DomainService.Works;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -94,6 +96,10 @@ builder.Services.AddIdentity<User, IdentityRole<int>>(options =>
 .AddEntityFrameworkStores<AppDbContext>()
 .AddSignInManager<SignInManager<User>>()
 .AddDefaultTokenProviders();
+
+
+
+
 
 builder.Services.AddScoped<IAdminRepository, AdminRepository>();
 builder.Services.AddScoped<IAdminService, AdminService>();
@@ -146,6 +152,7 @@ builder.Services.AddScoped<IPhotoAppService, PhotoAppService>();
 builder.Services.AddScoped<IAccountAppService, AccountAppService>();
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

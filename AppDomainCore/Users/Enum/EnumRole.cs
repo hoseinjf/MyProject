@@ -8,7 +8,6 @@ namespace AppDomainCore.Users.Enum
 {
     public enum EnumRole
     {
-        Admin = 1,
         Customer = 2,
         Expert = 3,
     }
