@@ -27,7 +27,7 @@ namespace AppDataRepository.Db.Configurations
 
             builder.HasData
                 (
-                    new Comment() 
+                    new Comment()
                     {
                         Id = 1,
                         Title = "Title",

@@ -55,6 +55,7 @@ namespace AppDataRepository.Db.Context
             modelBuilder.ApplyConfiguration(new ProvincesConfigurations());
             modelBuilder.ApplyConfiguration(new SubCategorysConfigurations());
             modelBuilder.ApplyConfiguration(new WorksConfigurations());
+            modelBuilder.ApplyConfiguration(new PhotoConfigurations());
             UserConfigurations.SeedUsers(modelBuilder);
             base.OnModelCreating(modelBuilder);
         }

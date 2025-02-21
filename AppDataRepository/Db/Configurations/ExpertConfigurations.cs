@@ -1,4 +1,5 @@
 ﻿using AppDomainCore.Experts.Entity;
+using AppDomainCore.Users.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace AppDataRepository.Db.Configurations
 {
@@ -22,15 +24,34 @@ namespace AppDataRepository.Db.Configurations
                    .HasForeignKey(x => x.ExpertId)
                    .OnDelete(DeleteBehavior.Restrict);
 
-            //builder.HasData
-            //(
-            //    new Expert
-            //    {
-            //        Id = 1,
-            //        Email = "hasn@hasan.com",
-            //        Password = "hasan",
-            //    }
-            //);
+            builder.HasData
+            (
+                new Expert
+                {
+                    Id = 1,
+                    Biography = "asd",
+                    UserId = 2,
+                    Score = 0,
+
+                },
+                new Expert
+                {
+                    Id = 2,
+                    Biography = "ased",
+                    UserId = 3,
+                    Score = 0,
+
+                },
+                new Expert 
+                {
+                    Id = 3,
+                    Biography = "asdsd",
+                    UserId = 4,
+                    Score = 0,
+
+                }
+
+            );
         }
     }
 }

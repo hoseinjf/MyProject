@@ -5,10 +5,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AppEndpoint_MVC.Controllers
 {
-    public class AccountController1 : Controller
+    public class AccountController : Controller
     {
         private readonly IAccountAppService _accountAppService;
-        public AccountController1(IAccountAppService accountAppService)
+        public AccountController(IAccountAppService accountAppService)
         {
             _accountAppService = accountAppService;
         }

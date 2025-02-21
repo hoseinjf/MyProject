@@ -54,7 +54,6 @@ namespace AppDataRepository.Photos
 
 
             photo.Src=model.Src;
-            photo.UserId = model.UserId;
 
             await _db.SaveChangesAsync(cancellationToken);
             return photo;

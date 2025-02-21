@@ -6,6 +6,7 @@ using AppDomainCore.Provinces.Entity;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,8 +23,11 @@ namespace AppDomainCore.Users.Entity
         public string? AccountCode { get; set; }
         public double? Balance { get; set; }
         public string? Address { get; set; }
+        
+       
         public Photo? Photo { get; set; }
-        public int PhotoId { get; set; }
+        [ForeignKey(nameof(PhotoId))]
+        public int? PhotoId { get; set; }
         public string? Phone { get; set; }
 
         public Admin? Admins { get; set; }

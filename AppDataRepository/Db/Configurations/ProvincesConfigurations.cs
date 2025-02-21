@@ -15,9 +15,9 @@ namespace AppDataRepository.Db.Configurations
         {
             builder.HasKey(x => x.Id);
 
-            builder.HasOne(x => x.User)
-                   .WithOne(x => x.Province)
-                   .OnDelete(DeleteBehavior.Restrict);
+            //builder.HasOne(x => x.User)
+            //       .WithOne(x => x.Province)
+            //       .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasData(
                 new Province { Id = 1, Name = "آذربایجان شرقی" },

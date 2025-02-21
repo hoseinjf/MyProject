@@ -36,7 +36,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         SubCategoryId = 1,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "پی ریزی",
                         CorePrice = 500,
                         Description = "انجام انواع امور پی ریزی"
@@ -48,7 +48,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         SubCategoryId = 1,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "بلوک گذاری و دیوار چینی",
                         CorePrice = 1000,
                         Description = "انجام انواع امور بلوک گذاری و دیوار چینی"
@@ -60,7 +60,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         SubCategoryId = 1,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "کف ساختمان",
                         CorePrice = 600,
                         Description = "انجام انواع امور مرتبط با کف ساختمان"
@@ -72,7 +72,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         SubCategoryId = 1,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "نوسازی",
                         CorePrice = 6000,
                         Description = "انجام انواع امور نوسازی ساختمان های قدیمی یا نیازمند تغییر"
@@ -84,7 +84,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         SubCategoryId = 1,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "سیمان کاری",
                         CorePrice = 500,
                         Description = "انجام انواع امور سیمان کاری"
@@ -96,7 +96,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         SubCategoryId = 2,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "دکور آشپزخانه",
                         CorePrice = 500,
                         Description = "انجام انواع امور دکور آشپزخانه"
@@ -108,7 +108,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         SubCategoryId = 2,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "دکور حال و پذیرایی",
                         CorePrice = 580,
                         Description = "انجام انواع امور دکور حال و پذیرایی"
@@ -120,7 +120,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         SubCategoryId = 2,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "دکور اتاق خواب",
                         CorePrice = 400,
                         Description = "انجام انواع امور دکور اتاق خواب"
@@ -132,7 +132,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         SubCategoryId = 2,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "طراحی و دیزاین ساختمان",
                         CorePrice = 800,
                         Description = "انجام انواع امور طراحی و دیزاین ساختمان"
@@ -144,7 +144,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         SubCategoryId = 2,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "معماری داخلی",
                         CorePrice = 1500,
                         Description = "انجام انواع امور معماری داخلی"
@@ -158,7 +158,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         SubCategoryId = 3,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "نقاشی داخل ساختمان",
                         CorePrice = 800,
                         Description = "انجام انواع امور نقاشی داخل ساختمان"
@@ -170,7 +170,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         SubCategoryId = 3,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "نقاشی خارج ساختمان",
                         CorePrice = 300,
                         Description = "انجام انواع امور نقاشی خارج ساختمان"
@@ -184,7 +184,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         SubCategoryId = 4,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "تعمیرات درب و پنجره",
                         CorePrice = 200,
                         Description = "انجام انواع امور تعمیرات درب و پنجره"
@@ -195,7 +195,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         SubCategoryId = 4,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "سفارش درب و پنجره",
                         CorePrice = 800,
                         Description = "انجام انواع امور سفارش درب و پنجرهن"
@@ -209,7 +209,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         SubCategoryId = 5,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "آهنگری و جوشکاری لوازم و غیره",
                         CorePrice = 800,
                         Description = "انجام انواع امور آهنگری و جوشکاری لوازم و غیره"
@@ -220,7 +220,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         SubCategoryId = 5,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "آهنگری و جوشکاری ساختمانی",
                         CorePrice = 800,
                         Description = "انجام انواع امور آهنگری و جوشکاری ساختمانی"
@@ -233,7 +233,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         SubCategoryId = 6,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "باغبانی ساختمان ها ومجتمع ها ",
                         CorePrice = 500,
                         Description = "انجام انواع امور باغبانی ساختمان ها ومجتمع ها"
@@ -244,7 +244,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         SubCategoryId = 6,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "باغبانی فضای شهری و سازمان ها",
                         CorePrice = 800,
                         Description = "انجام انواع امور باغبانی فضای شهری و سازمان ها"

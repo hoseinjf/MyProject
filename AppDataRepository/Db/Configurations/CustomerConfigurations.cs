@@ -26,15 +26,24 @@ namespace AppDataRepository.Db.Configurations
                    .HasForeignKey(x => x.CustomersId)
                    .OnDelete(DeleteBehavior.Restrict);
 
-            //builder.HasData
-            //(
-            //    new Customer
-            //    {
-            //        Id = 1,
-            //        Email = "ali@ali.com",
-            //        Password = "ali",
-            //    }
-            //);
+            builder.HasData
+            (
+                new Customer
+                {
+                    Id = 1,
+                    UserId = 5,
+                },
+                new Customer
+                {
+                    Id = 2,
+                    UserId = 3,
+                },
+                new Customer
+                {
+                    Id = 3,
+                    UserId = 7,
+                }
+            );
 
         }
     }

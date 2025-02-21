@@ -29,7 +29,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 1,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "بنایی",
                     },
                     new SubCategory
@@ -38,7 +38,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 1,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "دکوراسیون",
                     }
                     ,
@@ -48,7 +48,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 1,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "نقاشی ساختمان",
                     },
                     new SubCategory
@@ -57,7 +57,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 1,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "درب و پنجره",
                     },
                     new SubCategory
@@ -66,7 +66,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 1,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "آهنگری و جوشکاری",
                     },
                     new SubCategory
@@ -75,7 +75,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 1,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "باغبانی",
                     },
 
@@ -88,7 +88,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 2,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "سرمایش و گرمایش",
                     },
                     new SubCategory
@@ -97,7 +97,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 2,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "لوله کشی",
                     }
                     ,
@@ -107,7 +107,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 2,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "برقو الکترونیک",
                     },
                     new SubCategory
@@ -116,7 +116,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 2,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "تلفن و سانترال",
                     },
 
@@ -130,7 +130,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 3,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "خودرو",
                     },
 
@@ -144,7 +144,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 4,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "اسبابکشی",
                     },
                     new SubCategory
@@ -153,7 +153,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 4,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "حمل بار",
                     }
                     ,
@@ -168,7 +168,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 5,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "لوازم آشپزخانه",
                     },
                     new SubCategory
@@ -177,7 +177,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 5,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "لوازم شست و شو",
                     }
                     ,
@@ -187,7 +187,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 5,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "لوازم صوتی و تصویری",
                     },
 
@@ -201,7 +201,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 6,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "ماشین آلات اداری",
                     },
                     new SubCategory
@@ -210,7 +210,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 6,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "مبلمان اداری",
                     }
                     ,
@@ -225,7 +225,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 7,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "نظافت",
                     },
                     new SubCategory
@@ -234,7 +234,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 7,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "خشک شویی و اتوشویی",
                     }
                     ,
@@ -244,7 +244,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 7,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "قالی شویی و مبل شویی",
                     },
                     new SubCategory
@@ -253,7 +253,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 7,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "سمپاشی",
                     },
 
@@ -268,7 +268,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 8,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "موبایل و تبلت",
                     },
                     new SubCategory
@@ -277,7 +277,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 8,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "خدمات کامپیوتری",
                     }
                     ,
@@ -287,7 +287,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 8,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "امنیت و شبکه",
                     },
 
@@ -302,7 +302,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 9,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "معاینه پزشک",
                     },
                     new SubCategory
@@ -311,7 +311,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 9,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "داروخانه",
                     }
                     ,
@@ -321,7 +321,7 @@ namespace AppDataRepository.Db.Configurations
                         CreateAt = DateTime.UtcNow,
                         UpdateAt = DateTime.UtcNow,
                         CategoryId = 9,
-                        Photo = new Photo(),
+                                                //Photo = new Photo(),
                         Title = "مشاوره",
                     }
                 );

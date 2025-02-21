@@ -20,6 +20,6 @@ namespace AppDomainCore.Users.DTO
         [Display(Name = "رمزعبور")]
         public string Password { get; set; }
 
-        public EnumRole AccountRole { get; set; }
+        public EnumRole UserRole { get; set; }
     }
 }

@@ -19,15 +19,14 @@ namespace AppDataRepository.Db.Configurations
                 .WithOne(x => x.Admins)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            //builder.HasData
-            //    (
-            //        new Admin
-            //        {
-            //            Id = 1,
-            //            Email = "admin@admin.com",
-            //            Password = "admin",
-            //        }
-            //    );
+            builder.HasData
+                (
+                    new Admin
+                    {
+                        Id = 1,
+                        UserId = 1,
+                    }
+                );
         }
     }
 }
