@@ -3,7 +3,7 @@
 @using DomainAppService.Provinces
 
 @model CustomerAddDto
-@inject ProvinceAppService pr
+@* @inject ProvinceAppService pr *@
 @{
     ViewData["Title"] = "پیازچه > مدیریت کاربران > ایجاد کاربران";
 
@@ -65,10 +65,10 @@
                                 <input asp-for="Address" class="form-control" type="text" placeholder="آدرس" />
                             </div>
                         </div>
-@*                         <div class="form-group">
-                            <div class="input-group">
-                                <input asp-for="City" class="form-control" type="text" placeholder="آدرس" />
-                            </div>
+                        @*                         <div class="form-group">
+                        <div class="input-group">
+                        <input asp-for="City" class="form-control" type="text" placeholder="آدرس" />
+                        </div>
                         </div> *@
 
 
@@ -78,35 +78,35 @@
                         </div>
                         </div> *@
 
- @*                        <div class="form-group">
-                            <div class="input-group">
-                                <input asp-for="User.Password" class="form-control" type="password" placeholder="کلمه عبور" />
-                            </div>
+                        @*                        <div class="form-group">
+                        <div class="input-group">
+                        <input asp-for="User.Password" class="form-control" type="password" placeholder="کلمه عبور" />
+                        </div>
                         </div> *@
 
                         <div class="form-group">
                             <div class="input-group">
                                 <select asp-for="CityId" class="form-select">
-                                    @foreach (var city in @Model.provinces)
+                                    @foreach (var city in ViewBag.Categories)
                                     {
-                                        @* <option value="@city.Id">@await pr.GetAll()</option> *@
+                                        <option value="@city.Id">@city.Name</option>
                                     }
                                 </select>
                             </div>
                         </div>
 
-                        @*                         <div class="form-group">
-                            <div class="input-group">
-                                <select asp-for="User.Role" class="form-select">
-                                    <option value="1">Admin</option>
-                                    <option value="2">Visitor</option>
-                                    <option value="3">Advertiser</option>
-                                </select>
-                            </div>
+                        @*<div class="form-group">
+                        <div class="input-group">
+                        <select asp-for="User.Role" class="form-select">
+                        <option value="1">Admin</option>
+                        <option value="2">Visitor</option>
+                        <option value="3">Advertiser</option>
+                        </select>
+                        </div>
                         </div> *@
 
-                        @*                         <div class="form-group relative">
-                            <input asp-for="User.ProfileImgFile" type="file" class="form-control">
+                        <div class="form-group relative">
+                            <input asp-for="Pic" type="file" class="form-control">
                             <label>آپلود عکس</label>
                             <div class="input-group round">
                                 <input type="text" class="form-control file-input" placeholder="برای آپلود کلیک کنید">
@@ -119,7 +119,7 @@
                                 </span>
                             </div><!-- /.input-group -->
                             <div class="help-block"></div>
-                        </div> *@
+                        </div>
 
                     </div>
                     <hr>

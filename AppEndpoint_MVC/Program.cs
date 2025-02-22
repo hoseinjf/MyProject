@@ -14,6 +14,7 @@ using AppDomainCore.Account.AppService;
 using AppDomainCore.Admins.Contract.AppService;
 using AppDomainCore.Admins.Contract.Repository;
 using AppDomainCore.Admins.Contract.Service;
+using AppDomainCore.Base;
 using AppDomainCore.Categorys.Contract.AppService;
 using AppDomainCore.Categorys.Contract.Repository;
 using AppDomainCore.Categorys.Contract.Service;
@@ -59,6 +60,7 @@ using DomainAppService.Provinces;
 using DomainAppService.SubCategorys;
 using DomainAppService.Works;
 using DomainService.Admins;
+using DomainService.Base;
 using DomainService.Categorys;
 using DomainService.Comments;
 using DomainService.Customers;
@@ -156,6 +158,8 @@ builder.Services.AddScoped<IPhotoService, PhotoService>();
 builder.Services.AddScoped<IPhotoAppService, PhotoAppService>();
 
 builder.Services.AddScoped<IAccountAppService, AccountAppService>();
+
+builder.Services.AddScoped<IBaseDataService, BaseDataService>();
 
 var app = builder.Build();
 

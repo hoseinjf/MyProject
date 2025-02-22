@@ -45,7 +45,7 @@ namespace DomainService.Customers
             return com;
         }
 
-        public async Task<Customer> Update(Customer customer, CancellationToken cancellationToken)
+        public async Task<Customer> Update( Customer customer, CancellationToken cancellationToken)
         {
             var com = await _customerRepository.Update(customer, cancellationToken);
             if (com == null) throw new ArgumentNullException("موردی یافت نشد");

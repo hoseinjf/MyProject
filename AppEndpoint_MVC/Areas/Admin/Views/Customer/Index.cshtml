@@ -28,6 +28,7 @@
                             <tr>
                                 <th class="p-low"><input type="checkbox" id="btn-check-all-toggle"></th>
                                 <th>#</th>
+                                <th>عکس</th>
                                 <th>نام</th>
                                 <th>نام خانوادگی</th>
                                 <th>نام کاربری</th>
@@ -44,14 +45,14 @@
                                     <td><input type="checkbox"></td>
                                     <td>@user.Id</td>
 
-@*                                     @if (string.IsNullOrEmpty(user.))
+                                    @if (user.User.Photo==null)
                                     {
                                         <td><img style="border-radius : 50%" src="~/AdminTemplate/images/user/placeholder.jpg" width="80" height="80" /></td>
-                                    } *@
-@*                                     else
+                                    }
+                                    else
                                     {
-                                        <td><img style="border-radius : 50%" src="@user.ImagePath" width="80" height="80" /></td>
-                                    } *@
+                                        <td><img style="border-radius : 50%" src="@user.User.Photo.Src" width="80" height="80" /></td>
+                                    }
 
                                     <td>@user.User?.FirstName</td>
                                     <td>@user.User?.LastName</td>
@@ -60,8 +61,8 @@
                                     <td>@user.User?.Email</td>
                                     <td>@user.User?.Province?.Name</td>
                                     <td>
-                                        <a asp-action="Update" asp-route-Id="@user.Id" class="btn btn-info">ویرایش</a>
-                                        <a onclick="return confirm('آیا از حذف این کاربر اطمینان دارید؟')" asp-action="Delete" asp-controller="Customer" asp-area="Admin" asp-route-Id="@user.Id" class="btn btn-danger">حذف</a>
+                                        <a asp-area="Admin" asp-controller="Customer" asp-action="Update" asp-route-Id="@user.Id" class="btn btn-info">ویرایش</a>
+                                        <a onclick="return confirm('آیا از حذف این کاربر اطمینان دارید؟')" asp-area="Admin" asp-controller="Customer" asp-action="Delete" asp-route-Id="@user.Id" class="btn btn-danger">حذف</a>
                                     </td>
                                 </tr>
                             }

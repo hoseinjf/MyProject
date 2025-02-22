@@ -1,9 +1,11 @@
-﻿using AppDomainCore.Customers.Contract.AppService;
+﻿using AppDomainCore.Base;
+using AppDomainCore.Customers.Contract.AppService;
 using AppDomainCore.Customers.Contract.Service;
 using AppDomainCore.Customers.DTO;
 using AppDomainCore.Customers.Entity;
 using AppDomainCore.Works.Contract.Repository;
 using AppDomainCore.Works.Entity;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,12 +17,21 @@ namespace DomainAppService.Customers
     public class CustomerAppService : ICustomerAppService
     {
         private readonly ICustomerService _customerService;
-        public CustomerAppService(ICustomerService customerService)
+        private readonly IBaseDataService _bas;
+        public CustomerAppService(ICustomerService customerService,IBaseDataService bb)
         {
+            _bas = bb;
             _customerService = customerService;
         }
         public async Task<Customer> Add(CustomerAddDto customer, CancellationToken cancellationToken)
         {
+            customer.Photo = new AppDomainCore.Photos.Entity.Photo()
+            {
+                Src= await _bas.UploadImage(customer.Pic, "customer", cancellationToken),
+                
+            };
+            //customer.Photo.Src= await _bas.UploadImage(customer.Pic,"customer",cancellationToken);
+            
             return await _customerService.Add(customer, cancellationToken);
         }
 
@@ -39,9 +50,9 @@ namespace DomainAppService.Customers
             return await _customerService.GetAll(cancellationToken);
         }
 
-        public async Task<Customer> Update(Customer customer, CancellationToken cancellationToken)
+        public async Task<Customer> Update( Customer customer, CancellationToken cancellationToken)
         {
-            return await _customerService.Update(customer, cancellationToken);
+            return await _customerService.Update( customer, cancellationToken);
         }
     }
 }

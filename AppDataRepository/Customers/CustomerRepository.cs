@@ -49,10 +49,12 @@ namespace AppDataRepository.Customers
         {
             var customer = await _db.Customers.Include(x=>x.User).FirstOrDefaultAsync(x => x.Id == id,cancellationToken);  
             if (customer == null) { return false; }
-            var del = customer.User.IsDelete;
-            if (del == false) 
+            var userId = customer.UserId;
+            var user = await _db.Users.FirstOrDefaultAsync(x=>x.Id==userId);
+            
+            if (user.IsDelete == false) 
             {
-                del = true;
+                user.IsDelete = true;
                 await _db.SaveChangesAsync(cancellationToken);
                 return true; 
             }
@@ -61,25 +63,39 @@ namespace AppDataRepository.Customers
 
         public async Task<Customer> Get(int id, CancellationToken cancellationToken)
         {
-            var customer = await _db.Customers.Where(x=>x.User.IsDelete==false).FirstOrDefaultAsync(x=>x.Id == id,cancellationToken);
+            var customer = await _db.Customers.Include(x=>x.User).Where(x=>x.User.IsDelete==false).FirstOrDefaultAsync(x=>x.Id == id,cancellationToken);
             if (customer == null) { throw new Exception("کاربر یافت نشد"); }
             return customer;
         }
 
         public async Task<List<Customer>> GetAll(CancellationToken cancellationToken)
         {
-            return await _db.Customers.Include(x=> x.User).Where(x => x.User.IsDelete == false).ToListAsync(cancellationToken);
+            return await _db.Customers.Include(x=> x.User.Photo).Include(x=>x.User.Province).Where(x => x.User.IsDelete == false).ToListAsync(cancellationToken);
         }
 
-        public async Task<Customer> Update(Customer model, CancellationToken cancellationToken)
+        public async Task<Customer> Update(Customer customer, CancellationToken cancellationToken)
         {
-            var customer = await _db.Customers.Include(x=>x.User).FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
-            if (customer == null) { throw new Exception("کامنت یافت نشد"); }
+            var customer1 = await _db.Customers.Include(x=>x.User).FirstOrDefaultAsync(x => x.Id == customer.Id, cancellationToken);
+            if (customer1 == null) { throw new Exception("کامنت یافت نشد"); }
 
 
+            customer1.User = new User()
+            {
+                FirstName = customer.User.FirstName,
+                LastName = customer.User.LastName,
+                Email = customer.User.Email,
+                Address = customer.User.Address,
+                UserName = customer.User.UserName,
+                PasswordHash = customer.User.PasswordHash,
+                NormalizedEmail = customer.User.Email,
+                NormalizedUserName = customer.User.UserName,
+                Phone = customer.User.Phone,
+                Photo = customer.User.Photo,
+                ProvinceId = customer.User.ProvinceId
+            };
 
             await _db.SaveChangesAsync(cancellationToken);
-            return customer;
+            return customer1;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using AppDomainCore.Customers.Contract.AppService;
 using AppDomainCore.Customers.DTO;
 using AppDomainCore.Customers.Entity;
+using AppDomainCore.Provinces.Contract.AppService;
 using AppEndpoint_MVC.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -12,9 +13,11 @@ namespace AppEndpoint_MVC.Areas.Admin.Controllers
     public class CustomerController : Controller
     {
         private readonly ICustomerAppService _customerAppService;
-        public CustomerController(ICustomerAppService customerAppService)
+        private readonly IprovinceAppService _pr;
+        public CustomerController(ICustomerAppService customerAppService, IprovinceAppService prr)
         {
             _customerAppService = customerAppService;
+            _pr = prr;
         }
 
         public async Task<IActionResult> Index(List<Customer> customers,CancellationToken cancellationToken)
@@ -23,8 +26,10 @@ namespace AppEndpoint_MVC.Areas.Admin.Controllers
                 return View(customers);   
         }
 
-        public IActionResult Add() 
+        public async Task<IActionResult> Add(CancellationToken cancellationToken) 
         {
+            var categories = await _pr.GetAll(cancellationToken);
+            ViewBag.Categories = categories;
             return View();
         }
 
@@ -35,22 +40,23 @@ namespace AppEndpoint_MVC.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult Update()
+        public async  Task<IActionResult> Update(int id,CancellationToken cancellationToken)
         {
-            return View();
+            var x = await _customerAppService.Get(id, cancellationToken);
+            return View(x);
         }
 
         [HttpPost]
         public async Task<IActionResult> Update(Customer customer, CancellationToken cancellationToken)
         {
-            var item = await _customerAppService.Update(customer, cancellationToken);
-            return View("Index");
+            var item = await _customerAppService.Update( customer, cancellationToken);
+            return RedirectToAction("Index");
         }
 
         public async Task<IActionResult> Delete(int id , CancellationToken cancellationToken)
         {
             var item = await _customerAppService.Delete(id, cancellationToken);
-            return View("Index");
+            return RedirectToAction("Index");
         }
 
     }

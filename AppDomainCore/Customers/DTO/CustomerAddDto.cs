@@ -1,5 +1,6 @@
 ﻿using AppDomainCore.Photos.Entity;
 using AppDomainCore.Provinces.Entity;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,8 +18,9 @@ namespace AppDomainCore.Customers.DTO
         public string Password { get; set; }
         public string Address { get; set; }
         public Photo? Photo { get; set; }
+        public IFormFile? Pic { get; set; }
         public string Phone { get; set; }
-        public int CityId { get; set; }
+        public int? CityId { get; set; }
         public List<Province>? provinces { get; set; }
     }
 }
