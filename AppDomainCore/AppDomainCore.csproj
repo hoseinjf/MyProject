@@ -14,7 +14,6 @@
     <Folder Include="Comments\Enum\" />
     <Folder Include="Comments\DTO\" />
     <Folder Include="CustomersRequests\DTO\" />
-    <Folder Include="Customers\DTO\" />
     <Folder Include="Customers\Enum\" />
     <Folder Include="ExpertsRequests\DTO\" />
     <Folder Include="ExpertsRequests\Enum\" />

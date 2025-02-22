@@ -1,6 +1,6 @@
 ﻿@using AppDomainCore.Customers.Entity
 
-@model List<Customer?>
+@model List<Customer>
 @{
     ViewData["Title"] = "پیازچه > مدیریت کاربران > لیست کاربران";
 }
@@ -58,7 +58,7 @@
                                     <td>@user.User?.UserName</td>
                                     <td>@user.User?.Phone</td>
                                     <td>@user.User?.Email</td>
-                                    <td>@user.User?.Province</td>
+                                    <td>@user.User?.Province?.Name</td>
                                     <td>
                                         <a asp-action="Update" asp-route-Id="@user.Id" class="btn btn-info">ویرایش</a>
                                         <a onclick="return confirm('آیا از حذف این کاربر اطمینان دارید؟')" asp-action="Delete" asp-controller="Customer" asp-area="Admin" asp-route-Id="@user.Id" class="btn btn-danger">حذف</a>

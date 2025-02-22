@@ -1,5 +1,6 @@
 ﻿using AppDomainCore.Customers.Contract.AppService;
 using AppDomainCore.Customers.Contract.Service;
+using AppDomainCore.Customers.DTO;
 using AppDomainCore.Customers.Entity;
 using AppDomainCore.Works.Contract.Repository;
 using AppDomainCore.Works.Entity;
@@ -18,7 +19,7 @@ namespace DomainAppService.Customers
         {
             _customerService = customerService;
         }
-        public async Task<Customer> Add(Customer customer, CancellationToken cancellationToken)
+        public async Task<Customer> Add(CustomerAddDto customer, CancellationToken cancellationToken)
         {
             return await _customerService.Add(customer, cancellationToken);
         }

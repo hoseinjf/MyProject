@@ -2,6 +2,7 @@
 using AppDomainCore.Comments.Entity;
 using AppDomainCore.Customers.Contract.Repository;
 using AppDomainCore.Customers.Contract.Service;
+using AppDomainCore.Customers.DTO;
 using AppDomainCore.Customers.Entity;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace DomainService.Customers
         {
             _customerRepository = customerRepository;
         }
-        public async Task<Customer> Add(Customer customer, CancellationToken cancellationToken)
+        public async Task<Customer> Add(CustomerAddDto customer, CancellationToken cancellationToken)
         {
             var com =await _customerRepository.Add(customer, cancellationToken);
             if (com == null) throw new ArgumentNullException("موردی یافت نشد");

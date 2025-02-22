@@ -1,6 +1,9 @@
-﻿@using AppDomainCore.Customers.Entity
+﻿@using AppDomainCore.Customers.DTO
+@using AppDomainCore.Provinces.Entity
+@using DomainAppService.Provinces
 
-@model Customer
+@model CustomerAddDto
+@inject ProvinceAppService pr
 @{
     ViewData["Title"] = "پیازچه > مدیریت کاربران > ایجاد کاربران";
 
@@ -23,59 +26,76 @@
                     <div class="form-body">
                         <div class="form-group">
                             <div class="input-group">
-                                <input asp-for="User.FirstName" class="form-control" type="text" placeholder="نام">
+                                <input asp-for="FirstName" class="form-control" type="text" placeholder="نام">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="input-group">
-                                <input asp-for="User.LastName" class="form-control" type="text" placeholder="نام خانوادگی">
+                                <input asp-for="LastName" class="form-control" type="text" placeholder="نام خانوادگی">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="input-group">
-                                <input asp-for="User.Phone" class="form-control" type="text" placeholder="شماره موبایل" required />
+                                <input asp-for="Phone" class="form-control" type="text" placeholder="شماره موبایل" required />
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="input-group">
-                                <input asp-for="User.Email" class="form-control" type="email" placeholder="آدرس ایمیل" required />
+                                <input asp-for="Email" class="form-control" type="email" placeholder="آدرس ایمیل" required />
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="input-group">
-                                <input asp-for="User.Address" class="form-control" type="text" placeholder="آدرس" />
+                                <input asp-for="UserName" class="form-control" type="email" placeholder="نام کاربری" required />
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input asp-for="Password" class="form-control" type="password" placeholder="رمز عبور" required />
+                            </div>
+                        </div>
 
-                        @*                         <div class="form-group">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input asp-for="Address" class="form-control" type="text" placeholder="آدرس" />
+                            </div>
+                        </div>
+@*                         <div class="form-group">
+                            <div class="input-group">
+                                <input asp-for="City" class="form-control" type="text" placeholder="آدرس" />
+                            </div>
+                        </div> *@
+
+
+                        @*<div class="form-group">
                         <div class="input-group">
                         <input asp-for="User.UserName" class="form-control" type="text" placeholder="نام کاربری" />
                         </div>
-                        </div>
-
-                        <div class="form-group">
-                        <div class="input-group">
-                        <input asp-for="User.Password" class="form-control" type="password" placeholder="کلمه عبور" />
-                        </div>
                         </div> *@
 
-@*                         <div class="form-group">
+ @*                        <div class="form-group">
                             <div class="input-group">
-                                <select asp-for="User.ProvinceId" class="form-select">
-                                    @foreach (var city in @Model.User.Province)
-                                    {
-                                        <option value="@city.Id">@city.Title</option>
-                                    }
-                                </select>
+                                <input asp-for="User.Password" class="form-control" type="password" placeholder="کلمه عبور" />
                             </div>
                         </div> *@
 
-@*                         <div class="form-group">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <select asp-for="CityId" class="form-select">
+                                    @foreach (var city in @Model.provinces)
+                                    {
+                                        @* <option value="@city.Id">@await pr.GetAll()</option> *@
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+                        @*                         <div class="form-group">
                             <div class="input-group">
                                 <select asp-for="User.Role" class="form-select">
                                     <option value="1">Admin</option>
@@ -85,7 +105,7 @@
                             </div>
                         </div> *@
 
-@*                         <div class="form-group relative">
+                        @*                         <div class="form-group relative">
                             <input asp-for="User.ProfileImgFile" type="file" class="form-control">
                             <label>آپلود عکس</label>
                             <div class="input-group round">

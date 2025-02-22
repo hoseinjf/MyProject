@@ -84,74 +84,74 @@ namespace AppDataRepository.Migrations
                         new
                         {
                             Id = 1,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7576),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1296),
                             IsDelete = false,
                             Title = "دکوراسیون ساختمان",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7580)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1299)
                         },
                         new
                         {
                             Id = 2,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7582),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1301),
                             IsDelete = false,
                             Title = "تاسیسات ساختمان",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7583)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1301)
                         },
                         new
                         {
                             Id = 3,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7584),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1303),
                             IsDelete = false,
                             Title = "وسیله نقلیه",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7584)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1303)
                         },
                         new
                         {
                             Id = 4,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7585),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1304),
                             IsDelete = false,
                             Title = "اسبابکشی و باربری",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7585)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1305)
                         },
                         new
                         {
                             Id = 5,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7586),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1306),
                             IsDelete = false,
                             Title = "لوازم خانگی",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7587)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1306)
                         },
                         new
                         {
                             Id = 6,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7588),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1308),
                             IsDelete = false,
                             Title = "خدمات اداری",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7588)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1308)
                         },
                         new
                         {
                             Id = 7,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7589),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1309),
                             IsDelete = false,
                             Title = "نظافت و بهداشت",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7590)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1310)
                         },
                         new
                         {
                             Id = 8,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7590),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1311),
                             IsDelete = false,
                             Title = "دیجیتال و نرم افزار",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7591)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1311)
                         },
                         new
                         {
                             Id = 9,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7592),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1312),
                             IsDelete = false,
                             Title = "پزشکی و سلامت",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7592)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1313)
                         });
                 });
 
@@ -204,40 +204,40 @@ namespace AppDataRepository.Migrations
                         new
                         {
                             Id = 1,
-                            CreateAt = new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(4798),
+                            CreateAt = new DateTime(2025, 2, 22, 10, 51, 57, 478, DateTimeKind.Local).AddTicks(8342),
                             CustomersId = 1,
                             Description = "Description",
                             ExpertId = 1,
                             IsActive = true,
                             IsDelete = false,
                             Title = "Title",
-                            UpdateAt = new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(4811),
+                            UpdateAt = new DateTime(2025, 2, 22, 10, 51, 57, 478, DateTimeKind.Local).AddTicks(8354),
                             WorkScore = 4
                         },
                         new
                         {
                             Id = 2,
-                            CreateAt = new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(4814),
+                            CreateAt = new DateTime(2025, 2, 22, 10, 51, 57, 478, DateTimeKind.Local).AddTicks(8356),
                             CustomersId = 2,
                             Description = "Description",
                             ExpertId = 2,
                             IsActive = true,
                             IsDelete = false,
                             Title = "Title",
-                            UpdateAt = new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(4814),
+                            UpdateAt = new DateTime(2025, 2, 22, 10, 51, 57, 478, DateTimeKind.Local).AddTicks(8357),
                             WorkScore = 3
                         },
                         new
                         {
                             Id = 3,
-                            CreateAt = new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(4816),
+                            CreateAt = new DateTime(2025, 2, 22, 10, 51, 57, 478, DateTimeKind.Local).AddTicks(8359),
                             CustomersId = 3,
                             Description = "Description",
                             ExpertId = 3,
                             IsActive = true,
                             IsDelete = false,
                             Title = "Title",
-                            UpdateAt = new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(4817),
+                            UpdateAt = new DateTime(2025, 2, 22, 10, 51, 57, 478, DateTimeKind.Local).AddTicks(8360),
                             WorkScore = 5
                         });
                 });
@@ -323,37 +323,37 @@ namespace AppDataRepository.Migrations
                         new
                         {
                             Id = 1,
-                            CreateAt = new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(8725),
+                            CreateAt = new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(2894),
                             CustomerId = 1,
-                            DateWork = new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(8729),
+                            DateWork = new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(2898),
                             Description = "Description",
                             IsDelete = false,
                             Status = 3,
-                            UpdateAt = new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(8739),
+                            UpdateAt = new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(2904),
                             WorkId = 1
                         },
                         new
                         {
                             Id = 2,
-                            CreateAt = new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(8741),
+                            CreateAt = new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(2908),
                             CustomerId = 2,
-                            DateWork = new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(8741),
+                            DateWork = new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(2909),
                             Description = "Description",
                             IsDelete = false,
                             Status = 4,
-                            UpdateAt = new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(8742),
+                            UpdateAt = new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(2910),
                             WorkId = 2
                         },
                         new
                         {
                             Id = 3,
-                            CreateAt = new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(8743),
+                            CreateAt = new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(2912),
                             CustomerId = 3,
-                            DateWork = new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(8744),
+                            DateWork = new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(2912),
                             Description = "Description",
                             IsDelete = false,
                             Status = 1,
-                            UpdateAt = new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(8745),
+                            UpdateAt = new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(2913),
                             WorkId = 3
                         });
                 });
@@ -451,38 +451,38 @@ namespace AppDataRepository.Migrations
                         new
                         {
                             Id = 1,
-                            CreateAt = new DateTime(2025, 2, 22, 0, 6, 22, 143, DateTimeKind.Local).AddTicks(3489),
+                            CreateAt = new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(7623),
                             CustomersRequestId = 1,
-                            DateWork = new DateTime(2025, 2, 22, 0, 6, 22, 143, DateTimeKind.Local).AddTicks(3493),
+                            DateWork = new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(7627),
                             Description = "Description",
                             ExpertId = 1,
                             IsDelete = false,
                             Price = 1000.0,
-                            UpdateAt = new DateTime(2025, 2, 22, 0, 6, 22, 143, DateTimeKind.Local).AddTicks(3494)
+                            UpdateAt = new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(7629)
                         },
                         new
                         {
                             Id = 2,
-                            CreateAt = new DateTime(2025, 2, 22, 0, 6, 22, 143, DateTimeKind.Local).AddTicks(3496),
+                            CreateAt = new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(7632),
                             CustomersRequestId = 2,
-                            DateWork = new DateTime(2025, 2, 22, 0, 6, 22, 143, DateTimeKind.Local).AddTicks(3497),
+                            DateWork = new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(7633),
                             Description = "Description",
                             ExpertId = 2,
                             IsDelete = false,
                             Price = 1000.0,
-                            UpdateAt = new DateTime(2025, 2, 22, 0, 6, 22, 143, DateTimeKind.Local).AddTicks(3497)
+                            UpdateAt = new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(7634)
                         },
                         new
                         {
                             Id = 3,
-                            CreateAt = new DateTime(2025, 2, 22, 0, 6, 22, 143, DateTimeKind.Local).AddTicks(3499),
+                            CreateAt = new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(7636),
                             CustomersRequestId = 3,
-                            DateWork = new DateTime(2025, 2, 22, 0, 6, 22, 143, DateTimeKind.Local).AddTicks(3499),
+                            DateWork = new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(7636),
                             Description = "Description",
                             ExpertId = 3,
                             IsDelete = false,
                             Price = 1000.0,
-                            UpdateAt = new DateTime(2025, 2, 22, 0, 6, 22, 143, DateTimeKind.Local).AddTicks(3500)
+                            UpdateAt = new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(7637)
                         });
                 });
 
@@ -761,253 +761,253 @@ namespace AppDataRepository.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6014),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(890),
                             IsDelete = false,
                             Title = "بنایی",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6015)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(892)
                         },
                         new
                         {
                             Id = 2,
                             CategoryId = 1,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6018),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(894),
                             IsDelete = false,
                             Title = "دکوراسیون",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6019)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(895)
                         },
                         new
                         {
                             Id = 3,
                             CategoryId = 1,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6020),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(896),
                             IsDelete = false,
                             Title = "نقاشی ساختمان",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6020)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(897)
                         },
                         new
                         {
                             Id = 4,
                             CategoryId = 1,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6021),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(937),
                             IsDelete = false,
                             Title = "درب و پنجره",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6022)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(938)
                         },
                         new
                         {
                             Id = 5,
                             CategoryId = 1,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6023),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(939),
                             IsDelete = false,
                             Title = "آهنگری و جوشکاری",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6023)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(940)
                         },
                         new
                         {
                             Id = 6,
                             CategoryId = 1,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6024),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(941),
                             IsDelete = false,
                             Title = "باغبانی",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6024)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(942)
                         },
                         new
                         {
                             Id = 7,
                             CategoryId = 2,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6025),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(943),
                             IsDelete = false,
                             Title = "سرمایش و گرمایش",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6026)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(943)
                         },
                         new
                         {
                             Id = 8,
                             CategoryId = 2,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6027),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(944),
                             IsDelete = false,
                             Title = "لوله کشی",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6027)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(945)
                         },
                         new
                         {
                             Id = 9,
                             CategoryId = 2,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6028),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(946),
                             IsDelete = false,
                             Title = "برقو الکترونیک",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6029)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(947)
                         },
                         new
                         {
                             Id = 10,
                             CategoryId = 2,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6029),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(948),
                             IsDelete = false,
                             Title = "تلفن و سانترال",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6030)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(948)
                         },
                         new
                         {
                             Id = 11,
                             CategoryId = 3,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6062),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(949),
                             IsDelete = false,
                             Title = "خودرو",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6062)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(950)
                         },
                         new
                         {
                             Id = 12,
                             CategoryId = 4,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6063),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(951),
                             IsDelete = false,
                             Title = "اسبابکشی",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6064)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(952)
                         },
                         new
                         {
                             Id = 13,
                             CategoryId = 4,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6065),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(953),
                             IsDelete = false,
                             Title = "حمل بار",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6065)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(953)
                         },
                         new
                         {
                             Id = 14,
                             CategoryId = 5,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6066),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(954),
                             IsDelete = false,
                             Title = "لوازم آشپزخانه",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6066)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(955)
                         },
                         new
                         {
                             Id = 15,
                             CategoryId = 5,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6067),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(956),
                             IsDelete = false,
                             Title = "لوازم شست و شو",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6068)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(956)
                         },
                         new
                         {
                             Id = 16,
                             CategoryId = 5,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6069),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(957),
                             IsDelete = false,
                             Title = "لوازم صوتی و تصویری",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6069)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(958)
                         },
                         new
                         {
                             Id = 17,
                             CategoryId = 6,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6070),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(959),
                             IsDelete = false,
                             Title = "ماشین آلات اداری",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6071)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(960)
                         },
                         new
                         {
                             Id = 18,
                             CategoryId = 6,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6071),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(961),
                             IsDelete = false,
                             Title = "مبلمان اداری",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6072)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(961)
                         },
                         new
                         {
                             Id = 19,
                             CategoryId = 7,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6073),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(962),
                             IsDelete = false,
                             Title = "نظافت",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6073)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(963)
                         },
                         new
                         {
                             Id = 20,
                             CategoryId = 7,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6074),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(964),
                             IsDelete = false,
                             Title = "خشک شویی و اتوشویی",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6074)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(964)
                         },
                         new
                         {
                             Id = 21,
                             CategoryId = 7,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6075),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(966),
                             IsDelete = false,
                             Title = "قالی شویی و مبل شویی",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6076)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(966)
                         },
                         new
                         {
                             Id = 22,
                             CategoryId = 7,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6077),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(967),
                             IsDelete = false,
                             Title = "سمپاشی",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6077)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(968)
                         },
                         new
                         {
                             Id = 23,
                             CategoryId = 8,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6078),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(969),
                             IsDelete = false,
                             Title = "موبایل و تبلت",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6078)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(969)
                         },
                         new
                         {
                             Id = 24,
                             CategoryId = 8,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6079),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(970),
                             IsDelete = false,
                             Title = "خدمات کامپیوتری",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6080)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(971)
                         },
                         new
                         {
                             Id = 25,
                             CategoryId = 8,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6081),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(972),
                             IsDelete = false,
                             Title = "امنیت و شبکه",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6081)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(973)
                         },
                         new
                         {
                             Id = 26,
                             CategoryId = 9,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6082),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(974),
                             IsDelete = false,
                             Title = "معاینه پزشک",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6082)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(974)
                         },
                         new
                         {
                             Id = 27,
                             CategoryId = 9,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6083),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(975),
                             IsDelete = false,
                             Title = "داروخانه",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6084)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(976)
                         },
                         new
                         {
                             Id = 28,
                             CategoryId = 9,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6085),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(977),
                             IsDelete = false,
                             Title = "مشاوره",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6085)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(977)
                         });
                 });
 
@@ -1126,18 +1126,18 @@ namespace AppDataRepository.Migrations
                             Id = 1,
                             AccessFailedCount = 0,
                             Balance = 0.0,
-                            ConcurrencyStamp = "2fdc583c-a3f8-4634-bf16-7d13f0b244c8",
+                            ConcurrencyStamp = "0bee1d8d-58cc-4f5c-81c1-f5af9180622d",
                             Email = "Admin@gmail.com",
                             EmailConfirmed = false,
                             IsDelete = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEL3ujSQz7IQ7C2U/k77wv3XgK/v1xEj6jDB7jxruRUxsdNKMrJDMpcTab8VM8pu2Dw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAENlXGwKUBtTRTJgbQ21zRrWZtCkDfOxfO55sObCdoV1hmyEymjegYRBJsFhaGAWeCg==",
                             Phone = "09121111111",
                             PhoneNumberConfirmed = false,
                             PhotoId = 1,
                             ProvinceId = 1,
-                            SecurityStamp = "cb44e332-abec-48e8-9d82-16be26ddefb2",
+                            SecurityStamp = "ae5b9f8f-8470-47a3-8f49-313e35d0c364",
                             TwoFactorEnabled = false
                         },
                         new
@@ -1145,18 +1145,18 @@ namespace AppDataRepository.Migrations
                             Id = 2,
                             AccessFailedCount = 0,
                             Balance = 0.0,
-                            ConcurrencyStamp = "e83ac0b2-53e1-4229-8572-8c25301067ff",
+                            ConcurrencyStamp = "e7968be2-6203-4767-a317-1bad1e046a2c",
                             Email = "expert@gmail.com",
                             EmailConfirmed = false,
                             IsDelete = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "EXPERT@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAELodCzrJO3iWfXh3gAiR6fNKkk4oBClUY4pt95YBThGrWCHzsM2G5mR1FF3j8kt0qQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKO+DMtllsgHDhyLGEfY5YOxyUqSK2hTOO0m7zLF3Su5UiRgWSoiRjkIZU5Jdw437w==",
                             Phone = "09121111112",
                             PhoneNumberConfirmed = false,
                             PhotoId = 2,
                             ProvinceId = 2,
-                            SecurityStamp = "7ee0f124-266a-4a0a-9558-1962e1fa58f5",
+                            SecurityStamp = "264d1d01-017e-4d1d-b2c4-3cd47ded6676",
                             TwoFactorEnabled = false
                         },
                         new
@@ -1164,18 +1164,18 @@ namespace AppDataRepository.Migrations
                             Id = 3,
                             AccessFailedCount = 0,
                             Balance = 0.0,
-                            ConcurrencyStamp = "4d2e05b6-0e7f-489a-8722-fdf5119ed67a",
+                            ConcurrencyStamp = "c3cdab0c-22b8-4307-bd8d-6fecb56e704a",
                             Email = "expert@gmail.com",
                             EmailConfirmed = false,
                             IsDelete = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "EXPERT@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEB9A3iqDP/Ff9ZoC1P7Ko7sbNIWG+SbutB3vMjJ6NEhCnjN4QQSjnVHdFGxPqffoLg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPz1EFWPm6vErWgJFj1x014/GEcoBrU/vOjrgK8xiE/dk97Bd/IGTyvsftGHIdyuWQ==",
                             Phone = "09121111112",
                             PhoneNumberConfirmed = false,
                             PhotoId = 3,
                             ProvinceId = 3,
-                            SecurityStamp = "67c60f12-fe3b-4c3f-bfd0-482899ea415c",
+                            SecurityStamp = "85c49356-6a5f-4256-8594-a682362c1c40",
                             TwoFactorEnabled = false
                         },
                         new
@@ -1183,18 +1183,18 @@ namespace AppDataRepository.Migrations
                             Id = 4,
                             AccessFailedCount = 0,
                             Balance = 0.0,
-                            ConcurrencyStamp = "c60b6b2a-fedb-4cc6-8230-3cd8caa8426f",
+                            ConcurrencyStamp = "4cacdedf-ce93-4203-a369-cf23a8db5438",
                             Email = "expert@gmail.com",
                             EmailConfirmed = false,
                             IsDelete = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "EXPERT@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEAtB0ShdYMTeOvvE3MGPqwKzPNdaHKNzNHYmbsRQdEqHu8M4wJ7Uo9wg1eTgHn0bvQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDd4A78pJaAXfLW1HZryylvyT4c9i+tFqqeUbUWsYKSwzxy5I0t3KfrgzNe/PRzmKA==",
                             Phone = "09121111112",
                             PhoneNumberConfirmed = false,
                             PhotoId = 4,
                             ProvinceId = 4,
-                            SecurityStamp = "545fad0a-eaec-4ef0-8035-67c71eac13c4",
+                            SecurityStamp = "0e145b4d-c4b1-4522-aec7-2186397c8441",
                             TwoFactorEnabled = false
                         },
                         new
@@ -1202,18 +1202,18 @@ namespace AppDataRepository.Migrations
                             Id = 5,
                             AccessFailedCount = 0,
                             Balance = 0.0,
-                            ConcurrencyStamp = "ef9e6530-7d10-4a3c-98e6-1118081f3c6e",
+                            ConcurrencyStamp = "39c1151b-6bc0-454b-8c97-5106688fa298",
                             Email = "customer@gmail.com",
                             EmailConfirmed = false,
                             IsDelete = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "COSTOMER@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEOw54QlClGCWS11sUm5t5mCN6WTjfe77HyT/ChoKmOPp/dzXu/tAQuEhuyUHNMU0mA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMHS4e20I7OltNnWeA9s8N+6aONtIZUxKlwT90XfR1uBlzzUyu7sBjeLco6sBLtkUw==",
                             Phone = "09121111112",
                             PhoneNumberConfirmed = false,
                             PhotoId = 5,
                             ProvinceId = 5,
-                            SecurityStamp = "dfe35d7a-0432-4919-9e95-0b5e7f522d51",
+                            SecurityStamp = "b5259966-5632-465b-93e5-1a987183631b",
                             TwoFactorEnabled = false
                         },
                         new
@@ -1221,18 +1221,18 @@ namespace AppDataRepository.Migrations
                             Id = 6,
                             AccessFailedCount = 0,
                             Balance = 0.0,
-                            ConcurrencyStamp = "7ea50257-12b7-4ee7-b158-300567bd6db8",
+                            ConcurrencyStamp = "75eedbd0-399e-4aea-8c5e-e41369a46795",
                             Email = "customer@gmail.com",
                             EmailConfirmed = false,
                             IsDelete = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "COSTOMER@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEHVu1iPWrJw8IVp8PPCU+eWFnFeGrDaZV8WHBDD3MWEeAA3rstYRY13ij+wAKYlKFA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAELqQeMg32JdHmYqCNIgrTMl8vnOE0+L+4iTFootgzIXp5MjQdxi1nopXtKEvqJQH5Q==",
                             Phone = "09121111112",
                             PhoneNumberConfirmed = false,
                             PhotoId = 6,
                             ProvinceId = 6,
-                            SecurityStamp = "ef894f43-600c-4d35-a727-d92028f3e844",
+                            SecurityStamp = "bcad91d2-93b4-4483-b3ad-00953e026088",
                             TwoFactorEnabled = false
                         },
                         new
@@ -1240,18 +1240,18 @@ namespace AppDataRepository.Migrations
                             Id = 7,
                             AccessFailedCount = 0,
                             Balance = 0.0,
-                            ConcurrencyStamp = "6864c1aa-d5c7-42c6-88b2-9bd1246bd1e3",
+                            ConcurrencyStamp = "78006326-ae0d-4e91-8ef6-84ab35ebd7e0",
                             Email = "customer@gmail.com",
                             EmailConfirmed = false,
                             IsDelete = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "COSTOMER@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEInH7ZPDvbS0JAwLTlC58piQmIlb+v/26QCWpuUry72xgKv2X5K59CRalPMjnIR6FQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAENZOkerEKBcX2AaJzMyJ4e3geg3SU3A/yzSRCgRj8rfqpAvv6NpbcHdODoyxPehoFg==",
                             Phone = "09121111112",
                             PhoneNumberConfirmed = false,
                             PhotoId = 7,
                             ProvinceId = 7,
-                            SecurityStamp = "7ea0ab1c-e515-4759-a462-e6b73beb7827",
+                            SecurityStamp = "9903d223-e908-46a2-a59b-6e624837bd64",
                             TwoFactorEnabled = false
                         });
                 });
@@ -1308,199 +1308,199 @@ namespace AppDataRepository.Migrations
                         {
                             Id = 1,
                             CorePrice = 500.0,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8589),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3475),
                             Description = "انجام انواع امور پی ریزی",
                             IsDelete = false,
                             SubCategoryId = 1,
                             Title = "پی ریزی",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8590)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3477)
                         },
                         new
                         {
                             Id = 2,
                             CorePrice = 1000.0,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8593),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3482),
                             Description = "انجام انواع امور بلوک گذاری و دیوار چینی",
                             IsDelete = false,
                             SubCategoryId = 1,
                             Title = "بلوک گذاری و دیوار چینی",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8594)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3482)
                         },
                         new
                         {
                             Id = 3,
                             CorePrice = 600.0,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8596),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3484),
                             Description = "انجام انواع امور مرتبط با کف ساختمان",
                             IsDelete = false,
                             SubCategoryId = 1,
                             Title = "کف ساختمان",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8596)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3485)
                         },
                         new
                         {
                             Id = 4,
                             CorePrice = 6000.0,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8597),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3486),
                             Description = "انجام انواع امور نوسازی ساختمان های قدیمی یا نیازمند تغییر",
                             IsDelete = false,
                             SubCategoryId = 1,
                             Title = "نوسازی",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8597)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3487)
                         },
                         new
                         {
                             Id = 5,
                             CorePrice = 500.0,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8599),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3488),
                             Description = "انجام انواع امور سیمان کاری",
                             IsDelete = false,
                             SubCategoryId = 1,
                             Title = "سیمان کاری",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8599)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3488)
                         },
                         new
                         {
                             Id = 6,
                             CorePrice = 500.0,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8600),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3490),
                             Description = "انجام انواع امور دکور آشپزخانه",
                             IsDelete = false,
                             SubCategoryId = 2,
                             Title = "دکور آشپزخانه",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8601)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3490)
                         },
                         new
                         {
                             Id = 7,
                             CorePrice = 580.0,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8602),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3492),
                             Description = "انجام انواع امور دکور حال و پذیرایی",
                             IsDelete = false,
                             SubCategoryId = 2,
                             Title = "دکور حال و پذیرایی",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8602)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3492)
                         },
                         new
                         {
                             Id = 8,
                             CorePrice = 400.0,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8604),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3494),
                             Description = "انجام انواع امور دکور اتاق خواب",
                             IsDelete = false,
                             SubCategoryId = 2,
                             Title = "دکور اتاق خواب",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8604)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3494)
                         },
                         new
                         {
                             Id = 9,
                             CorePrice = 800.0,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8605),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3496),
                             Description = "انجام انواع امور طراحی و دیزاین ساختمان",
                             IsDelete = false,
                             SubCategoryId = 2,
                             Title = "طراحی و دیزاین ساختمان",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8606)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3496)
                         },
                         new
                         {
                             Id = 10,
                             CorePrice = 1500.0,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8607),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3498),
                             Description = "انجام انواع امور معماری داخلی",
                             IsDelete = false,
                             SubCategoryId = 2,
                             Title = "معماری داخلی",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8607)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3498)
                         },
                         new
                         {
                             Id = 11,
                             CorePrice = 800.0,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8608),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3500),
                             Description = "انجام انواع امور نقاشی داخل ساختمان",
                             IsDelete = false,
                             SubCategoryId = 3,
                             Title = "نقاشی داخل ساختمان",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8609)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3500)
                         },
                         new
                         {
                             Id = 12,
                             CorePrice = 300.0,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8610),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3502),
                             Description = "انجام انواع امور نقاشی خارج ساختمان",
                             IsDelete = false,
                             SubCategoryId = 3,
                             Title = "نقاشی خارج ساختمان",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8610)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3502)
                         },
                         new
                         {
                             Id = 13,
                             CorePrice = 200.0,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8612),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3504),
                             Description = "انجام انواع امور تعمیرات درب و پنجره",
                             IsDelete = false,
                             SubCategoryId = 4,
                             Title = "تعمیرات درب و پنجره",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8612)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3504)
                         },
                         new
                         {
                             Id = 14,
                             CorePrice = 800.0,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8613),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3505),
                             Description = "انجام انواع امور سفارش درب و پنجرهن",
                             IsDelete = false,
                             SubCategoryId = 4,
                             Title = "سفارش درب و پنجره",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8614)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3506)
                         },
                         new
                         {
                             Id = 15,
                             CorePrice = 800.0,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8615),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3507),
                             Description = "انجام انواع امور آهنگری و جوشکاری لوازم و غیره",
                             IsDelete = false,
                             SubCategoryId = 5,
                             Title = "آهنگری و جوشکاری لوازم و غیره",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8615)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3508)
                         },
                         new
                         {
                             Id = 16,
                             CorePrice = 800.0,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8616),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3509),
                             Description = "انجام انواع امور آهنگری و جوشکاری ساختمانی",
                             IsDelete = false,
                             SubCategoryId = 5,
                             Title = "آهنگری و جوشکاری ساختمانی",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8617)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3510)
                         },
                         new
                         {
                             Id = 17,
                             CorePrice = 500.0,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8618),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3511),
                             Description = "انجام انواع امور باغبانی ساختمان ها ومجتمع ها",
                             IsDelete = false,
                             SubCategoryId = 6,
                             Title = "باغبانی ساختمان ها ومجتمع ها ",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8618)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3512)
                         },
                         new
                         {
                             Id = 18,
                             CorePrice = 800.0,
-                            CreateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8620),
+                            CreateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3513),
                             Description = "انجام انواع امور باغبانی فضای شهری و سازمان ها",
                             IsDelete = false,
                             SubCategoryId = 6,
                             Title = "باغبانی فضای شهری و سازمان ها",
-                            UpdateAt = new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8620)
+                            UpdateAt = new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3514)
                         });
                 });
 

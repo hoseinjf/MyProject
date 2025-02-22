@@ -1,4 +1,5 @@
 ﻿using AppDomainCore.Customers.Contract.AppService;
+using AppDomainCore.Customers.DTO;
 using AppDomainCore.Customers.Entity;
 using AppEndpoint_MVC.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -28,10 +29,10 @@ namespace AppEndpoint_MVC.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add(Customer customer,CancellationToken cancellationToken)
+        public async Task<IActionResult> Add(CustomerAddDto customer,CancellationToken cancellationToken)
         {
             var item= await _customerAppService.Add(customer,cancellationToken);
-            return View("Index");
+            return RedirectToAction("Index");
         }
 
         public IActionResult Update()

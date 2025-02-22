@@ -1,7 +1,9 @@
 ﻿using AppDataRepository.Db.Context;
 using AppDomainCore.Admins.Entity;
 using AppDomainCore.Customers.Contract.Repository;
+using AppDomainCore.Customers.DTO;
 using AppDomainCore.Customers.Entity;
+using AppDomainCore.Users.Entity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -19,20 +21,42 @@ namespace AppDataRepository.Customers
         {
             _db = appDbContext;
         }
-        public async Task<Customer> Add(Customer customer, CancellationToken cancellationToken)
+        public async Task<Customer> Add(CustomerAddDto customer, CancellationToken cancellationToken)
         {
-            await _db.Customers.AddAsync(customer,cancellationToken);
+            Customer customer1 = new Customer();
+            customer1.User = new User()
+            {
+                FirstName = customer.FirstName,
+                LastName = customer.LastName,
+                Email = customer.Email,
+                Address = customer.Address,
+                UserName = customer.UserName,
+                PasswordHash = customer.Password,
+                NormalizedEmail = customer.Email,
+                NormalizedUserName = customer.UserName,
+                Phone = customer.Phone,
+                Photo = customer.Photo,
+                ProvinceId=customer.CityId
+
+            };
+            //customer1.User.Province.Name = customer.City;
+            await _db.Customers.AddAsync(customer1,cancellationToken);
             await _db.SaveChangesAsync(cancellationToken);
-            return customer;
+            return customer1;
         }
 
         public async Task<bool> Delete(int id, CancellationToken cancellationToken)
         {
             var customer = await _db.Customers.Include(x=>x.User).FirstOrDefaultAsync(x => x.Id == id,cancellationToken);  
             if (customer == null) { return false; }
-            customer.User.IsDelete=true;
-            await _db.SaveChangesAsync(cancellationToken);
-            return true;
+            var del = customer.User.IsDelete;
+            if (del == false) 
+            {
+                del = true;
+                await _db.SaveChangesAsync(cancellationToken);
+                return true; 
+            }
+            return false;
         }
 
         public async Task<Customer> Get(int id, CancellationToken cancellationToken)

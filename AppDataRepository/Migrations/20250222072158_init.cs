@@ -452,15 +452,15 @@ namespace AppDataRepository.Migrations
                 columns: new[] { "Id", "CreateAt", "IsDelete", "PhotoId", "Title", "UpdateAt" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7576), false, null, "دکوراسیون ساختمان", new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7580) },
-                    { 2, new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7582), false, null, "تاسیسات ساختمان", new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7583) },
-                    { 3, new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7584), false, null, "وسیله نقلیه", new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7584) },
-                    { 4, new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7585), false, null, "اسبابکشی و باربری", new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7585) },
-                    { 5, new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7586), false, null, "لوازم خانگی", new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7587) },
-                    { 6, new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7588), false, null, "خدمات اداری", new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7588) },
-                    { 7, new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7589), false, null, "نظافت و بهداشت", new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7590) },
-                    { 8, new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7590), false, null, "دیجیتال و نرم افزار", new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7591) },
-                    { 9, new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7592), false, null, "پزشکی و سلامت", new DateTime(2025, 2, 21, 20, 36, 22, 141, DateTimeKind.Utc).AddTicks(7592) }
+                    { 1, new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1296), false, null, "دکوراسیون ساختمان", new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1299) },
+                    { 2, new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1301), false, null, "تاسیسات ساختمان", new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1301) },
+                    { 3, new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1303), false, null, "وسیله نقلیه", new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1303) },
+                    { 4, new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1304), false, null, "اسبابکشی و باربری", new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1305) },
+                    { 5, new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1306), false, null, "لوازم خانگی", new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1306) },
+                    { 6, new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1308), false, null, "خدمات اداری", new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1308) },
+                    { 7, new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1309), false, null, "نظافت و بهداشت", new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1310) },
+                    { 8, new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1311), false, null, "دیجیتال و نرم افزار", new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1311) },
+                    { 9, new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1312), false, null, "پزشکی و سلامت", new DateTime(2025, 2, 22, 7, 21, 57, 478, DateTimeKind.Utc).AddTicks(1313) }
                 });
 
             migrationBuilder.InsertData(
@@ -520,13 +520,13 @@ namespace AppDataRepository.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "AccountCode", "AccountNumber", "Address", "Balance", "ConcurrencyStamp", "CreateAt", "Email", "EmailConfirmed", "FirstName", "IsDelete", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "Phone", "PhoneNumber", "PhoneNumberConfirmed", "PhotoId", "ProvinceId", "SecurityStamp", "TwoFactorEnabled", "UpdateAt", "UserName" },
                 values: new object[,]
                 {
-                    { 1, 0, null, null, null, 0.0, "2fdc583c-a3f8-4634-bf16-7d13f0b244c8", null, "Admin@gmail.com", false, null, false, null, false, null, "ADMIN@GMAIL.COM", null, "AQAAAAIAAYagAAAAEL3ujSQz7IQ7C2U/k77wv3XgK/v1xEj6jDB7jxruRUxsdNKMrJDMpcTab8VM8pu2Dw==", "09121111111", null, false, 1, 1, "cb44e332-abec-48e8-9d82-16be26ddefb2", false, null, null },
-                    { 2, 0, null, null, null, 0.0, "e83ac0b2-53e1-4229-8572-8c25301067ff", null, "expert@gmail.com", false, null, false, null, false, null, "EXPERT@GMAIL.COM", null, "AQAAAAIAAYagAAAAELodCzrJO3iWfXh3gAiR6fNKkk4oBClUY4pt95YBThGrWCHzsM2G5mR1FF3j8kt0qQ==", "09121111112", null, false, 2, 2, "7ee0f124-266a-4a0a-9558-1962e1fa58f5", false, null, null },
-                    { 3, 0, null, null, null, 0.0, "4d2e05b6-0e7f-489a-8722-fdf5119ed67a", null, "expert@gmail.com", false, null, false, null, false, null, "EXPERT@GMAIL.COM", null, "AQAAAAIAAYagAAAAEB9A3iqDP/Ff9ZoC1P7Ko7sbNIWG+SbutB3vMjJ6NEhCnjN4QQSjnVHdFGxPqffoLg==", "09121111112", null, false, 3, 3, "67c60f12-fe3b-4c3f-bfd0-482899ea415c", false, null, null },
-                    { 4, 0, null, null, null, 0.0, "c60b6b2a-fedb-4cc6-8230-3cd8caa8426f", null, "expert@gmail.com", false, null, false, null, false, null, "EXPERT@GMAIL.COM", null, "AQAAAAIAAYagAAAAEAtB0ShdYMTeOvvE3MGPqwKzPNdaHKNzNHYmbsRQdEqHu8M4wJ7Uo9wg1eTgHn0bvQ==", "09121111112", null, false, 4, 4, "545fad0a-eaec-4ef0-8035-67c71eac13c4", false, null, null },
-                    { 5, 0, null, null, null, 0.0, "ef9e6530-7d10-4a3c-98e6-1118081f3c6e", null, "customer@gmail.com", false, null, false, null, false, null, "COSTOMER@GMAIL.COM", null, "AQAAAAIAAYagAAAAEOw54QlClGCWS11sUm5t5mCN6WTjfe77HyT/ChoKmOPp/dzXu/tAQuEhuyUHNMU0mA==", "09121111112", null, false, 5, 5, "dfe35d7a-0432-4919-9e95-0b5e7f522d51", false, null, null },
-                    { 6, 0, null, null, null, 0.0, "7ea50257-12b7-4ee7-b158-300567bd6db8", null, "customer@gmail.com", false, null, false, null, false, null, "COSTOMER@GMAIL.COM", null, "AQAAAAIAAYagAAAAEHVu1iPWrJw8IVp8PPCU+eWFnFeGrDaZV8WHBDD3MWEeAA3rstYRY13ij+wAKYlKFA==", "09121111112", null, false, 6, 6, "ef894f43-600c-4d35-a727-d92028f3e844", false, null, null },
-                    { 7, 0, null, null, null, 0.0, "6864c1aa-d5c7-42c6-88b2-9bd1246bd1e3", null, "customer@gmail.com", false, null, false, null, false, null, "COSTOMER@GMAIL.COM", null, "AQAAAAIAAYagAAAAEInH7ZPDvbS0JAwLTlC58piQmIlb+v/26QCWpuUry72xgKv2X5K59CRalPMjnIR6FQ==", "09121111112", null, false, 7, 7, "7ea0ab1c-e515-4759-a462-e6b73beb7827", false, null, null }
+                    { 1, 0, null, null, null, 0.0, "0bee1d8d-58cc-4f5c-81c1-f5af9180622d", null, "Admin@gmail.com", false, null, false, null, false, null, "ADMIN@GMAIL.COM", null, "AQAAAAIAAYagAAAAENlXGwKUBtTRTJgbQ21zRrWZtCkDfOxfO55sObCdoV1hmyEymjegYRBJsFhaGAWeCg==", "09121111111", null, false, 1, 1, "ae5b9f8f-8470-47a3-8f49-313e35d0c364", false, null, null },
+                    { 2, 0, null, null, null, 0.0, "e7968be2-6203-4767-a317-1bad1e046a2c", null, "expert@gmail.com", false, null, false, null, false, null, "EXPERT@GMAIL.COM", null, "AQAAAAIAAYagAAAAEKO+DMtllsgHDhyLGEfY5YOxyUqSK2hTOO0m7zLF3Su5UiRgWSoiRjkIZU5Jdw437w==", "09121111112", null, false, 2, 2, "264d1d01-017e-4d1d-b2c4-3cd47ded6676", false, null, null },
+                    { 3, 0, null, null, null, 0.0, "c3cdab0c-22b8-4307-bd8d-6fecb56e704a", null, "expert@gmail.com", false, null, false, null, false, null, "EXPERT@GMAIL.COM", null, "AQAAAAIAAYagAAAAEPz1EFWPm6vErWgJFj1x014/GEcoBrU/vOjrgK8xiE/dk97Bd/IGTyvsftGHIdyuWQ==", "09121111112", null, false, 3, 3, "85c49356-6a5f-4256-8594-a682362c1c40", false, null, null },
+                    { 4, 0, null, null, null, 0.0, "4cacdedf-ce93-4203-a369-cf23a8db5438", null, "expert@gmail.com", false, null, false, null, false, null, "EXPERT@GMAIL.COM", null, "AQAAAAIAAYagAAAAEDd4A78pJaAXfLW1HZryylvyT4c9i+tFqqeUbUWsYKSwzxy5I0t3KfrgzNe/PRzmKA==", "09121111112", null, false, 4, 4, "0e145b4d-c4b1-4522-aec7-2186397c8441", false, null, null },
+                    { 5, 0, null, null, null, 0.0, "39c1151b-6bc0-454b-8c97-5106688fa298", null, "customer@gmail.com", false, null, false, null, false, null, "COSTOMER@GMAIL.COM", null, "AQAAAAIAAYagAAAAEMHS4e20I7OltNnWeA9s8N+6aONtIZUxKlwT90XfR1uBlzzUyu7sBjeLco6sBLtkUw==", "09121111112", null, false, 5, 5, "b5259966-5632-465b-93e5-1a987183631b", false, null, null },
+                    { 6, 0, null, null, null, 0.0, "75eedbd0-399e-4aea-8c5e-e41369a46795", null, "customer@gmail.com", false, null, false, null, false, null, "COSTOMER@GMAIL.COM", null, "AQAAAAIAAYagAAAAELqQeMg32JdHmYqCNIgrTMl8vnOE0+L+4iTFootgzIXp5MjQdxi1nopXtKEvqJQH5Q==", "09121111112", null, false, 6, 6, "bcad91d2-93b4-4483-b3ad-00953e026088", false, null, null },
+                    { 7, 0, null, null, null, 0.0, "78006326-ae0d-4e91-8ef6-84ab35ebd7e0", null, "customer@gmail.com", false, null, false, null, false, null, "COSTOMER@GMAIL.COM", null, "AQAAAAIAAYagAAAAENZOkerEKBcX2AaJzMyJ4e3geg3SU3A/yzSRCgRj8rfqpAvv6NpbcHdODoyxPehoFg==", "09121111112", null, false, 7, 7, "9903d223-e908-46a2-a59b-6e624837bd64", false, null, null }
                 });
 
             migrationBuilder.InsertData(
@@ -534,34 +534,34 @@ namespace AppDataRepository.Migrations
                 columns: new[] { "Id", "CategoryId", "CreateAt", "IsDelete", "PhotoId", "Title", "UpdateAt" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6014), false, null, "بنایی", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6015) },
-                    { 2, 1, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6018), false, null, "دکوراسیون", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6019) },
-                    { 3, 1, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6020), false, null, "نقاشی ساختمان", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6020) },
-                    { 4, 1, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6021), false, null, "درب و پنجره", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6022) },
-                    { 5, 1, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6023), false, null, "آهنگری و جوشکاری", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6023) },
-                    { 6, 1, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6024), false, null, "باغبانی", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6024) },
-                    { 7, 2, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6025), false, null, "سرمایش و گرمایش", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6026) },
-                    { 8, 2, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6027), false, null, "لوله کشی", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6027) },
-                    { 9, 2, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6028), false, null, "برقو الکترونیک", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6029) },
-                    { 10, 2, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6029), false, null, "تلفن و سانترال", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6030) },
-                    { 11, 3, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6062), false, null, "خودرو", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6062) },
-                    { 12, 4, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6063), false, null, "اسبابکشی", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6064) },
-                    { 13, 4, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6065), false, null, "حمل بار", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6065) },
-                    { 14, 5, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6066), false, null, "لوازم آشپزخانه", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6066) },
-                    { 15, 5, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6067), false, null, "لوازم شست و شو", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6068) },
-                    { 16, 5, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6069), false, null, "لوازم صوتی و تصویری", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6069) },
-                    { 17, 6, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6070), false, null, "ماشین آلات اداری", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6071) },
-                    { 18, 6, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6071), false, null, "مبلمان اداری", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6072) },
-                    { 19, 7, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6073), false, null, "نظافت", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6073) },
-                    { 20, 7, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6074), false, null, "خشک شویی و اتوشویی", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6074) },
-                    { 21, 7, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6075), false, null, "قالی شویی و مبل شویی", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6076) },
-                    { 22, 7, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6077), false, null, "سمپاشی", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6077) },
-                    { 23, 8, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6078), false, null, "موبایل و تبلت", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6078) },
-                    { 24, 8, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6079), false, null, "خدمات کامپیوتری", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6080) },
-                    { 25, 8, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6081), false, null, "امنیت و شبکه", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6081) },
-                    { 26, 9, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6082), false, null, "معاینه پزشک", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6082) },
-                    { 27, 9, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6083), false, null, "داروخانه", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6084) },
-                    { 28, 9, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6085), false, null, "مشاوره", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(6085) }
+                    { 1, 1, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(890), false, null, "بنایی", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(892) },
+                    { 2, 1, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(894), false, null, "دکوراسیون", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(895) },
+                    { 3, 1, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(896), false, null, "نقاشی ساختمان", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(897) },
+                    { 4, 1, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(937), false, null, "درب و پنجره", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(938) },
+                    { 5, 1, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(939), false, null, "آهنگری و جوشکاری", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(940) },
+                    { 6, 1, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(941), false, null, "باغبانی", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(942) },
+                    { 7, 2, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(943), false, null, "سرمایش و گرمایش", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(943) },
+                    { 8, 2, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(944), false, null, "لوله کشی", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(945) },
+                    { 9, 2, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(946), false, null, "برقو الکترونیک", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(947) },
+                    { 10, 2, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(948), false, null, "تلفن و سانترال", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(948) },
+                    { 11, 3, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(949), false, null, "خودرو", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(950) },
+                    { 12, 4, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(951), false, null, "اسبابکشی", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(952) },
+                    { 13, 4, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(953), false, null, "حمل بار", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(953) },
+                    { 14, 5, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(954), false, null, "لوازم آشپزخانه", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(955) },
+                    { 15, 5, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(956), false, null, "لوازم شست و شو", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(956) },
+                    { 16, 5, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(957), false, null, "لوازم صوتی و تصویری", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(958) },
+                    { 17, 6, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(959), false, null, "ماشین آلات اداری", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(960) },
+                    { 18, 6, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(961), false, null, "مبلمان اداری", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(961) },
+                    { 19, 7, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(962), false, null, "نظافت", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(963) },
+                    { 20, 7, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(964), false, null, "خشک شویی و اتوشویی", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(964) },
+                    { 21, 7, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(966), false, null, "قالی شویی و مبل شویی", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(966) },
+                    { 22, 7, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(967), false, null, "سمپاشی", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(968) },
+                    { 23, 8, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(969), false, null, "موبایل و تبلت", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(969) },
+                    { 24, 8, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(970), false, null, "خدمات کامپیوتری", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(971) },
+                    { 25, 8, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(972), false, null, "امنیت و شبکه", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(973) },
+                    { 26, 9, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(974), false, null, "معاینه پزشک", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(974) },
+                    { 27, 9, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(975), false, null, "داروخانه", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(976) },
+                    { 28, 9, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(977), false, null, "مشاوره", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(977) }
                 });
 
             migrationBuilder.InsertData(
@@ -608,24 +608,24 @@ namespace AppDataRepository.Migrations
                 columns: new[] { "Id", "CorePrice", "CreateAt", "Description", "IsDelete", "PhotoId", "SubCategoryId", "Title", "UpdateAt", "Viwe" },
                 values: new object[,]
                 {
-                    { 1, 500.0, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8589), "انجام انواع امور پی ریزی", false, null, 1, "پی ریزی", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8590), null },
-                    { 2, 1000.0, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8593), "انجام انواع امور بلوک گذاری و دیوار چینی", false, null, 1, "بلوک گذاری و دیوار چینی", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8594), null },
-                    { 3, 600.0, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8596), "انجام انواع امور مرتبط با کف ساختمان", false, null, 1, "کف ساختمان", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8596), null },
-                    { 4, 6000.0, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8597), "انجام انواع امور نوسازی ساختمان های قدیمی یا نیازمند تغییر", false, null, 1, "نوسازی", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8597), null },
-                    { 5, 500.0, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8599), "انجام انواع امور سیمان کاری", false, null, 1, "سیمان کاری", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8599), null },
-                    { 6, 500.0, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8600), "انجام انواع امور دکور آشپزخانه", false, null, 2, "دکور آشپزخانه", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8601), null },
-                    { 7, 580.0, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8602), "انجام انواع امور دکور حال و پذیرایی", false, null, 2, "دکور حال و پذیرایی", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8602), null },
-                    { 8, 400.0, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8604), "انجام انواع امور دکور اتاق خواب", false, null, 2, "دکور اتاق خواب", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8604), null },
-                    { 9, 800.0, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8605), "انجام انواع امور طراحی و دیزاین ساختمان", false, null, 2, "طراحی و دیزاین ساختمان", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8606), null },
-                    { 10, 1500.0, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8607), "انجام انواع امور معماری داخلی", false, null, 2, "معماری داخلی", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8607), null },
-                    { 11, 800.0, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8608), "انجام انواع امور نقاشی داخل ساختمان", false, null, 3, "نقاشی داخل ساختمان", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8609), null },
-                    { 12, 300.0, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8610), "انجام انواع امور نقاشی خارج ساختمان", false, null, 3, "نقاشی خارج ساختمان", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8610), null },
-                    { 13, 200.0, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8612), "انجام انواع امور تعمیرات درب و پنجره", false, null, 4, "تعمیرات درب و پنجره", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8612), null },
-                    { 14, 800.0, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8613), "انجام انواع امور سفارش درب و پنجرهن", false, null, 4, "سفارش درب و پنجره", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8614), null },
-                    { 15, 800.0, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8615), "انجام انواع امور آهنگری و جوشکاری لوازم و غیره", false, null, 5, "آهنگری و جوشکاری لوازم و غیره", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8615), null },
-                    { 16, 800.0, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8616), "انجام انواع امور آهنگری و جوشکاری ساختمانی", false, null, 5, "آهنگری و جوشکاری ساختمانی", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8617), null },
-                    { 17, 500.0, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8618), "انجام انواع امور باغبانی ساختمان ها ومجتمع ها", false, null, 6, "باغبانی ساختمان ها ومجتمع ها ", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8618), null },
-                    { 18, 800.0, new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8620), "انجام انواع امور باغبانی فضای شهری و سازمان ها", false, null, 6, "باغبانی فضای شهری و سازمان ها", new DateTime(2025, 2, 21, 20, 36, 22, 143, DateTimeKind.Utc).AddTicks(8620), null }
+                    { 1, 500.0, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3475), "انجام انواع امور پی ریزی", false, null, 1, "پی ریزی", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3477), null },
+                    { 2, 1000.0, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3482), "انجام انواع امور بلوک گذاری و دیوار چینی", false, null, 1, "بلوک گذاری و دیوار چینی", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3482), null },
+                    { 3, 600.0, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3484), "انجام انواع امور مرتبط با کف ساختمان", false, null, 1, "کف ساختمان", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3485), null },
+                    { 4, 6000.0, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3486), "انجام انواع امور نوسازی ساختمان های قدیمی یا نیازمند تغییر", false, null, 1, "نوسازی", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3487), null },
+                    { 5, 500.0, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3488), "انجام انواع امور سیمان کاری", false, null, 1, "سیمان کاری", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3488), null },
+                    { 6, 500.0, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3490), "انجام انواع امور دکور آشپزخانه", false, null, 2, "دکور آشپزخانه", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3490), null },
+                    { 7, 580.0, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3492), "انجام انواع امور دکور حال و پذیرایی", false, null, 2, "دکور حال و پذیرایی", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3492), null },
+                    { 8, 400.0, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3494), "انجام انواع امور دکور اتاق خواب", false, null, 2, "دکور اتاق خواب", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3494), null },
+                    { 9, 800.0, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3496), "انجام انواع امور طراحی و دیزاین ساختمان", false, null, 2, "طراحی و دیزاین ساختمان", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3496), null },
+                    { 10, 1500.0, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3498), "انجام انواع امور معماری داخلی", false, null, 2, "معماری داخلی", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3498), null },
+                    { 11, 800.0, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3500), "انجام انواع امور نقاشی داخل ساختمان", false, null, 3, "نقاشی داخل ساختمان", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3500), null },
+                    { 12, 300.0, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3502), "انجام انواع امور نقاشی خارج ساختمان", false, null, 3, "نقاشی خارج ساختمان", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3502), null },
+                    { 13, 200.0, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3504), "انجام انواع امور تعمیرات درب و پنجره", false, null, 4, "تعمیرات درب و پنجره", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3504), null },
+                    { 14, 800.0, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3505), "انجام انواع امور سفارش درب و پنجرهن", false, null, 4, "سفارش درب و پنجره", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3506), null },
+                    { 15, 800.0, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3507), "انجام انواع امور آهنگری و جوشکاری لوازم و غیره", false, null, 5, "آهنگری و جوشکاری لوازم و غیره", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3508), null },
+                    { 16, 800.0, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3509), "انجام انواع امور آهنگری و جوشکاری ساختمانی", false, null, 5, "آهنگری و جوشکاری ساختمانی", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3510), null },
+                    { 17, 500.0, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3511), "انجام انواع امور باغبانی ساختمان ها ومجتمع ها", false, null, 6, "باغبانی ساختمان ها ومجتمع ها ", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3512), null },
+                    { 18, 800.0, new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3513), "انجام انواع امور باغبانی فضای شهری و سازمان ها", false, null, 6, "باغبانی فضای شهری و سازمان ها", new DateTime(2025, 2, 22, 7, 21, 57, 480, DateTimeKind.Utc).AddTicks(3514), null }
                 });
 
             migrationBuilder.InsertData(
@@ -633,9 +633,9 @@ namespace AppDataRepository.Migrations
                 columns: new[] { "Id", "CreateAt", "CustomersId", "Description", "ExpertId", "IsActive", "IsDelete", "Title", "UpdateAt", "WorkScore" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(4798), 1, "Description", 1, true, false, "Title", new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(4811), 4 },
-                    { 2, new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(4814), 2, "Description", 2, true, false, "Title", new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(4814), 3 },
-                    { 3, new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(4816), 3, "Description", 3, true, false, "Title", new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(4817), 5 }
+                    { 1, new DateTime(2025, 2, 22, 10, 51, 57, 478, DateTimeKind.Local).AddTicks(8342), 1, "Description", 1, true, false, "Title", new DateTime(2025, 2, 22, 10, 51, 57, 478, DateTimeKind.Local).AddTicks(8354), 4 },
+                    { 2, new DateTime(2025, 2, 22, 10, 51, 57, 478, DateTimeKind.Local).AddTicks(8356), 2, "Description", 2, true, false, "Title", new DateTime(2025, 2, 22, 10, 51, 57, 478, DateTimeKind.Local).AddTicks(8357), 3 },
+                    { 3, new DateTime(2025, 2, 22, 10, 51, 57, 478, DateTimeKind.Local).AddTicks(8359), 3, "Description", 3, true, false, "Title", new DateTime(2025, 2, 22, 10, 51, 57, 478, DateTimeKind.Local).AddTicks(8360), 5 }
                 });
 
             migrationBuilder.InsertData(
@@ -643,9 +643,9 @@ namespace AppDataRepository.Migrations
                 columns: new[] { "Id", "CreateAt", "CustomerId", "DateWork", "Description", "IsDelete", "Status", "UpdateAt", "WorkId" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(8725), 1, new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(8729), "Description", false, 3, new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(8739), 1 },
-                    { 2, new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(8741), 2, new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(8741), "Description", false, 4, new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(8742), 2 },
-                    { 3, new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(8743), 3, new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(8744), "Description", false, 1, new DateTime(2025, 2, 22, 0, 6, 22, 142, DateTimeKind.Local).AddTicks(8745), 3 }
+                    { 1, new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(2894), 1, new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(2898), "Description", false, 3, new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(2904), 1 },
+                    { 2, new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(2908), 2, new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(2909), "Description", false, 4, new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(2910), 2 },
+                    { 3, new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(2912), 3, new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(2912), "Description", false, 1, new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(2913), 3 }
                 });
 
             migrationBuilder.InsertData(
@@ -653,9 +653,9 @@ namespace AppDataRepository.Migrations
                 columns: new[] { "Id", "CreateAt", "CustomersRequestId", "DateWork", "Description", "ExpertId", "IsDelete", "Price", "UpdateAt" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2025, 2, 22, 0, 6, 22, 143, DateTimeKind.Local).AddTicks(3489), 1, new DateTime(2025, 2, 22, 0, 6, 22, 143, DateTimeKind.Local).AddTicks(3493), "Description", 1, false, 1000.0, new DateTime(2025, 2, 22, 0, 6, 22, 143, DateTimeKind.Local).AddTicks(3494) },
-                    { 2, new DateTime(2025, 2, 22, 0, 6, 22, 143, DateTimeKind.Local).AddTicks(3496), 2, new DateTime(2025, 2, 22, 0, 6, 22, 143, DateTimeKind.Local).AddTicks(3497), "Description", 2, false, 1000.0, new DateTime(2025, 2, 22, 0, 6, 22, 143, DateTimeKind.Local).AddTicks(3497) },
-                    { 3, new DateTime(2025, 2, 22, 0, 6, 22, 143, DateTimeKind.Local).AddTicks(3499), 3, new DateTime(2025, 2, 22, 0, 6, 22, 143, DateTimeKind.Local).AddTicks(3499), "Description", 3, false, 1000.0, new DateTime(2025, 2, 22, 0, 6, 22, 143, DateTimeKind.Local).AddTicks(3500) }
+                    { 1, new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(7623), 1, new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(7627), "Description", 1, false, 1000.0, new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(7629) },
+                    { 2, new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(7632), 2, new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(7633), "Description", 2, false, 1000.0, new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(7634) },
+                    { 3, new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(7636), 3, new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(7636), "Description", 3, false, 1000.0, new DateTime(2025, 2, 22, 10, 51, 57, 479, DateTimeKind.Local).AddTicks(7637) }
                 });
 
             migrationBuilder.CreateIndex(

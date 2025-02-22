@@ -1,4 +1,5 @@
-﻿using AppDomainCore.Customers.Entity;
+﻿using AppDomainCore.Customers.DTO;
+using AppDomainCore.Customers.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace AppDomainCore.Customers.Contract.Service
     {
         public Task<Customer> Get(int id, CancellationToken cancellationToken);
         public Task<List<Customer>> GetAll(CancellationToken cancellationToken);
-        public Task<Customer> Add(Customer customer, CancellationToken cancellationToken);
+        public Task<Customer> Add(CustomerAddDto customer, CancellationToken cancellationToken);
         public Task<Customer> Update(Customer customer, CancellationToken cancellationToken);
         public Task<bool> Delete(int id, CancellationToken cancellationToken);
     }
