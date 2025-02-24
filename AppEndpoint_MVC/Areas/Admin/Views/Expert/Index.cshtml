@@ -1,21 +1,21 @@
-﻿@using AppDomainCore.Customers.Entity
+﻿@using AppDomainCore.Experts.Entity
 
-@model List<Customer>
+@model List<Expert>
 @{
-    ViewData["Title"] = "پیازچه > مدیریت مشتریان > لیست مشتریان";
+    ViewData["Title"] = "پیازچه > مدیریت کارشناسان > لیست کارشناسان";
 }
 <div class="col-lg-12">
     <div class="portlet box shadow">
         <div class="portlet-heading">
             <div class="portlet-title">
                 <h3 class="title">
-                    مشتریان
+                    کارشناسان
                 </h3>
             </div><!-- /.portlet-title -->
         </div><!-- /.portlet-heading -->
         <div class="portlet-body">
             <div class="top-buttons-box mb-2">
-                <a asp-action="Add" class="btn btn-success" >
+                <a asp-action="Add" class="btn btn-success">
                     <i class="icon-plus"></i>
                     افزودن
                     <div class="paper-ripple"><div class="paper-ripple__background"></div><div class="paper-ripple__waves"></div></div>
@@ -45,7 +45,7 @@
                                     <td><input type="checkbox"></td>
                                     <td>@user.Id</td>
 
-                                    @if (user.User.Photo==null)
+                                    @if (user.User.Photo == null)
                                     {
                                         <td><img style="border-radius : 50%" src="~/AdminTemplate/images/user/placeholder.jpg" width="80" height="80" /></td>
                                     }
@@ -61,8 +61,8 @@
                                     <td>@user.User?.Email</td>
                                     <td>@user.User?.Province?.Name</td>
                                     <td>
-                                        <a asp-area="Admin" asp-controller="Customer" asp-action="Update" asp-route-Id="@user.Id" class="btn btn-info">ویرایش</a>
-                                        <a onclick="return confirm('آیا از حذف این کاربر اطمینان دارید؟')" asp-area="Admin" asp-controller="Customer" asp-action="Delete" asp-route-Id="@user.Id" class="btn btn-danger">حذف</a>
+                                        <a asp-area="Admin" asp-controller="Expert" asp-action="Update" asp-route-Id="@user.Id" class="btn btn-info">ویرایش</a>
+                                        <a onclick="return confirm('آیا از حذف این کاربر اطمینان دارید؟')" asp-area="Admin" asp-controller="Expert" asp-action="Delete" asp-route-Id="@user.Id" class="btn btn-danger">حذف</a>
                                     </td>
                                 </tr>
                             }

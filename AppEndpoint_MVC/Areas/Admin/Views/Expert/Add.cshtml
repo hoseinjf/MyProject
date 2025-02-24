@@ -1,11 +1,9 @@
-﻿@using AppDomainCore.Customers.DTO
-@using AppDomainCore.Provinces.Entity
-@using DomainAppService.Provinces
+﻿@using AppDomainCore.Experts.DTO
 
-@model CustomerAddDto
+@model ExpertAddDto
 @* @inject ProvinceAppService pr *@
 @{
-    ViewData["Title"] = "پیازچه > مدیریت مشتریان > ایجاد مشتری";
+    ViewData["Title"] = "پیازچه > مدیریت کارشناسان > ایجاد کارشناس";
 
 }
 
@@ -14,7 +12,7 @@
         <div class="portlet-heading">
             <div class="portlet-title">
                 <h3 class="title">
-                    مشتریان
+                    کارشناسان
                 </h3>
             </div>
         </div>
@@ -22,7 +20,7 @@
             <div class="top-buttons-box mb-2">
             </div>
             <div class="row">
-                <form asp-area="Admin" asp-controller="Customer" asp-action="Add" enctype="multipart/form-data" id="simple-form" role="form" method="post">
+                <form asp-area="Admin" asp-controller="Expert" asp-action="Add" enctype="multipart/form-data" id="simple-form" role="form" method="post">
                     <div class="form-body">
                         <div class="form-group">
                             <div class="input-group">

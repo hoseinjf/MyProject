@@ -1,6 +1,7 @@
 ﻿using AppDomainCore.CustomersRequests.Entity;
 using AppDomainCore.Experts.Contract.Repository;
 using AppDomainCore.Experts.Contract.Service;
+using AppDomainCore.Experts.DTO;
 using AppDomainCore.Experts.Entity;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace DomainService.Experts
         {
             _expertRep = expertRepository;
         }
-        public async Task<Expert> Add(Expert expert, CancellationToken cancellationToken)
+        public async Task<Expert> Add(ExpertAddDto expert, CancellationToken cancellationToken)
         {
             var com =await _expertRep.Add(expert, cancellationToken);
             if (com == null) throw new ArgumentNullException("موردی یافت نشد");
