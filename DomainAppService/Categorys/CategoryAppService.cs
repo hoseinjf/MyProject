@@ -1,6 +1,9 @@
-﻿using AppDomainCore.Categorys.Contract.AppService;
+﻿using AppDomainCore.Base;
+using AppDomainCore.Categorys.Contract.AppService;
 using AppDomainCore.Categorys.Contract.Service;
+using AppDomainCore.Categorys.DTO;
 using AppDomainCore.Categorys.Entity;
+using AppDomainCore.Experts.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,12 +15,19 @@ namespace DomainAppService.Categorys
     public class CategoryAppService : ICategoryAppService
     {
         private readonly ICategoryService _categoryService;
-        public CategoryAppService(ICategoryService categoryService)
+        private readonly IBaseDataService _bas;
+
+        public CategoryAppService(ICategoryService categoryService, IBaseDataService baseData)
         {
             _categoryService = categoryService;
+            _bas = baseData;
         }
-        public async Task<Category> Add(Category category, CancellationToken cancellationToken)
+        public async Task<Category> Add(CategoryDto category, CancellationToken cancellationToken)
         {
+            category.Photo = new AppDomainCore.Photos.Entity.Photo()
+            {
+                Src = await _bas.UploadImage(category.Pic, "category", cancellationToken),
+            };
             return await _categoryService.Add(category, cancellationToken);
         }
 

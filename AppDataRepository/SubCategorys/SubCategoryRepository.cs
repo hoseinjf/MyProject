@@ -1,6 +1,9 @@
 ﻿using AppDataRepository.Db.Context;
+using AppDomainCore.Categorys.DTO;
+using AppDomainCore.Categorys.Entity;
 using AppDomainCore.Customers.Entity;
 using AppDomainCore.SubCategorys.Contract.Repository;
+using AppDomainCore.SubCategorys.DTO;
 using AppDomainCore.SubCategorys.Entity;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -19,43 +22,65 @@ namespace AppDataRepository.SubCategorys
         {
             _db = appDbContext;
         }
-        public async Task<SubCategory> Add(SubCategory subCategory, CancellationToken cancellationToken)
+
+        public async Task<SubCategory> Add(SubCategoryDto category, CancellationToken cancellationToken)
         {
-            await _db.SubCategories.AddAsync(subCategory,cancellationToken);
+            SubCategory category1 = new SubCategory()
+            {
+                Photo = category.Photo,
+                Title = category.Title,
+
+            };
+            category1.works = category.works;
+
+            await _db.SubCategories.AddAsync(category1, cancellationToken);
             await _db.SaveChangesAsync(cancellationToken);
-            return subCategory;
+            return category1;
         }
 
         public async Task<bool> Delete(int id, CancellationToken cancellationToken)
         {
-            var sub = await _db.SubCategories.FirstOrDefaultAsync(c => c.Id == id,cancellationToken);
-            if (sub == null) { return false; }
-            _db.SubCategories.Remove(sub);
-            return true;
+            var category = await _db.SubCategories.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+            if (category == null) { return false; }
+
+            if (category.IsDelete == false)
+            {
+                category.IsDelete = true;
+                await _db.SaveChangesAsync(cancellationToken);
+                return true;
+            }
+            return false;
         }
 
         public async Task<SubCategory> Get(int id, CancellationToken cancellationToken)
         {
-            var sub = await _db.SubCategories.FirstOrDefaultAsync(x=>x.Id == id,cancellationToken);
-            if (sub == null) { throw new Exception("زیردسته بندی یافت نشد"); }
-
-            return sub;
+            var category = await _db.SubCategories.Include(x => x.Photo).Where(x => x.IsDelete == false).FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+            if (category == null) { throw new Exception("کاربر یافت نشد"); }
+            return category;
         }
 
         public async Task<List<SubCategory>> GetAll(CancellationToken cancellationToken)
         {
-            return await _db.SubCategories.ToListAsync(cancellationToken);
+            return await _db.SubCategories.Include(x => x.Photo).Where(x => x.IsDelete == false).ToListAsync(cancellationToken);
         }
 
-        public async Task<SubCategory> Update(SubCategory model, CancellationToken cancellationToken)
+        public async Task<SubCategory> Update(SubCategory category, CancellationToken cancellationToken)
         {
-            var subCategory = await _db.SubCategories.FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
-            if (subCategory == null) { throw new Exception("زیردسته بندی یافت نشد"); }
+            //CategoryDto dto = new CategoryDto();
+            var category1 = await _db.SubCategories.FirstOrDefaultAsync(x => x.Id == category.Id, cancellationToken);
+            if (category1 == null) { throw new Exception("کامنت یافت نشد"); }
 
-            subCategory.Title = model.Title;
+
+            category1.works = category.works;
+            category1.Photo = category.Photo;
+            category1.Title = category.Title;
 
             await _db.SaveChangesAsync(cancellationToken);
-            return subCategory;
+            return category1;
         }
+
+
+
+
     }
 }

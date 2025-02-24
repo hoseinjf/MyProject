@@ -2,6 +2,7 @@
 using AppDomainCore.Admins.Entity;
 using AppDomainCore.Categorys.Contract.Repository;
 using AppDomainCore.Categorys.Contract.Service;
+using AppDomainCore.Categorys.DTO;
 using AppDomainCore.Categorys.Entity;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace DomainService.Categorys
             _categoryRepository = categoryRepository;
         }
 
-        public async Task<Category> Add(Category category, CancellationToken cancellationToken)
+        public async Task<Category> Add(CategoryDto category, CancellationToken cancellationToken)
         {
             var cat =await _categoryRepository.Add(category, cancellationToken);
             if (cat == null) throw new ArgumentNullException("موردی یافت نشد");

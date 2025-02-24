@@ -1,5 +1,8 @@
-﻿using AppDomainCore.SubCategorys.Contract.AppService;
+﻿using AppDomainCore.Base;
+using AppDomainCore.Categorys.Entity;
+using AppDomainCore.SubCategorys.Contract.AppService;
 using AppDomainCore.SubCategorys.Contract.Service;
+using AppDomainCore.SubCategorys.DTO;
 using AppDomainCore.SubCategorys.Entity;
 using System;
 using System.Collections.Generic;
@@ -12,12 +15,19 @@ namespace DomainAppService.SubCategorys
     public class SubCategoryAppService : ISubCategoryAppService
     {
         private readonly ISubCategoryService _subCategoryService;
-        public SubCategoryAppService(ISubCategoryService subCategoryService)
+        private readonly IBaseDataService _bas;
+
+        public SubCategoryAppService(ISubCategoryService subCategoryService, IBaseDataService baseData)
         {
             _subCategoryService = subCategoryService;
+            _bas = baseData;
         }
-        public async Task<SubCategory> Add(SubCategory subCategory, CancellationToken cancellationToken)
+        public async Task<SubCategory> Add(SubCategoryDto subCategory, CancellationToken cancellationToken)
         {
+            subCategory.Photo = new AppDomainCore.Photos.Entity.Photo()
+            {
+                Src = await _bas.UploadImage(subCategory.Pic, "subCategory", cancellationToken),
+            };
             return await _subCategoryService.Add(subCategory, cancellationToken);
         }
 

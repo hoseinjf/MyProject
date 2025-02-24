@@ -63,29 +63,12 @@
                                 <input asp-for="Address" class="form-control" type="text" placeholder="آدرس" />
                             </div>
                         </div>
-                        @*                         <div class="form-group">
-                        <div class="input-group">
-                        <input asp-for="City" class="form-control" type="text" placeholder="آدرس" />
-                        </div>
-                        </div> *@
 
-
-                        @*<div class="form-group">
-                        <div class="input-group">
-                        <input asp-for="User.UserName" class="form-control" type="text" placeholder="نام کاربری" />
-                        </div>
-                        </div> *@
-
-                        @*                        <div class="form-group">
-                        <div class="input-group">
-                        <input asp-for="User.Password" class="form-control" type="password" placeholder="کلمه عبور" />
-                        </div>
-                        </div> *@
 
                         <div class="form-group">
                             <div class="input-group">
                                 <select asp-for="CityId" class="form-select">
-                                    @foreach (var city in ViewBag.Categories)
+                                    @foreach (var city in ViewBag.Provinces)
                                     {
                                         <option value="@city.Id">@city.Name</option>
                                     }
@@ -93,15 +76,6 @@
                             </div>
                         </div>
 
-                        @*<div class="form-group">
-                        <div class="input-group">
-                        <select asp-for="User.Role" class="form-select">
-                        <option value="1">Admin</option>
-                        <option value="2">Visitor</option>
-                        <option value="3">Advertiser</option>
-                        </select>
-                        </div>
-                        </div> *@
 
                         <div class="form-group relative">
                             <input asp-for="Pic" type="file" class="form-control">

@@ -1,4 +1,5 @@
-﻿using AppDomainCore.SubCategorys.Entity;
+﻿using AppDomainCore.SubCategorys.DTO;
+using AppDomainCore.SubCategorys.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace AppDomainCore.SubCategorys.Contract.Service
     {
         public Task<SubCategory> Get(int id, CancellationToken cancellationToken);
         public Task<List<SubCategory>> GetAll(CancellationToken cancellationToken);
-        public Task<SubCategory> Add(SubCategory subCategory, CancellationToken cancellationToken);
+        public Task<SubCategory> Add(SubCategoryDto subCategory, CancellationToken cancellationToken);
         public Task<SubCategory> Update(SubCategory subCategory, CancellationToken cancellationToken);
         public Task<bool> Delete(int id, CancellationToken cancellationToken);
     }

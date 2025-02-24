@@ -10,7 +10,6 @@
     <Folder Include="Admins\Enum\" />
     <Folder Include="Admins\DTO\" />
     <Folder Include="Categorys\Enum\" />
-    <Folder Include="Categorys\DTO\" />
     <Folder Include="Comments\Enum\" />
     <Folder Include="Comments\DTO\" />
     <Folder Include="CustomersRequests\DTO\" />
@@ -22,7 +21,6 @@
     <Folder Include="Photos\Enum\" />
     <Folder Include="Provinces\DTO\" />
     <Folder Include="Provinces\Enum\" />
-    <Folder Include="SubCategorys\DTO\" />
     <Folder Include="SubCategorys\Enum\" />
     <Folder Include="Works\Enum\" />
   </ItemGroup>

@@ -1,5 +1,6 @@
 ﻿using AppDomainCore.SubCategorys.Contract.Repository;
 using AppDomainCore.SubCategorys.Contract.Service;
+using AppDomainCore.SubCategorys.DTO;
 using AppDomainCore.SubCategorys.Entity;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace DomainService.SubCategorys
         {
             _repository = subCategoryRepository;
         }
-        public async Task<SubCategory> Add(SubCategory subCategory, CancellationToken cancellationToken)
+        public async Task<SubCategory> Add(SubCategoryDto subCategory, CancellationToken cancellationToken)
         {
             var item = await _repository.Add(subCategory, cancellationToken);
             if (item == null) throw new ArgumentNullException("موردی یافت نشد");
