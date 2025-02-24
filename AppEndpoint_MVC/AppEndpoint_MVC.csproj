@@ -34,6 +34,7 @@
     <Folder Include="wwwroot\images\customer\" />
     <Folder Include="wwwroot\images\expert\" />
     <Folder Include="wwwroot\images\category\" />
+    <Folder Include="wwwroot\images\work\" />
     <Folder Include="wwwroot\images\subCategory\" />
   </ItemGroup>
 

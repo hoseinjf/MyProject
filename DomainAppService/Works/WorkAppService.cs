@@ -1,5 +1,8 @@
-﻿using AppDomainCore.Works.Contract.AppService;
+﻿using AppDomainCore.Base;
+using AppDomainCore.SubCategorys.Entity;
+using AppDomainCore.Works.Contract.AppService;
 using AppDomainCore.Works.Contract.Service;
+using AppDomainCore.Works.DTO;
 using AppDomainCore.Works.Entity;
 using System;
 using System.Collections.Generic;
@@ -12,12 +15,19 @@ namespace DomainAppService.Works
     public class WorkAppService : IWorkAppService
     {
         private readonly IWorkService _workService;
-        public WorkAppService(IWorkService workService)
+        private readonly IBaseDataService _bas;
+
+        public WorkAppService(IWorkService workService, IBaseDataService baseDataService)
         {
             _workService = workService;
+            _bas = baseDataService;
         }
-        public async Task<Work> Add(Work work, CancellationToken cancellationToken)
+        public async Task<Work> Add(WorkDto work, CancellationToken cancellationToken)
         {
+            work.Photo = new AppDomainCore.Photos.Entity.Photo()
+            {
+                Src = await _bas.UploadImage(work.Pic, "work", cancellationToken),
+            };
             return await _workService.Add(work, cancellationToken);
         }
 

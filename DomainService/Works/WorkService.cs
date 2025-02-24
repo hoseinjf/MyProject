@@ -1,6 +1,7 @@
 ﻿using AppDomainCore.SubCategorys.Entity;
 using AppDomainCore.Works.Contract.Repository;
 using AppDomainCore.Works.Contract.Service;
+using AppDomainCore.Works.DTO;
 using AppDomainCore.Works.Entity;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace DomainService.Works
         {
             _workRepository = workRepository;
         }
-        public async Task<Work> Add(Work work, CancellationToken cancellationToken)
+        public async Task<Work> Add(WorkDto work, CancellationToken cancellationToken)
         {
             var item =await _workRepository.Add(work, cancellationToken);
             if (item == null) throw new ArgumentNullException("موردی یافت نشد");
