@@ -23,7 +23,7 @@ namespace AppEndpoint_MVC.Areas.Admin.Controllers
         public async Task<IActionResult> Index(List<Category> categories, CancellationToken cancellationToken)
         {
             _logger.LogInformation("صفحه اصلی کتگوری در پنل ادمین در تاریخ:{date}بازدید شد",DateTime.UtcNow.ToLongDateString());
-            categories = await _categoryAppService.GetAll(cancellationToken);
+            categories = await _categoryAppService.GetAll(cancellationToken); 
             return View(categories);
         }
 
