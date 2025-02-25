@@ -1,6 +1,7 @@
 ﻿using AppDomainCore.Categorys.Contract.AppService;
 using AppDomainCore.Categorys.DTO;
 using AppDomainCore.Categorys.Entity;
+using AppEndpoint_MVC.Controllers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,19 +12,25 @@ namespace AppEndpoint_MVC.Areas.Admin.Controllers
     public class CategoryController : Controller
     {
         private readonly ICategoryAppService _categoryAppService;
-        public CategoryController(ICategoryAppService category)
+        private readonly ILogger<HomeController> _logger;
+
+        public CategoryController(ICategoryAppService category, ILogger<HomeController> logger)
         {
             _categoryAppService = category;
+            _logger = logger;
         }
 
         public async Task<IActionResult> Index(List<Category> categories, CancellationToken cancellationToken)
         {
+            _logger.LogInformation("صفحه اصلی کتگوری در پنل ادمین در تاریخ:{date}بازدید شد",DateTime.UtcNow.ToLongDateString());
             categories = await _categoryAppService.GetAll(cancellationToken);
             return View(categories);
         }
 
         public async Task<IActionResult> Add(CancellationToken cancellationToken)
         {
+            _logger.LogInformation("صفحه اضافه کردن کتگوری در پنل ادمین در تاریخ:{date}بازدید شد", DateTime.UtcNow.ToLongDateString());
+
             return View();
         }
 

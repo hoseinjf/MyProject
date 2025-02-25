@@ -74,9 +74,25 @@ using DomainService.Works;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 
+Log.Logger= new LoggerConfiguration().WriteTo.Console().CreateLogger();
 var builder = WebApplication.CreateBuilder(args);
+//builder.Logging.AddSerilog();
+
+builder.Host.ConfigureLogging(o =>
+    {
+        o.ClearProviders();
+        o.AddSerilog();
+    }).UseSerilog((context, config) =>
+    {
+        config.WriteTo.Console();
+        config.WriteTo.Seq("http://localhost:5340",apiKey:"");
+    });
+
+try
+{
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -194,3 +210,13 @@ app.MapControllerRoute(
 
 
 app.Run();
+
+}
+catch(Exception ex)
+{
+    Log.Fatal(ex,"Application terminated unexpectedly");
+}
+finally
+{
+    Log.CloseAndFlush();
+}
