@@ -50,15 +50,23 @@ namespace AppDataRepository.Comments
         {
             var comment = await _db.Comments.FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
             if (comment == null) { throw new Exception("کامنت یافت نشد"); }
-
-
-            comment.Title = model.Title;
-            comment.Description = model.Description;
-            comment.WorkScore = model.WorkScore;
-            comment.IsActive = model.IsActive;
-
-            await _db.SaveChangesAsync(cancellationToken);
-            return comment;
+            //comment.Title = model.Title;
+            //comment.Description = model.Description;
+            //comment.WorkScore = model.WorkScore;
+            if (comment.IsActive == true)
+            {
+                comment.IsActive=false;
+                comment.IsActive = model.IsActive;
+                await _db.SaveChangesAsync(cancellationToken);
+                return comment;
+            }
+            else
+            {
+                comment.IsActive = true;
+                comment.IsActive = model.IsActive;
+                await _db.SaveChangesAsync(cancellationToken);
+                return comment;
+            }
         }
     }
 }

@@ -1,26 +1,20 @@
-﻿@using AppDomainCore.Works.Entity
+﻿@using AppDomainCore.Comments.Entity
 
-@model List<Work>
+
+@model List<Comment>
 @{
-    ViewData["Title"] = "پیازچه > مدیریت خدمات > لیست خدمات";
+    ViewData["Title"] = "پیازچه > مدیریت کامنت ها > لیست کامنت ها";
 }
 <div class="col-lg-12">
     <div class="portlet box shadow">
         <div class="portlet-heading">
             <div class="portlet-title">
                 <h3 class="title">
-                    خدمات
+                    کامنت ها
                 </h3>
             </div><!-- /.portlet-title -->
         </div><!-- /.portlet-heading -->
         <div class="portlet-body">
-            <div class="top-buttons-box mb-2">
-                <a asp-action="Add" class="btn btn-success">
-                    <i class="icon-plus"></i>
-                    افزودن
-                    <div class="paper-ripple"><div class="paper-ripple__background"></div><div class="paper-ripple__waves"></div></div>
-                </a>
-            </div>
             <div class="row">
                 <div class="table-responsive">
                     <table class="table table-bordered table-hover table-striped" id="data-table">
@@ -28,9 +22,10 @@
                             <tr>
                                 <th class="p-low"><input type="checkbox" id="btn-check-all-toggle"></th>
                                 <th>#</th>
-                                <th>عکس</th>
-                                <th>نام خدمت</th>
-                                <th>عملیات</th>
+                                <th>موضوع</th>
+                                <th>توضیحات</th>
+                                <th>تاریخ</th>
+                                <th>وضعیت</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -39,21 +34,24 @@
                                 <tr>
                                     <td><input type="checkbox"></td>
                                     <td>@user.Id</td>
+                                    <td>@user.Title</td>
+                                    <td>@user.Description</td>
+                                    <td>@user.CreateAt</td>
 
-                                    @if (user.Photo == null)
+                                    @if (user.IsActive == true)
                                     {
-                                        <td><img style="border-radius : 50%" src="~/AdminTemplate/images/user/placeholder.jpg" width="80" height="80" /></td>
+                                        <td>
+                                            <a asp-area="Admin" asp-controller="Comment" asp-action="Update" asp-route-Id="@user.Id" class="btn btn-success">تایید شد</a>
+
+                                        </td>
                                     }
                                     else
                                     {
-                                        <td><img style="border-radius : 50%" src="@user.Photo.Src" width="80" height="80" /></td>
-                                    }
+                                        <td>
+                                            <a asp-area="Admin" asp-controller="Comment" asp-action="Update" asp-route-Id="@user.Id" class="btn btn-danger">رد شد</a>
 
-                                    <td>@user.Title</td>
-                                    <td>
-                                        <a asp-area="Admin" asp-controller="Work" asp-action="Update" asp-route-Id="@user.Id" class="btn btn-info">ویرایش</a>
-                                        <a onclick="return confirm('آیا از حذف این کاربر اطمینان دارید؟')" asp-area="Admin" asp-controller="Work" asp-action="Delete" asp-route-Id="@user.Id" class="btn btn-danger">حذف</a>
-                                    </td>
+                                        </td>
+                                    }
                                 </tr>
                             }
                         </tbody>
