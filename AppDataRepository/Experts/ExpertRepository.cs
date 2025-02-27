@@ -79,26 +79,25 @@ namespace AppDataRepository.Experts
             return await _db.Experts.Include(x => x.User.Photo).Include(x => x.User.Province).Include(x => x.Works).Where(x => x.User.IsDelete == false).ToListAsync(cancellationToken);
         }
 
-        public async Task<Expert> Update(Expert expert, CancellationToken cancellationToken)
+        public async Task<Expert> Update(ExpertAddDto expert, CancellationToken cancellationToken)
         {
             var expert1 = await _db.Experts.Include(x => x.User).FirstOrDefaultAsync(x => x.Id == expert.Id, cancellationToken);
             if (expert1 == null) { throw new Exception("کامنت یافت نشد"); }
 
 
-            expert1.User = new User()
-            {
-                FirstName = expert.User.FirstName,
-                LastName = expert.User.LastName,
-                Email = expert.User.Email,
-                Address = expert.User.Address,
-                UserName = expert.User.UserName,
-                PasswordHash = expert.User.PasswordHash,
-                NormalizedEmail = expert.User.Email,
-                NormalizedUserName = expert.User.UserName,
-                Phone = expert.User.Phone,
-                Photo = expert.User.Photo,
-                ProvinceId = expert.User.ProvinceId
-            };
+            expert1.Id = expert.Id;
+            expert1.User.Id = expert.UserId;
+            expert1.User.FirstName = expert.FirstName;
+            expert1.User.LastName = expert.LastName;
+            expert1.User.Email = expert.Email;
+            expert1.User.Address = expert.Address;
+            expert1.User.UserName = expert.UserName;
+            //expert1.User.PasswordHash = expert.Password;
+            expert1.User.NormalizedEmail = expert.Email;
+            expert1.User.NormalizedUserName = expert.UserName;
+            expert1.User.Phone = expert.Phone;
+            expert1.User.Photo = expert.Photo;
+            expert1.User.ProvinceId = expert.CityId;
             //expert1.Works = new List<Work>();
 
             await _db.SaveChangesAsync(cancellationToken);

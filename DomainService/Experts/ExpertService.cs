@@ -44,7 +44,7 @@ namespace DomainService.Experts
             return com;
         }
 
-        public async Task<Expert> Update(Expert expert, CancellationToken cancellationToken)
+        public async Task<Expert> Update(ExpertAddDto expert, CancellationToken cancellationToken)
         {
             var com = await _expertRep.Update(expert, cancellationToken);
             if (com == null) throw new ArgumentNullException("موردی یافت نشد");

@@ -1,6 +1,6 @@
-﻿@using AppDomainCore.Experts.Entity
+﻿@using AppDomainCore.Experts.DTO
 
-@model Expert
+@model ExpertAddDto
 @{
     ViewData["Title"] = "پیازچه > مدیریت کارشناسان > ویرایش کارشناس";
 
@@ -23,44 +23,63 @@
                 <form asp-area="Admin" asp-controller="Customer" asp-action="Update" enctype="multipart/form-data" id="simple-form" role="form" method="post">
                     @* <img style="border-radius : 50%" src="@Model.User.ImagePath" width="80" height="80" /> *@
                     <hr />
-                    <input type="hidden" asp-for="User.Id" />
+                    <input type="hidden" asp-for="Id" />
+                    <input type="hidden" asp-for="UserId" />
+@*                     <input type="hidden" asp-for="Photo.Id" />
+                    <input type="hidden" asp-for="Photo.Src" /> *@
 
                     <div class="form-body">
                         <div class="form-group">
                             <div class="input-group">
-                                <input asp-for="User.FirstName" class="form-control" type="text" placeholder="نام">
+                                <input asp-for="FirstName" class="form-control" type="text" placeholder="نام">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="input-group">
-                                <input asp-for="User.LastName" class="form-control" type="text" placeholder="نام خانوادگی">
+                                <input asp-for="LastName" class="form-control" type="text" placeholder="نام خانوادگی">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="input-group">
-                                <input asp-for="User.Phone" class="form-control" type="text" placeholder="شماره موبایل" required />
+                                <input asp-for="Phone" class="form-control" type="text" placeholder="شماره موبایل" required />
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="input-group">
-                                <input asp-for="User.Email" class="form-control" type="email" placeholder="آدرس ایمیل" required />
+                                <input asp-for="Email" class="form-control" type="email" placeholder="آدرس ایمیل" required />
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="input-group">
-                                <input asp-for="User.Address" class="form-control" type="text" placeholder="آدرس" />
+                                <input asp-for="Address" class="form-control" type="text" placeholder="آدرس" />
                             </div>
                         </div>
 
 
                         <div class="form-group">
                             <div class="input-group">
-                                <input asp-for="User.UserName" class="form-control" type="text" placeholder="نام کاربری" />
+                                <input asp-for="UserName" class="form-control" type="text" placeholder="نام کاربری" />
                             </div>
+                        </div>
+
+                        <div class="form-group relative">
+                            <input asp-for="Pic" type="file" class="form-control">
+                            <label>آپلود عکس</label>
+                            <div class="input-group round">
+                                <input type="text" class="form-control file-input" placeholder="برای آپلود کلیک کنید">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-success">
+                                        <i class="icon-picture"></i>
+                                        آپلود عکس
+                                        <div class="paper-ripple"><div class="paper-ripple__background"></div><div class="paper-ripple__waves"></div></div>
+                                    </button>
+                                </span>
+                            </div><!-- /.input-group -->
+                            <div class="help-block"></div>
                         </div>
 
                         @*                         <div class="form-group">

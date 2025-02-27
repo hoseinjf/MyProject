@@ -1,4 +1,5 @@
-﻿using AppDomainCore.Customers.DTO;
+﻿using AppDomainCore.Account.AppService;
+using AppDomainCore.Customers.DTO;
 using AppDomainCore.Customers.Entity;
 using AppDomainCore.Experts.Contract.AppService;
 using AppDomainCore.Experts.DTO;
@@ -15,10 +16,13 @@ namespace AppEndpoint_MVC.Areas.Admin.Controllers
     {
         private readonly IExpertAppService _expertAppService;
         private readonly IprovinceAppService _pr;
-        public ExpertController(IExpertAppService expertApp, IprovinceAppService iprovinceApp)
+        private readonly IAccountAppService _accountAppService;
+
+        public ExpertController(IExpertAppService expertApp, IprovinceAppService iprovinceApp, IAccountAppService accountAppService)
         {
             _expertAppService = expertApp;
             _pr = iprovinceApp;
+            _accountAppService = accountAppService;
         }
 
 
@@ -38,18 +42,33 @@ namespace AppEndpoint_MVC.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(ExpertAddDto expert, CancellationToken cancellationToken)
         {
-            var item = await _expertAppService.Add(expert, cancellationToken);
+            var item = await _accountAppService.RegisterExpert(expert, cancellationToken);
             return RedirectToAction("Index");
         }
 
         public async Task<IActionResult> Update(int id, CancellationToken cancellationToken)
         {
             var x = await _expertAppService.Get(id, cancellationToken);
-            return View(x);
+
+            ExpertAddDto expertAddDto = new ExpertAddDto();
+            expertAddDto.Id = x.Id;
+            expertAddDto.UserId = x.User.Id;
+            expertAddDto.FirstName = x.User.FirstName;
+            expertAddDto.LastName = x.User.LastName;
+            expertAddDto.Email = x.User.Email;
+            expertAddDto.Address = x.User.Address;
+            expertAddDto.UserName = x.User.UserName;
+            expertAddDto.Email = x.User.NormalizedEmail;
+            expertAddDto.UserName = x.User.NormalizedUserName;
+            expertAddDto.Phone = x.User.Phone;
+            expertAddDto.Photo = x.User.Photo;
+            expertAddDto.CityId = x.User.ProvinceId;
+
+            return View(expertAddDto);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Update(Expert expert, CancellationToken cancellationToken)
+        public async Task<IActionResult> Update(ExpertAddDto expert, CancellationToken cancellationToken)
         {
             var item = await _expertAppService.Update(expert, cancellationToken);
             return RedirectToAction("Index");

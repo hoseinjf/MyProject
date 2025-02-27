@@ -44,11 +44,16 @@ namespace AppEndpoint_MVC.Areas.Admin.Controllers
         public async Task<IActionResult> Update(int id, CancellationToken cancellationToken)
         {
             var x = await _categoryAppService.Get(id, cancellationToken);
-            return View(x);
+            CategoryDto categoryDto = new CategoryDto();
+            categoryDto.Title = x.Title;
+            categoryDto.subCategories=x.subCategories;
+            categoryDto.Id = x.Id;
+            categoryDto.Photo = x.Photo;
+            return View(categoryDto);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Update(Category categories, CancellationToken cancellationToken)
+        public async Task<IActionResult> Update(CategoryDto categories, CancellationToken cancellationToken)
         {
             var item = await _categoryAppService.Update(categories, cancellationToken);
             return RedirectToAction("Index");

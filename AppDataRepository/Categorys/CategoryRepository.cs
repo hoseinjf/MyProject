@@ -64,13 +64,13 @@ namespace AppDataRepository.Categorys
             return await _db.Categories.Include(x => x.Photo).Where(x => x.IsDelete == false).ToListAsync(cancellationToken);
         }
 
-        public async Task<Category> Update(Category category, CancellationToken cancellationToken)
+        public async Task<Category> Update(CategoryDto category, CancellationToken cancellationToken)
         {
             //CategoryDto dto = new CategoryDto();
             var category1 = await _db.Categories.FirstOrDefaultAsync(x => x.Id == category.Id, cancellationToken);
             if (category1 == null) { throw new Exception("کامنت یافت نشد"); }
 
-
+            category1.Id = category.Id;
             category1.subCategories = category.subCategories;
             category1.Photo = category.Photo;
             category1.Title = category.Title;

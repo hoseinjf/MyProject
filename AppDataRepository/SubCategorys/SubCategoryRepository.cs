@@ -29,6 +29,7 @@ namespace AppDataRepository.SubCategorys
             {
                 Photo = category.Photo,
                 Title = category.Title,
+                CategoryId = category.CategoryId,
 
             };
             category1.works = category.works;
@@ -64,13 +65,14 @@ namespace AppDataRepository.SubCategorys
             return await _db.SubCategories.Include(x => x.Photo).Where(x => x.IsDelete == false).ToListAsync(cancellationToken);
         }
 
-        public async Task<SubCategory> Update(SubCategory category, CancellationToken cancellationToken)
+        public async Task<SubCategory> Update(SubCategoryDto category, CancellationToken cancellationToken)
         {
             //CategoryDto dto = new CategoryDto();
             var category1 = await _db.SubCategories.FirstOrDefaultAsync(x => x.Id == category.Id, cancellationToken);
             if (category1 == null) { throw new Exception("کامنت یافت نشد"); }
 
-
+            category1.Id = category.Id;
+            category1.CategoryId = category.CategoryId;
             category1.works = category.works;
             category1.Photo = category.Photo;
             category1.Title = category.Title;

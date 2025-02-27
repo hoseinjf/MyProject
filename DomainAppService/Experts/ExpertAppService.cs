@@ -1,4 +1,5 @@
 ﻿using AppDomainCore.Base;
+using AppDomainCore.Customers.Entity;
 using AppDomainCore.Experts.Contract.AppService;
 using AppDomainCore.Experts.Contract.Service;
 using AppDomainCore.Experts.DTO;
@@ -45,8 +46,15 @@ namespace DomainAppService.Experts
             return await _service.GetAll(cancellationToken);
         }
 
-        public async Task<Expert> Update(Expert expert, CancellationToken cancellationToken)
+        public async Task<Expert> Update(ExpertAddDto expert, CancellationToken cancellationToken)
         {
+            if (expert.Pic != null)
+            {
+                expert.Photo = new AppDomainCore.Photos.Entity.Photo()
+                {
+                    Src = await _bas.UploadImage(expert.Pic, "expert", cancellationToken),
+                };
+            }
             return await _service.Update(expert,cancellationToken);
         }
     }

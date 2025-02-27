@@ -4,6 +4,7 @@ using AppDomainCore.SubCategorys.Contract.AppService;
 using AppDomainCore.SubCategorys.Contract.Service;
 using AppDomainCore.SubCategorys.DTO;
 using AppDomainCore.SubCategorys.Entity;
+using AppDomainCore.Works.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,8 +47,15 @@ namespace DomainAppService.SubCategorys
             return await _subCategoryService.GetAll(cancellationToken);
         }
 
-        public async Task<SubCategory> Update(SubCategory subCategory, CancellationToken cancellationToken)
+        public async Task<SubCategory> Update(SubCategoryDto subCategory, CancellationToken cancellationToken)
         {
+            if (subCategory.Pic != null)
+            {
+                subCategory.Photo = new AppDomainCore.Photos.Entity.Photo()
+                {
+                    Src = await _bas.UploadImage(subCategory.Pic, "work", cancellationToken),
+                };
+            }
             return await _subCategoryService.Update(subCategory, cancellationToken);
         }
     }

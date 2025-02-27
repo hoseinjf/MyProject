@@ -1,7 +1,7 @@
-﻿@using AppDomainCore.Categorys.Entity
+﻿@using AppDomainCore.Categorys.DTO
 
 
-@model Category
+@model CategoryDto
 @{
     ViewData["Title"] = "پیازچه > مدیریت دسته بندی > ویرایش دسته بندی";
 
@@ -25,6 +25,8 @@
                     @* <img style="border-radius : 50%" src="@Model.User.ImagePath" width="80" height="80" /> *@
                     <hr />
                     <input type="hidden" asp-for="Id" />
+                    <input type="hidden" asp-for="Photo.Id" />
+                    <input type="hidden" asp-for="Photo.Src" />
 
                     <div class="form-body">
                         <div class="form-group">
@@ -36,7 +38,7 @@
 
 
                         <div class="form-group relative">
-                            <input asp-for="Photo" type="file" class="form-control">
+                            <input asp-for="Pic" type="file" class="form-control">
                             <label>آپلود عکس</label>
                             <div class="input-group round">
                                 <input type="text" class="form-control file-input" placeholder="برای آپلود کلیک کنید">

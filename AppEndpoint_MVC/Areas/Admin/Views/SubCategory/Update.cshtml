@@ -1,6 +1,6 @@
-﻿@using AppDomainCore.SubCategorys.Entity
+﻿@using AppDomainCore.SubCategorys.DTO
 
-@model SubCategory
+@model SubCategoryDto
 @{
     ViewData["Title"] = "پیازچه > مدیریت سرویس > ویرایش سرویس";
 
@@ -24,6 +24,8 @@
                     @* <img style="border-radius : 50%" src="@Model.User.ImagePath" width="80" height="80" /> *@
                     <hr />
                     <input type="hidden" asp-for="Id" />
+                    <input type="hidden" asp-for="Photo.Id" />
+                    <input type="hidden" asp-for="Photo.Src" />
 
                     <div class="form-body">
                         <div class="form-group">
@@ -32,7 +34,16 @@
                             </div>
                         </div>
 
-
+                        <div class="form-group">
+                            <div class="input-group">
+                                <select asp-for="CategoryId" class="form-select">
+                                    @foreach (var cat in ViewBag.Category)
+                                    {
+                                        <option value="@cat.Id">@cat.Title</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
 
                         <div class="form-group relative">
                             <input asp-for="Photo" type="file" class="form-control">

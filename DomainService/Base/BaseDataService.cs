@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DomainService.Base
 {
-    public class BaseDataService: IBaseDataService
+    public class BaseDataService : IBaseDataService
     {
         public async Task<string> UploadImage(IFormFile FormFile, string folderName, CancellationToken cancellation)
         {
@@ -38,5 +38,6 @@ namespace DomainService.Base
 
             return fileName;
         }
+
     }
 }

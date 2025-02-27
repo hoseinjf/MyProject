@@ -1,4 +1,5 @@
 ﻿using AppDomainCore.Base;
+using AppDomainCore.Categorys.Entity;
 using AppDomainCore.SubCategorys.Entity;
 using AppDomainCore.Works.Contract.AppService;
 using AppDomainCore.Works.Contract.Service;
@@ -46,8 +47,15 @@ namespace DomainAppService.Works
             return await _workService.GetAll(cancellationToken);
         }
 
-        public async Task<Work> Update(Work work, CancellationToken cancellationToken)
+        public async Task<Work> Update(WorkDto work, CancellationToken cancellationToken)
         {
+            if (work.Pic != null)
+            {
+                work.Photo = new AppDomainCore.Photos.Entity.Photo()
+                {
+                    Src = await _bas.UploadImage(work.Pic, "work", cancellationToken),
+                };
+            }
             return await _workService.Update(work, cancellationToken);
         }
     }

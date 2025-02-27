@@ -12,9 +12,11 @@ namespace AppDomainCore.SubCategorys.DTO
 {
     public class SubCategoryDto
     {
+        public int Id { get; set; }
         public string Title { get; set; }
         public Photo? Photo { get; set; }
         public IFormFile? Pic { get; set; }
+        public int CategoryId { get; set; }
         public List<Work>? works { get; set; } = new List<Work>();
     }
 }

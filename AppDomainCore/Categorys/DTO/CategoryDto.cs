@@ -11,6 +11,7 @@ namespace AppDomainCore.Categorys.DTO
 {
     public class CategoryDto
     {
+        public int Id { get; set; }
         public string Title { get; set; }
         public Photo? Photo { get; set; }
         public IFormFile? Pic { get; set; }

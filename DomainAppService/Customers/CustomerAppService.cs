@@ -50,8 +50,15 @@ namespace DomainAppService.Customers
             return await _customerService.GetAll(cancellationToken);
         }
 
-        public async Task<Customer> Update( Customer customer, CancellationToken cancellationToken)
+        public async Task<Customer> Update(CustomerAddDto customer, CancellationToken cancellationToken)
         {
+            if (customer.Pic != null)
+            {
+                customer.Photo = new AppDomainCore.Photos.Entity.Photo()
+                {
+                    Src = await _bas.UploadImage(customer.Pic, "customer", cancellationToken),
+                };
+            }
             return await _customerService.Update( customer, cancellationToken);
         }
     }

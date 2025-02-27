@@ -43,7 +43,7 @@ namespace DomainService.SubCategorys
             return item;
         }
 
-        public async Task<SubCategory> Update(SubCategory subCategory, CancellationToken cancellationToken)
+        public async Task<SubCategory> Update(SubCategoryDto subCategory, CancellationToken cancellationToken)
         {
             var item = await _repository.Update(subCategory, cancellationToken);
             if (item == null) throw new ArgumentNullException("موردی یافت نشد");

@@ -21,7 +21,6 @@
                             <tr>
                                 <th class="p-low"><input type="checkbox" id="btn-check-all-toggle"></th>
                                 <th>#</th>
-                                <th>عکس</th>
                                 <th>نام خدمت</th>
                                 <th>وضعیت</th>
                                 <th>عملیات</th>
@@ -34,14 +33,6 @@
                                     <td><input type="checkbox"></td>
                                     <td>@user.Id</td>
 
-                                    @if (user.Customer.User.Photo == null)
-                                    {
-                                        <td><img style="border-radius : 50%" src="~/AdminTemplate/images/user/placeholder.jpg" width="80" height="80" /></td>
-                                    }
-                                    else
-                                    {
-                                        <td><img style="border-radius : 50%" src="@user.Customer.User.Photo.Src" width="80" height="80" /></td>
-                                    }
 
                                     <td>@user.Work.Title</td>
                                     <td>@user.Status.ToString()</td>

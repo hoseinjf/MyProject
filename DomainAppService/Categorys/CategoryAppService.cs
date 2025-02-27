@@ -7,6 +7,7 @@ using AppDomainCore.Experts.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -46,8 +47,16 @@ namespace DomainAppService.Categorys
             return await _categoryService.GetAll(cancellationToken);
         }
 
-        public async Task<Category> Update(Category category, CancellationToken cancellationToken)
+        public async Task<Category> Update(CategoryDto category, CancellationToken cancellationToken)
         {
+            if (category.Pic != null)
+            {
+
+                category.Photo = new AppDomainCore.Photos.Entity.Photo()
+                {
+                    Src = await _bas.UploadImage(category.Pic, "category", cancellationToken),
+                };
+            }
             return await _categoryService.Update(category, cancellationToken);
         }
     }

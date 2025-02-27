@@ -13,6 +13,7 @@ namespace AppDomainCore.Works.DTO
 {
     public class WorkDto
     {
+        public int Id { get; set; }
         public string Title { get; set; }
         public Photo? Photo { get; set; }
         public int? Viwe { get; set; }

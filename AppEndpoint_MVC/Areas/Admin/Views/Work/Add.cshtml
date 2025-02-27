@@ -27,6 +27,24 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input asp-for="Description" class="form-control" type="text" placeholder="توضیحات خدمت">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <select asp-for="SubCategoryId" class="form-select">
+                                    @foreach (var sub in ViewBag.Work)
+                                    {
+                                        <option value="@sub.Id">@sub.Title</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+
                         <div class="form-group relative">
                             <input asp-for="Pic" type="file" class="form-control">
                             <label>آپلود عکس</label>

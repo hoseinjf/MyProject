@@ -13,7 +13,7 @@ namespace AppDomainCore.SubCategorys.Contract.Repository
         public Task<SubCategory> Get(int id, CancellationToken cancellationToken);
         public Task<List<SubCategory>> GetAll(CancellationToken cancellationToken);
         public Task<SubCategory> Add(SubCategoryDto subCategory, CancellationToken cancellationToken);
-        public Task<SubCategory> Update(SubCategory subCategory, CancellationToken cancellationToken);
+        public Task<SubCategory> Update(SubCategoryDto subCategory, CancellationToken cancellationToken);
         public Task<bool> Delete(int id, CancellationToken cancellationToken);
     }
 }

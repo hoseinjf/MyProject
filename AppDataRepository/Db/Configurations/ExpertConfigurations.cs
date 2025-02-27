@@ -16,6 +16,8 @@ namespace AppDataRepository.Db.Configurations
     {
         public void Configure(EntityTypeBuilder<Expert> builder)
         {
+            builder.HasKey(x => x.Id);
+
             builder.HasMany(x => x.Works)
                    .WithMany(x => x.Experts);
 

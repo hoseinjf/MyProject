@@ -46,7 +46,7 @@ namespace DomainService.Categorys
             return cat;
         }
 
-        public async Task<Category> Update(Category category, CancellationToken cancellationToken)
+        public async Task<Category> Update(CategoryDto category, CancellationToken cancellationToken)
         {
             var cat = await _categoryRepository.Update(category, cancellationToken);
             if (cat == null) throw new ArgumentNullException("موردی یافت نشد");
