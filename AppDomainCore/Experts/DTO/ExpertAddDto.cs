@@ -1,5 +1,6 @@
 ﻿using AppDomainCore.Photos.Entity;
 using AppDomainCore.Provinces.Entity;
+using AppDomainCore.Users.Entity;
 using AppDomainCore.Users.Enum;
 using AppDomainCore.Works.Entity;
 using Microsoft.AspNetCore.Http;
