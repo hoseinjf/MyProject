@@ -20,9 +20,16 @@ namespace AppDataRepository.Comments
         }
         public async Task<Comment> Add(Comment comment, CancellationToken cancellationToken)
         {
-            await _db.Comments.AddAsync(comment,cancellationToken);
-            await _db.SaveChangesAsync(cancellationToken);
-            return comment;
+            try
+            {
+                await _db.Comments.AddAsync(comment, cancellationToken);
+                await _db.SaveChangesAsync(cancellationToken);
+                return comment;
+            }
+            catch (Exception ex) 
+            {
+                return new Comment();
+            }
         }
 
         public async Task<bool> Delete(int id, CancellationToken cancellationToken)

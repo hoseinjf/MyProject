@@ -25,18 +25,22 @@ namespace AppDataRepository.SubCategorys
 
         public async Task<SubCategory> Add(SubCategoryDto category, CancellationToken cancellationToken)
         {
-            SubCategory category1 = new SubCategory()
+            try
             {
-                Photo = category.Photo,
-                Title = category.Title,
-                CategoryId = category.CategoryId,
+                SubCategory category1 = new SubCategory()
+                {
+                    Photo = category.Photo,
+                    Title = category.Title,
+                    CategoryId = category.CategoryId,
 
-            };
-            category1.works = category.works;
+                };
+                category1.works = category.works;
 
-            await _db.SubCategories.AddAsync(category1, cancellationToken);
-            await _db.SaveChangesAsync(cancellationToken);
-            return category1;
+                await _db.SubCategories.AddAsync(category1, cancellationToken);
+                await _db.SaveChangesAsync(cancellationToken);
+                return category1;
+            }
+            catch (Exception ex) { return new SubCategory(); }
         }
 
         public async Task<bool> Delete(int id, CancellationToken cancellationToken)

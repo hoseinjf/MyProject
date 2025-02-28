@@ -22,9 +22,10 @@ namespace AppEndpoint_MVC.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index(List<Category> categories, CancellationToken cancellationToken)
         {
-            _logger.LogInformation("صفحه اصلی کتگوری در پنل ادمین در تاریخ:{date}بازدید شد",DateTime.UtcNow.ToLongDateString());
-            categories = await _categoryAppService.GetAll(cancellationToken); 
+            _logger.LogInformation("صفحه اصلی کتگوری در پنل ادمین در تاریخ:{date}بازدید شد", DateTime.UtcNow.ToLongDateString());
+            categories = await _categoryAppService.GetAll(cancellationToken);
             return View(categories);
+
         }
 
         public async Task<IActionResult> Add(CancellationToken cancellationToken)
@@ -39,6 +40,7 @@ namespace AppEndpoint_MVC.Areas.Admin.Controllers
         {
             var item = await _categoryAppService.Add(categories, cancellationToken);
             return RedirectToAction("Index");
+
         }
 
         public async Task<IActionResult> Update(int id, CancellationToken cancellationToken)
@@ -46,7 +48,7 @@ namespace AppEndpoint_MVC.Areas.Admin.Controllers
             var x = await _categoryAppService.Get(id, cancellationToken);
             CategoryDto categoryDto = new CategoryDto();
             categoryDto.Title = x.Title;
-            categoryDto.subCategories=x.subCategories;
+            categoryDto.subCategories = x.subCategories;
             categoryDto.Id = x.Id;
             categoryDto.Photo = x.Photo;
             return View(categoryDto);

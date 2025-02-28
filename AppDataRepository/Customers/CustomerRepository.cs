@@ -23,26 +23,31 @@ namespace AppDataRepository.Customers
         }
         public async Task<Customer> Add(CustomerAddDto customer, CancellationToken cancellationToken)
         {
-            Customer customer1 = new Customer();
-            customer1.User = new User()
+            try
             {
-                FirstName = customer.FirstName,
-                LastName = customer.LastName,
-                Email = customer.Email,
-                Address = customer.Address,
-                UserName = customer.UserName,
-                PasswordHash = customer.Password,
-                NormalizedEmail = customer.Email,
-                NormalizedUserName = customer.UserName,
-                Phone = customer.Phone,
-                Photo = customer.Photo,
-                ProvinceId = customer.CityId
+                Customer customer1 = new Customer();
+                customer1.User = new User()
+                {
+                    FirstName = customer.FirstName,
+                    LastName = customer.LastName,
+                    Email = customer.Email,
+                    Address = customer.Address,
+                    UserName = customer.UserName,
+                    PasswordHash = customer.Password,
+                    NormalizedEmail = customer.Email,
+                    NormalizedUserName = customer.UserName,
+                    Phone = customer.Phone,
+                    Photo = customer.Photo,
+                    ProvinceId = customer.CityId
 
-            };
-            //customer1.User.Province.Name = customer.City;
-            await _db.Customers.AddAsync(customer1, cancellationToken);
-            await _db.SaveChangesAsync(cancellationToken);
-            return customer1;
+                };
+                //customer1.User.Province.Name = customer.City;
+                await _db.Customers.AddAsync(customer1, cancellationToken);
+                await _db.SaveChangesAsync(cancellationToken);
+                return customer1;
+            }
+            catch (Exception ex) { return new Customer(); }
+
         }
 
         public async Task<bool> Delete(int id, CancellationToken cancellationToken)

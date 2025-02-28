@@ -26,29 +26,34 @@ namespace AppDataRepository.Experts
 
         public async Task<Expert> Add(ExpertAddDto expert, CancellationToken cancellationToken)
         {
-            Expert expert1 = new Expert();
-            expert1.User = new User()
+            try
             {
-                FirstName = expert.FirstName,
-                LastName = expert.LastName,
-                Email = expert.Email,
-                Address = expert.Address,
-                UserName = expert.UserName,
-                PasswordHash = expert.Password,
-                NormalizedEmail = expert.Email,
-                NormalizedUserName = expert.UserName,
-                Phone = expert.Phone,
-                Photo = expert.Photo,
-                ProvinceId = expert.CityId
+                Expert expert1 = new Expert();
+                expert1.User = new User()
+                {
+                    FirstName = expert.FirstName,
+                    LastName = expert.LastName,
+                    Email = expert.Email,
+                    Address = expert.Address,
+                    UserName = expert.UserName,
+                    PasswordHash = expert.Password,
+                    NormalizedEmail = expert.Email,
+                    NormalizedUserName = expert.UserName,
+                    Phone = expert.Phone,
+                    Photo = expert.Photo,
+                    ProvinceId = expert.CityId
 
-            };
-            //expert1.Works = new List<Work>();
+                };
+                //expert1.Works = new List<Work>();
 
-            expert1.Biography = expert.Biography;
-            
-            await _db.Experts.AddAsync(expert1, cancellationToken);
-            await _db.SaveChangesAsync(cancellationToken);
-            return expert1;
+                expert1.Biography = expert.Biography;
+
+                await _db.Experts.AddAsync(expert1, cancellationToken);
+                await _db.SaveChangesAsync(cancellationToken);
+                return expert1;
+            }
+            catch (Exception ex) { return new Expert(); }
+
         }
 
         public async Task<bool> Delete(int id, CancellationToken cancellationToken)
@@ -69,7 +74,7 @@ namespace AppDataRepository.Experts
 
         public async Task<Expert> Get(int id, CancellationToken cancellationToken)
         {
-            var expert = await _db.Experts.Include(x => x.User).Include(x=>x.Works).Where(x => x.User.IsDelete == false).FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+            var expert = await _db.Experts.Include(x => x.User).Include(x => x.Works).Where(x => x.User.IsDelete == false).FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
             if (expert == null) { throw new Exception("کاربر یافت نشد"); }
             return expert;
         }

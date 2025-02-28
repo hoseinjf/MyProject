@@ -21,9 +21,13 @@ namespace AppDataRepository.CustomersRequests
 
         public async Task<CustomersRequest> Add(CustomersRequest customersRequest, CancellationToken cancellationToken)
         {
-            await _db.CustomersRequests.AddAsync(customersRequest, cancellationToken);
-            await _db.SaveChangesAsync(cancellationToken);
-            return customersRequest;
+            try
+            {
+                await _db.CustomersRequests.AddAsync(customersRequest, cancellationToken);
+                await _db.SaveChangesAsync(cancellationToken);
+                return customersRequest;
+            }
+            catch (Exception ex) { return new CustomersRequest(); }
         }
 
         public async Task<bool> Delete(int id, CancellationToken cancellationToken)

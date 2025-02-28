@@ -28,6 +28,8 @@ namespace AppDataRepository.Works
 
         public async Task<Work> Add(WorkDto work, CancellationToken cancellationToken)
         {
+            try
+            {
             Work work1 = new Work()
             {
                 CorePrice = work.CorePrice,
@@ -41,6 +43,8 @@ namespace AppDataRepository.Works
             await _db.Works.AddAsync(work1, cancellationToken);
             await _db.SaveChangesAsync(cancellationToken);
             return work1;
+            }
+            catch (Exception ex) { return new Work(); }
         }
 
         public async Task<bool> Delete(int id, CancellationToken cancellationToken)

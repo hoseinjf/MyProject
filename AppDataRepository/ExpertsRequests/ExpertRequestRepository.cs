@@ -21,9 +21,13 @@ namespace AppDataRepository.ExpertsRequests
         }
         public async Task<ExpertsRequest> Add(ExpertsRequest expertsRequest, CancellationToken cancellationToken)
         {
-            await _db.ExpertsRequests.AddAsync(expertsRequest, cancellationToken);
-            await _db.SaveChangesAsync(cancellationToken);
-            return expertsRequest;
+            try
+            {
+                await _db.ExpertsRequests.AddAsync(expertsRequest, cancellationToken);
+                await _db.SaveChangesAsync(cancellationToken);
+                return expertsRequest;
+            }
+            catch (Exception ex) { return new ExpertsRequest(); }
         }
 
         public async Task<bool> Delete(int id, CancellationToken cancellationToken)
