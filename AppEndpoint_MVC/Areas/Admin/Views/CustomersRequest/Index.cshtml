@@ -37,7 +37,9 @@
                                     <td>@user.Work.Title</td>
                                     <td>@user.Status.ToString()</td>
                                     <td>
-                                        <a asp-area="Admin" asp-controller="CustomersRequest" asp-action="Update" asp-route-Id="@user.Id" class="btn btn-info">ویرایش</a>                                    </td>
+                                        <a asp-area="Admin" asp-controller="CustomersRequest" asp-action="Update" asp-route-Id="@user.Id" class="btn btn-info">ویرایش</a>
+                                        <a asp-area="Admin" asp-controller="CustomersRequest" asp-action="Get" asp-route-Id="@user.Id" class="btn btn-info">جزئیات</a>
+                                    </td>
                                 </tr>
                             }
                         </tbody>

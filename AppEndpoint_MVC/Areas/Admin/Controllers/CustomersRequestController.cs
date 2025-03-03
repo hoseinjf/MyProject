@@ -26,6 +26,12 @@ namespace AppEndpoint_MVC.Areas.Admin.Controllers
             return View(customers);
         }
 
+        public async Task<IActionResult> Get(int id, CancellationToken cancellationToken)
+        {
+            var x = await _appService.Get(id,cancellationToken);
+            return View(x);
+        }
+
         public async Task<IActionResult> Update(int id, CancellationToken cancellationToken)
         {
             var x = await _appService.Get(id, cancellationToken);

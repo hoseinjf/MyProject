@@ -64,6 +64,9 @@ namespace AppEndpoint_MVC.Areas.Admin.Controllers
             expertAddDto.Photo = x.User.Photo;
             expertAddDto.CityId = x.User.ProvinceId;
 
+            var provinces = await _pr.GetAll(cancellationToken);
+            ViewBag.Provinces = provinces;
+
             return View(expertAddDto);
         }
 

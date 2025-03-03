@@ -65,6 +65,9 @@ namespace AppEndpoint_MVC.Areas.Admin.Controllers
             customerAddDto.UserId = x.User.Id;
             customerAddDto.Id = x.Id;
 
+            var categories = await _pr.GetAll(cancellationToken);
+            ViewBag.Categories = categories;
+
             return View(customerAddDto);
         }
 

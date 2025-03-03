@@ -2,6 +2,7 @@
 using AppDomainCore.Customers.Entity;
 using AppDomainCore.CustomersRequests.Contract.Repository;
 using AppDomainCore.CustomersRequests.Entity;
+using AppDomainCore.CustomersRequests.Enum;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,7 @@ namespace AppDataRepository.CustomersRequests
 
         public async Task<bool> Delete(int id, CancellationToken cancellationToken)
         {
-            var request = await _db.CustomersRequests.FirstOrDefaultAsync(x => x.Id == id,cancellationToken);
+            var request = await _db.CustomersRequests.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
             if (request == null) { return false; }
             _db.CustomersRequests.Remove(request);
             await _db.SaveChangesAsync(cancellationToken);
@@ -41,7 +42,7 @@ namespace AppDataRepository.CustomersRequests
 
         public async Task<CustomersRequest> Get(int id, CancellationToken cancellationToken)
         {
-            var request = await _db.CustomersRequests.Include(x => x.Work).Include(x=>x.Customer.User).FirstOrDefaultAsync(x=>x.Id == id, cancellationToken);
+            var request = await _db.CustomersRequests.Include(x => x.Work).Include(x => x.Work.Experts).Include(x => x.Customer.User).FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
             if (request == null) { throw new Exception("درخواستی یافت نشد"); }
 
             return request;
@@ -49,7 +50,7 @@ namespace AppDataRepository.CustomersRequests
 
         public async Task<List<CustomersRequest>> GetAll(CancellationToken cancellationToken)
         {
-            return await _db.CustomersRequests.Include(x=>x.Work).Include(x => x.Customer.User).Include(x => x.Customer.User.Photo).ToListAsync(cancellationToken);
+            return await _db.CustomersRequests.Include(x => x.Work).Include(x => x.Work.Experts).Include(x => x.Customer.User).Include(x => x.Customer.User.Photo).ToListAsync(cancellationToken);
         }
 
         public async Task<CustomersRequest> Update(CustomersRequest model, CancellationToken cancellationToken)
@@ -57,7 +58,13 @@ namespace AppDataRepository.CustomersRequests
             var customersRequest = await _db.CustomersRequests.FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
             if (customersRequest == null) { throw new Exception("درخواستی یافت نشد"); }
 
-
+            if (customersRequest.Status == StatusEnum.non || customersRequest.Status == StatusEnum.waiting || customersRequest.Status == StatusEnum.choice)
+            {
+                if (model.Status == StatusEnum.progress)
+                {
+                    throw new Exception("شما مجاز به این تغیر نیستید");
+                }
+            }
             customersRequest.Status = model.Status;
             //customersRequest.DateWork = model.DateWork;
             //customersRequest.Description = model.Description;
@@ -65,6 +72,7 @@ namespace AppDataRepository.CustomersRequests
 
             await _db.SaveChangesAsync(cancellationToken);
             return customersRequest;
+
         }
     }
 }

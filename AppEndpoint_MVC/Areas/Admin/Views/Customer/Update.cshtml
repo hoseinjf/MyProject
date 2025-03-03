@@ -66,6 +66,17 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <div class="input-group">
+                                <select asp-for="CityId" class="form-select">
+                                    @foreach (var city in ViewBag.Categories)
+                                    {
+                                        <option value="@city.Id">@city.Name</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="form-group relative">
                             <input asp-for="Pic" type="file" class="form-control">
                             <label>آپلود عکس</label>
