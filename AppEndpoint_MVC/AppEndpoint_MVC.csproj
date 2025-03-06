@@ -34,11 +34,19 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Customer\Models\" />
     <Folder Include="wwwroot\images\customer\" />
     <Folder Include="wwwroot\images\expert\" />
     <Folder Include="wwwroot\images\category\" />
     <Folder Include="wwwroot\images\work\" />
     <Folder Include="wwwroot\images\subCategory\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\logoM.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

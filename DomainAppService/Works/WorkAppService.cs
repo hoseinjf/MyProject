@@ -47,7 +47,14 @@ namespace DomainAppService.Works
             return await _workService.GetAll(cancellationToken);
         }
 
-        public async Task<Work> Update(WorkDto work, CancellationToken cancellationToken)
+		public async Task<List<Work>> GetAllId(int id, CancellationToken cancellationToken)
+        {
+			return await _workService.GetAllId(id,cancellationToken);
+
+		}
+
+
+		public async Task<Work> Update(WorkDto work, CancellationToken cancellationToken)
         {
             if (work.Pic != null)
             {

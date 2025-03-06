@@ -49,5 +49,11 @@ namespace DomainService.SubCategorys
             if (item == null) throw new ArgumentNullException("موردی یافت نشد");
             return item;
         }
+        public async Task<List<SubCategory>> GetAllId(int id, CancellationToken cancellationToken)
+        {
+            var item = await _repository.GetAllId(id,cancellationToken);
+            if (item == null) throw new ArgumentNullException("موردی یافت نشد");
+            return item;
+        }
     }
 }

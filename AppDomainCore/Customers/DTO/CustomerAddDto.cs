@@ -40,5 +40,6 @@ namespace AppDomainCore.Customers.DTO
         public IFormFile? Pic { get; set; }
         public string Phone { get; set; }
         public int? CityId { get; set; }
+        public double? Balance { get; set; } = 1000000;
     }
 }

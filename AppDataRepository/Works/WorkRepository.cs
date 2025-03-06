@@ -73,7 +73,12 @@ namespace AppDataRepository.Works
             return await _db.Works.Include(x => x.Photo).Where(x => x.IsDelete == false).ToListAsync(cancellationToken);
         }
 
-        public async Task<Work> Update(WorkDto work, CancellationToken cancellationToken)
+		public async Task<List<Work>> GetAllId(int id,CancellationToken cancellationToken)
+		{
+			return await _db.Works.Include(x => x.Photo).Where(x=>x.SubCategoryId==id).Where(x => x.IsDelete == false).ToListAsync(cancellationToken);
+		}
+
+		public async Task<Work> Update(WorkDto work, CancellationToken cancellationToken)
         {
             var work1 = await _db.Works.FirstOrDefaultAsync(x => x.Id == work.Id, cancellationToken);
             if (work1 == null) { throw new Exception("کامنت یافت نشد"); }

@@ -28,13 +28,13 @@ namespace AppEndpoint_MVC.Areas.Admin.Controllers
             _accountAppService = accountAppService;
         }
 
-        public async Task<IActionResult> Index(List<Customer> customers, CancellationToken cancellationToken)
-        {
-            customers = await _customerAppService.GetAll(cancellationToken);
-            return View(customers);
-        }
+		public async Task<IActionResult> Index(List<AppDomainCore.Customers.Entity.Customer> customers, CancellationToken cancellationToken)
+		{
+			customers = await _customerAppService.GetAll(cancellationToken);
+			return View(customers);
+		}
 
-        public async Task<IActionResult> Add(CancellationToken cancellationToken)
+		public async Task<IActionResult> Add(CancellationToken cancellationToken)
         {
             var categories = await _pr.GetAll(cancellationToken);
             ViewBag.Categories = categories;

@@ -100,5 +100,25 @@ namespace AppDataRepository.Customers
             await _db.SaveChangesAsync(cancellationToken);
             return customer1;
         }
-    }
+
+
+		public async Task<CustomerAddDto> GetUpdateDTO(int Id, CancellationToken cancellationToken)
+		{
+			var result = await _db.Customers.AsNoTracking().Where(x => x.User.IsDelete != true).Select(x => new CustomerAddDto
+			{
+				FirstName = x.User.FirstName,
+				LastName = x.User.LastName,
+				Balance = x.User.Balance,
+
+				Id = x.Id,
+				Phone = x.User.Phone,
+                Email =x.User.Email,
+                UserName= x.User.UserName,
+
+				UserId = x.User.Id,
+			}).FirstOrDefaultAsync(x => x.Id == Id, cancellationToken);
+			return result;
+		}
+
+	}
 }

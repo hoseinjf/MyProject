@@ -69,6 +69,11 @@ namespace AppDataRepository.SubCategorys
             return await _db.SubCategories.Include(x => x.Photo).Where(x => x.IsDelete == false).ToListAsync(cancellationToken);
         }
 
+        public async Task<List<SubCategory>> GetAllId(int id,CancellationToken cancellationToken)
+        {
+            return await _db.SubCategories.Include(x => x.Photo).Where(x => x.IsDelete == false).Where(x=>x.CategoryId==id).ToListAsync(cancellationToken);
+        }
+
         public async Task<SubCategory> Update(SubCategoryDto category, CancellationToken cancellationToken)
         {
             //CategoryDto dto = new CategoryDto();

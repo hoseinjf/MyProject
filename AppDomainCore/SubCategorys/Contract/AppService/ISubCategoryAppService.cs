@@ -15,5 +15,6 @@ namespace AppDomainCore.SubCategorys.Contract.AppService
         public Task<SubCategory> Add(SubCategoryDto subCategory, CancellationToken cancellationToken);
         public Task<SubCategory> Update(SubCategoryDto subCategory, CancellationToken cancellationToken);
         public Task<bool> Delete(int id, CancellationToken cancellationToken);
+        public  Task<List<SubCategory>> GetAllId(int id, CancellationToken cancellationToken);
     }
 }

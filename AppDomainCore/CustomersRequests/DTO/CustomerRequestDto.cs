@@ -2,6 +2,7 @@
 using AppDomainCore.CustomersRequests.Enum;
 using AppDomainCore.Photos.Entity;
 using AppDomainCore.Works.Entity;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace AppDomainCore.CustomersRequests.DTO
         public Work Work { get; set; }
         public Customer Customer { get; set; }
         public StatusEnum Status { get; set; }
+		public List<IFormFile>? ImageFiles { get; set; }
 
-    }
+	}
 }

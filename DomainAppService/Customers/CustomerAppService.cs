@@ -61,5 +61,10 @@ namespace DomainAppService.Customers
             }
             return await _customerService.Update( customer, cancellationToken);
         }
-    }
+		public async Task<CustomerAddDto> GetUpdateDTO(int Id, CancellationToken cancellationToken)
+		{
+			var com = await _customerService.GetUpdateDTO(Id, cancellationToken);
+			return com;
+		}
+	}
 }

@@ -12,7 +12,9 @@ namespace AppDomainCore.Works.Contract.AppService
     {
         public Task<Work> Get(int id, CancellationToken cancellationToken);
         public Task<List<Work>> GetAll(CancellationToken cancellationToken);
-        public Task<Work> Add(WorkDto work, CancellationToken cancellationToken);
+        public  Task<List<Work>> GetAllId(int id, CancellationToken cancellationToken);
+
+		public Task<Work> Add(WorkDto work, CancellationToken cancellationToken);
         public Task<Work> Update(WorkDto work, CancellationToken cancellationToken);
         public Task<bool> Delete(int id, CancellationToken cancellationToken);
     }

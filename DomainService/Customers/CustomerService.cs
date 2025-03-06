@@ -45,7 +45,14 @@ namespace DomainService.Customers
             return com;
         }
 
-        public async Task<Customer> Update( CustomerAddDto customer, CancellationToken cancellationToken)
+		public async Task<CustomerAddDto> GetUpdateDTO(int Id, CancellationToken cancellationToken)
+		{
+			var com = await _customerRepository.GetUpdateDTO(Id, cancellationToken);
+			if (com == null) throw new ArgumentNullException("موردی یافت نشد");
+			return com;
+		}
+
+		public async Task<Customer> Update( CustomerAddDto customer, CancellationToken cancellationToken)
         {
             var com = await _customerRepository.Update(customer, cancellationToken);
             if (com == null) throw new ArgumentNullException("موردی یافت نشد");

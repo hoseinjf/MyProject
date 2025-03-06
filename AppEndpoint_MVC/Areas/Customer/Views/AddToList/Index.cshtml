@@ -1,0 +1,167 @@
+﻿@using AppDomainCore.CustomersRequests.Entity
+
+@model CustomersRequest
+@{
+	var customerId = User.FindFirst("CustomerId")?.Value;
+	var expertId = User.FindFirst("ExpertId")?.Value;
+}
+
+	<div class="goodup-dashboard-content">
+		<div class="dashboard-tlbar d-block mb-5">
+			<div class="row">
+				<div class="colxl-12 col-lg-12 col-md-12">
+					<h1 class="ft-medium fs-lg">افزودن آگهی</h1>
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item text-muted"><a href="#">خانه</a></li>
+							<li class="breadcrumb-item text-muted"><a href="#">داشبورد</a></li>
+							<li class="breadcrumb-item"><a href="#" class="theme-cl">افزودن آگهی</a></li>
+						</ol>
+					</nav>
+				</div>
+			</div>
+		</div>
+
+		<div class="dashboard-widg-bar d-block">
+			<div class="row">
+				<div class="col-xl-12 col-lg-2 col-md-12 col-sm-12">
+					<div class="submit-form">
+					<form asp-area="Customer" asp-controller="AddToList" asp-action="AddRequest" enctype="multipart/form-data" method="post">
+						<!-- Listing Info -->
+						<input hidden asp-for="CustomerId" value="@customerId">
+						<input hidden asp-for="Photo">
+						<div class="dashboard-list-wraps bg-white rounded mb-4">
+							<div class="dashboard-list-wraps-head br-bottom py-3 px-3">
+								<div class="dashboard-list-wraps-flx">
+									<h4 class="mb-0 ft-medium fs-md"><i class="fa fa-file ms-2 theme-cl fs-sm"></i>اطلاعات آگهی</h4>
+								</div>
+							</div>
+
+							<div class="dashboard-list-wraps-body py-3 px-3">
+								<div class="row">
+									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+										<div class="form-group">
+											<label class="mb-1">توضیحات</label>
+											<input asp-for="Description" type="text" class="form-control rounded" placeholder="" />
+										</div>
+									</div>
+									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+										<div class="form-group">
+											<label class="mb-1">برای تاریخ</label>
+											<input asp-for="DateWork" type="date" class="form-control rounded" placeholder="برای تاریخ" />
+										</div>
+									</div>
+								<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+									<div class="form-group">
+										<label class="mb-1">دسته بندی</label>
+										<select asp-for="WorkId" class="form-control" >
+											<option value="">دسته بندی</option>
+											@foreach (var x in ViewBag.Services)
+											{
+												<option value="@x.Id" selected="@(ViewBag.ServiceId != null && ViewBag.ServiceId == x.Id ? "selected" : null)">
+													@x.Title
+												</option>
+											}
+										</select>
+									</div>
+								</div>
+
+
+									
+								</div>
+							</div>
+						</div>
+
+						
+
+						<!-- Image & Gallery Option -->
+					<div class="dashboard-list-wraps bg-white rounded mb-4">
+						<div class="dashboard-list-wraps-head br-bottom py-3 px-3">
+							<div class="dashboard-list-wraps-flx">
+								<h4 class="mb-0 ft-medium fs-md">
+									<i class="fa fa-camera ms-2 theme-cl fs-sm"></i> تصاویر
+								</h4>
+							</div>
+						</div>
+
+						<div class="dashboard-list-wraps-body py-3 px-3">
+							<div class="row">
+								<!-- Upload Area -->
+								<div class="col-lg-4 col-md-12">
+									<label class="mb-1">گالری تصاویر</label>
+									<div id="galleryUpload"
+										 class="dropzone d-flex flex-column align-items-center justify-content-center position-relative"
+										 style="width: 100%; height: 200px; border: 2px dashed #aaa; border-radius: 12px; cursor: pointer; text-align: center; background-color: #f9f9f9;">
+											<input asp-for="Photo" type="file" multiple id="fileInput" accept="image/*"
+											   style="position: absolute; width: 100%; height: 100%; opacity: 0; cursor: pointer;">
+										<i class="fas fa-cloud-upload-alt text-muted" id="uploadIcon" style="font-size: 2rem;"></i>
+										<p class="text-muted mt-2">برای آپلود کلیک کنید</p>
+									</div>
+									<label class="smart-text d-block mt-2 text-center">حداکثر حجم فایل: 2 مگابایت</label>
+								</div>
+
+								<!-- Image Preview Grid -->
+								<div class="col-lg-8 col-md-12">
+									<div id="imagePreviewContainer" class="d-flex flex-wrap gap-2 mt-3" style="max-height: 220px; overflow-y: auto;"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+						<div class="text-center mt-4">
+							<button type="submit" class="btn btn-primary px-4 py-2 rounded">ارسال آگهی</button>
+						</div>
+					</form>
+						
+
+						<!-- Amenties Options -->
+
+					<script>
+						document.getElementById("fileInput").addEventListener("change", function(event) {
+							const files = event.target.files;
+							const imagePreviewContainer = document.getElementById("imagePreviewContainer");
+
+							for (let i = 0; i < files.length; i++) {
+								const file = files[i];
+								if (file) {
+									const reader = new FileReader();
+									reader.onload = function(e) {
+										const previewDiv = document.createElement("div");
+										previewDiv.classList.add("position-relative");
+										previewDiv.style.width = "100px";
+										previewDiv.style.height = "100px";
+
+										const img = document.createElement("img");
+										img.src = e.target.result;
+										img.style.width = "100%";
+										img.style.height = "100%";
+										img.style.objectFit = "cover";
+										img.style.borderRadius = "10px";
+
+										const removeBtn = document.createElement("button");
+										removeBtn.innerHTML = "&times;";
+										removeBtn.classList.add("position-absolute", "top-0", "end-0", "bg-danger", "text-white", "border-0", "rounded-circle");
+										removeBtn.style.width = "20px";
+										removeBtn.style.height = "20px";
+										removeBtn.style.cursor = "pointer";
+										removeBtn.style.fontSize = "14px";
+										removeBtn.addEventListener("click", function() {
+											previewDiv.remove();
+										});
+
+										previewDiv.appendChild(img);
+										previewDiv.appendChild(removeBtn);
+										imagePreviewContainer.appendChild(previewDiv);
+									};
+									reader.readAsDataURL(file);
+								}
+							}
+						});
+					</script>
+						<!-- Social Links -->
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+		</div>

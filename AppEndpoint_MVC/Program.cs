@@ -81,6 +81,8 @@ Log.Logger= new LoggerConfiguration().WriteTo.Console().CreateLogger();
 var builder = WebApplication.CreateBuilder(args);
 //builder.Logging.AddSerilog();
 
+builder.Services.AddMemoryCache();
+
 builder.Host.ConfigureLogging(o =>
     {
         o.ClearProviders();

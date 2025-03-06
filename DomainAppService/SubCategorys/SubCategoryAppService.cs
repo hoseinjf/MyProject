@@ -46,6 +46,11 @@ namespace DomainAppService.SubCategorys
         {
             return await _subCategoryService.GetAll(cancellationToken);
         }
+        public async Task<List<SubCategory>> GetAllId(int id, CancellationToken cancellationToken)
+        {
+            return await _subCategoryService.GetAllId(id,cancellationToken);
+
+        }
 
         public async Task<SubCategory> Update(SubCategoryDto subCategory, CancellationToken cancellationToken)
         {

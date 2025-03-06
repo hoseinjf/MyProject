@@ -15,5 +15,7 @@ namespace AppDomainCore.Customers.Contract.Repository
         public Task<Customer> Add(CustomerAddDto customer, CancellationToken cancellationToken);
         public Task<Customer> Update(CustomerAddDto customer, CancellationToken cancellationToken);
         public Task<bool> Delete(int id, CancellationToken cancellationToken);
-    }
+		public Task<CustomerAddDto> GetUpdateDTO(int Id, CancellationToken cancellationToken);
+
+	}
 }

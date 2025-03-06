@@ -69,6 +69,7 @@ namespace AppDataRepository.Categorys
 
         public async Task<List<Category>> GetAll(CancellationToken cancellationToken)
         {
+            await Task.Delay(5000);
             return await _db.Categories.Include(x => x.Photo).Where(x => x.IsDelete == false).ToListAsync(cancellationToken);
         }
 

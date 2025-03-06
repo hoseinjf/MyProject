@@ -44,7 +44,14 @@ namespace DomainService.Works
             return item;
         }
 
-        public async Task<Work> Update(WorkDto work, CancellationToken cancellationToken)
+		public async Task<List<Work>> GetAllId(int id,CancellationToken cancellationToken)
+		{
+			var item = await _workRepository.GetAllId(id,cancellationToken);
+			if (item == null) throw new ArgumentNullException("موردی یافت نشد");
+			return item;
+		}
+
+		public async Task<Work> Update(WorkDto work, CancellationToken cancellationToken)
         {
             var item =await _workRepository.Update(work, cancellationToken);
             if (item == null) throw new ArgumentNullException("موردی یافت نشد");
