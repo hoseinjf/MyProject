@@ -20,7 +20,7 @@
 						<ul>
 							@foreach (var Cat in ViewBag.Categories)
 							{
-								<li><a href="half-map-search-2.html" class="Goodup-top-cat-box"><div class="Goodup-tp-ico"></div><div class="Goodup-tp-title"><h5>@Cat.Title</h5></div></a></li>
+								<li><a asp-controller="SubCategory" asp-action="Index" asp-route-Id="@Cat.Id" class="Goodup-top-cat-box"><div class="Goodup-tp-ico"></div><div class="Goodup-tp-title"><h5>@Cat.Title</h5></div></a></li>
 							}
 
 						</ul>
