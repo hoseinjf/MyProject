@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace AppDomainCore.SiteSetting
 {
-    public class SiteSettings
-    {
-	    public ConnectionStrings ConnectionStrings { get; set; }
-	    public string ApiKey { get; set; }
+	public class ConnectionStrings
+	{
+		public string SqlConnection { get; set; }
 	}
 }

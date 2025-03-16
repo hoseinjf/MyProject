@@ -7,16 +7,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AppDomainCore.SiteSetting;
+using Dapper;
+using Microsoft.Data.SqlClient;
+using System.Data;
+
 
 namespace AppDataRepository.Provinces
 {
     public class ProvinceRepository : IProvinceRepository
     {
         private readonly AppDbContext _db;
+        private readonly SiteSettings _siteSettings;
 
-        public ProvinceRepository(AppDbContext appDbContext)
+        public ProvinceRepository(AppDbContext appDbContext, SiteSettings siteSettings)
         {
-            _db = appDbContext;
+	        _db = appDbContext;
+	        _siteSettings = siteSettings;
         }
 
 
@@ -29,8 +36,11 @@ namespace AppDataRepository.Provinces
 
         public async Task<List<Province>> GetAll(CancellationToken cancellationToken)
         {
-            return await _db.Provinces.ToListAsync(cancellationToken);
-        }
+	        using IDbConnection db = new SqlConnection(_siteSettings.ConnectionStrings.SqlConnection);
+	        var query = "SELECT * FROM Provinces";
+	        var Provinces = await db.QueryAsync<Province>(query);
+	        return Provinces.ToList();
+		}
 
     }
 }

@@ -11,17 +11,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AppDomainCore.SiteSetting;
+using Dapper;
+using Microsoft.Data.SqlClient;
+using System.Data;
 
 namespace AppDataRepository.SubCategorys
 {
     public class SubCategoryRepository : ISubCategoryRepository
     {
         private readonly AppDbContext _db;
+        private readonly SiteSettings _siteSettings;
 
-        public SubCategoryRepository(AppDbContext appDbContext)
-        {
-            _db = appDbContext;
-        }
+
+		public SubCategoryRepository(AppDbContext appDbContext, SiteSettings siteSettings)
+		{
+			_db = appDbContext;
+			_siteSettings = siteSettings;
+		}
 
         public async Task<SubCategory> Add(SubCategoryDto category, CancellationToken cancellationToken)
         {
@@ -71,8 +78,21 @@ namespace AppDataRepository.SubCategorys
 
         public async Task<List<SubCategory>> GetAllId(int id,CancellationToken cancellationToken)
         {
-            return await _db.SubCategories.Include(x => x.Photo).Where(x => x.IsDelete == false).Where(x=>x.CategoryId==id).ToListAsync(cancellationToken);
-        }
+	        var sql = @"
+        SELECT 
+            c.Id, c.Title, c.IsDelete, c.PhotoId AS CategoryPhotoId
+        FROM SubCategories c
+        WHERE c.IsDelete = 0 
+        AND c.CategoryId = @CategoryId;";
+
+	        using IDbConnection db = new SqlConnection(_siteSettings.ConnectionStrings.SqlConnection);
+	        var parameters = new { CategoryId = id };
+
+	        var result = await db.QueryAsync<SubCategory>(sql, parameters);
+	        return result.ToList();
+
+			//return await _db.SubCategories.Include(x => x.Photo).Where(x => x.IsDelete == false).Where(x=>x.CategoryId==id).ToListAsync(cancellationToken);
+		}
 
         public async Task<SubCategory> Update(SubCategoryDto category, CancellationToken cancellationToken)
         {

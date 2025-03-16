@@ -40,6 +40,7 @@ using AppDomainCore.Photos.Contract.Service;
 using AppDomainCore.Provinces.Contract.AppService;
 using AppDomainCore.Provinces.Contract.Repository;
 using AppDomainCore.Provinces.Contract.Service;
+using AppDomainCore.SiteSetting;
 using AppDomainCore.SubCategorys.Contract.AppService;
 using AppDomainCore.SubCategorys.Contract.Repository;
 using AppDomainCore.SubCategorys.Contract.Service;
@@ -77,148 +78,155 @@ using Microsoft.EntityFrameworkCore;
 using Serilog;
 
 
-Log.Logger= new LoggerConfiguration().WriteTo.Console().CreateLogger();
+Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
 var builder = WebApplication.CreateBuilder(args);
 //builder.Logging.AddSerilog();
 
 builder.Services.AddMemoryCache();
 
 builder.Host.ConfigureLogging(o =>
-    {
-        o.ClearProviders();
-        o.AddSerilog();
-    }).UseSerilog((context, config) =>
-    {
-        config.WriteTo.Console();
-        config.WriteTo.Seq("http://localhost:5341", apiKey: "off7Uxd4ai5T73XgHdY2");
-    });
+	{
+		o.ClearProviders();
+		o.AddSerilog();
+	}).UseSerilog((context, config) =>
+	{
+		config.WriteTo.Console();
+		config.WriteTo.Seq("http://localhost:5341", apiKey: "off7Uxd4ai5T73XgHdY2");
+	});
 
 try
 {
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
+	// Add services to the container.
+	builder.Services.AddControllersWithViews();
 
-var ConnectionString = builder.Configuration.GetConnectionString("sql");
-builder.Services.AddDbContext<AppDbContext>(option => option.UseSqlServer(ConnectionString));
+	var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+	var siteSettings = configuration.GetSection("SiteSettings").Get<SiteSettings>();
+	builder.Services.AddSingleton(siteSettings);
 
-builder.Services.AddIdentity<User, IdentityRole<int>>(options =>
-{
-    options.SignIn.RequireConfirmedAccount = false;
-    options.Password.RequireDigit = false;
-    options.Password.RequiredLength = 6;
-    options.Password.RequireNonAlphanumeric = false;
-    options.Password.RequireUppercase = false;
-    options.Password.RequireLowercase = false;
+	builder.Services.AddDbContext<AppDbContext>(options =>
+		options.UseSqlServer(siteSettings.ConnectionStrings.SqlConnection));
 
-})
-.AddRoles<IdentityRole<int>>()
-.AddEntityFrameworkStores<AppDbContext>()
-.AddSignInManager<SignInManager<User>>()
-.AddDefaultTokenProviders();
+	//var ConnectionString = builder.Configuration.GetConnectionString("sql");
+	//builder.Services.AddDbContext<AppDbContext>(option => option.UseSqlServer(ConnectionString));
 
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("NotAdmin", policy =>
-        policy.RequireAssertion(context =>
-            !context.User.IsInRole("admin")));
-});
+	builder.Services.AddIdentity<User, IdentityRole<int>>(options =>
+	{
+		options.SignIn.RequireConfirmedAccount = false;
+		options.Password.RequireDigit = false;
+		options.Password.RequiredLength = 6;
+		options.Password.RequireNonAlphanumeric = false;
+		options.Password.RequireUppercase = false;
+		options.Password.RequireLowercase = false;
 
+	})
+	.AddRoles<IdentityRole<int>>()
+	.AddEntityFrameworkStores<AppDbContext>()
+	.AddSignInManager<SignInManager<User>>()
+	.AddDefaultTokenProviders();
 
-
-
-builder.Services.AddScoped<IAdminRepository, AdminRepository>();
-builder.Services.AddScoped<IAdminService, AdminService>();
-builder.Services.AddScoped<IAdminAppService, AdminAppService>();
-
-builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
-builder.Services.AddScoped<ICategoryService, CategoryService>();
-builder.Services.AddScoped<ICategoryAppService, CategoryAppService>();
-
-builder.Services.AddScoped<ICommentRepository, CommentRepository>();
-builder.Services.AddScoped<ICommentService, CommentService>();
-builder.Services.AddScoped<ICommentAppService, CommentAppService>();
-
-builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
-builder.Services.AddScoped<ICustomerService, CustomerService>();
-builder.Services.AddScoped<ICustomerAppService, CustomerAppService>();
-
-builder.Services.AddScoped<ICustomerRequestRepository, CustomerRequestRepository>();
-builder.Services.AddScoped<ICustomerRequestService, CustomerRequestService>();
-builder.Services.AddScoped<ICustomerRequestAppService, CustomerRequestAppService>();
-
-builder.Services.AddScoped<IExpertRepository, ExpertRepository>();
-builder.Services.AddScoped<IExpertService, ExpertService>();
-builder.Services.AddScoped<IExpertAppService, ExpertAppService>();
-
-builder.Services.AddScoped<IExpertsRequestRepository, ExpertRequestRepository>();
-builder.Services.AddScoped<IExpertsRequestService, ExpertRequestService>();
-builder.Services.AddScoped<IExpertsRequestAppService, ExpertRequestAppService>();
-
-builder.Services.AddScoped<IProvinceRepository, ProvinceRepository>();
-builder.Services.AddScoped<IProvinceService, ProvincesService>();
-builder.Services.AddScoped<IprovinceAppService, ProvinceAppService>();
-
-builder.Services.AddScoped<ISubCategoryRepository, SubCategoryRepository>();
-builder.Services.AddScoped<ISubCategoryService, SubCategoryService>();
-builder.Services.AddScoped<ISubCategoryAppService, SubCategoryAppService>();
-
-builder.Services.AddScoped<ICommentRepository, CommentRepository>();
-builder.Services.AddScoped<ICommentService, CommentService>();
-builder.Services.AddScoped<ICommentAppService, CommentAppService>();
-
-builder.Services.AddScoped<IWorkRepository, WorkRepository>();
-builder.Services.AddScoped<IWorkService, WorkService>();
-builder.Services.AddScoped<IWorkAppService, WorkAppService>();
-
-builder.Services.AddScoped<IPhotoRepository, PhotoRepository>();
-builder.Services.AddScoped<IPhotoService, PhotoService>();
-builder.Services.AddScoped<IPhotoAppService, PhotoAppService>();
-
-builder.Services.AddScoped<IAccountAppService, AccountAppService>();
-
-builder.Services.AddScoped<IBaseDataService, BaseDataService>();
-
-var app = builder.Build();
+	builder.Services.AddAuthorization(options =>
+	{
+		options.AddPolicy("NotAdmin", policy =>
+			policy.RequireAssertion(context =>
+				!context.User.IsInRole("admin")));
+	});
 
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+
+
+	builder.Services.AddScoped<IAdminRepository, AdminRepository>();
+	builder.Services.AddScoped<IAdminService, AdminService>();
+	builder.Services.AddScoped<IAdminAppService, AdminAppService>();
+
+	builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+	builder.Services.AddScoped<ICategoryService, CategoryService>();
+	builder.Services.AddScoped<ICategoryAppService, CategoryAppService>();
+
+	builder.Services.AddScoped<ICommentRepository, CommentRepository>();
+	builder.Services.AddScoped<ICommentService, CommentService>();
+	builder.Services.AddScoped<ICommentAppService, CommentAppService>();
+
+	builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+	builder.Services.AddScoped<ICustomerService, CustomerService>();
+	builder.Services.AddScoped<ICustomerAppService, CustomerAppService>();
+
+	builder.Services.AddScoped<ICustomerRequestRepository, CustomerRequestRepository>();
+	builder.Services.AddScoped<ICustomerRequestService, CustomerRequestService>();
+	builder.Services.AddScoped<ICustomerRequestAppService, CustomerRequestAppService>();
+
+	builder.Services.AddScoped<IExpertRepository, ExpertRepository>();
+	builder.Services.AddScoped<IExpertService, ExpertService>();
+	builder.Services.AddScoped<IExpertAppService, ExpertAppService>();
+
+	builder.Services.AddScoped<IExpertsRequestRepository, ExpertRequestRepository>();
+	builder.Services.AddScoped<IExpertsRequestService, ExpertRequestService>();
+	builder.Services.AddScoped<IExpertsRequestAppService, ExpertRequestAppService>();
+
+	builder.Services.AddScoped<IProvinceRepository, ProvinceRepository>();
+	builder.Services.AddScoped<IProvinceService, ProvincesService>();
+	builder.Services.AddScoped<IprovinceAppService, ProvinceAppService>();
+
+	builder.Services.AddScoped<ISubCategoryRepository, SubCategoryRepository>();
+	builder.Services.AddScoped<ISubCategoryService, SubCategoryService>();
+	builder.Services.AddScoped<ISubCategoryAppService, SubCategoryAppService>();
+
+	builder.Services.AddScoped<ICommentRepository, CommentRepository>();
+	builder.Services.AddScoped<ICommentService, CommentService>();
+	builder.Services.AddScoped<ICommentAppService, CommentAppService>();
+
+	builder.Services.AddScoped<IWorkRepository, WorkRepository>();
+	builder.Services.AddScoped<IWorkService, WorkService>();
+	builder.Services.AddScoped<IWorkAppService, WorkAppService>();
+
+	builder.Services.AddScoped<IPhotoRepository, PhotoRepository>();
+	builder.Services.AddScoped<IPhotoService, PhotoService>();
+	builder.Services.AddScoped<IPhotoAppService, PhotoAppService>();
+
+	builder.Services.AddScoped<IAccountAppService, AccountAppService>();
+
+	builder.Services.AddScoped<IBaseDataService, BaseDataService>();
+
+	var app = builder.Build();
+
+
+	// Configure the HTTP request pipeline.
+	if (!app.Environment.IsDevelopment())
+	{
+		app.UseExceptionHandler("/Home/Error");
+		// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+		app.UseHsts();
+	}
+
+	app.UseHttpsRedirection();
+	app.UseStaticFiles();
+
+	app.UseRouting();
+
+	app.UseAuthentication();
+	app.UseAuthorization();
+
+
+
+	app.MapControllerRoute(
+		name: "areas",
+		pattern: "{area:exists}/{controller=Panel}/{action=Index}/{id?}");
+
+
+	app.MapControllerRoute(
+		name: "default",
+		pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
+
+	app.Run();
+
 }
-
-app.UseHttpsRedirection();
-app.UseStaticFiles();
-
-app.UseRouting();
-
-app.UseAuthentication();
-app.UseAuthorization();
-
-
-
-app.MapControllerRoute(
-    name: "areas",
-    pattern: "{area:exists}/{controller=Panel}/{action=Index}/{id?}");
-
-
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-
-
-
-app.Run();
-
-}
-catch(Exception ex)
+catch (Exception ex)
 {
-    Log.Fatal(ex,"Application terminated unexpectedly");
+	Log.Fatal(ex, "Application terminated unexpectedly");
 }
 finally
 {
-    Log.CloseAndFlush();
+	Log.CloseAndFlush();
 }
