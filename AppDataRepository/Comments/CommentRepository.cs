@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AppDomainCore.Comments.DTO;
 
 namespace AppDataRepository.Comments
 {
@@ -48,7 +49,25 @@ namespace AppDataRepository.Comments
             return comment;
         }
 
-        public async Task<List<Comment>> GetAll(CancellationToken cancellationToken)
+        public async Task<List<Comment>> GetUser(int Id, CancellationToken cancellationToken)
+        {
+	        var result = await _db.Comments.Where(x => x.CustomersId == Id && x.IsActive == true).Select(x => new Comment
+			{
+		        Id = x.Id,
+		        Title = x.Title,
+		        Description = x.Description,
+		        WorkScore = x.WorkScore,
+		        IsActive = x.IsActive,
+		        Customers = x.Customers,
+		        Experts = x.Experts,
+		        IsDelete = x.IsDelete,
+				CreateAt = x.CreateAt
+
+	        }).ToListAsync(cancellationToken);
+	        return result;
+        }
+
+		public async Task<List<Comment>> GetAll(CancellationToken cancellationToken)
         {
             return await _db.Comments.ToListAsync(cancellationToken);
         }

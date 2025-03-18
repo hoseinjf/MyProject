@@ -12,7 +12,6 @@
     <Folder Include="Categorys\Enum\" />
     <Folder Include="Comments\Enum\" />
     <Folder Include="Customers\Enum\" />
-    <Folder Include="ExpertsRequests\DTO\" />
     <Folder Include="ExpertsRequests\Enum\" />
     <Folder Include="Experts\Enum\" />
     <Folder Include="Photos\DTO\" />

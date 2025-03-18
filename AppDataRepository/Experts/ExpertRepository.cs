@@ -4,6 +4,7 @@ using AppDomainCore.Customers.Entity;
 using AppDomainCore.Experts.Contract.Repository;
 using AppDomainCore.Experts.DTO;
 using AppDomainCore.Experts.Entity;
+using AppDomainCore.Photos.Entity;
 using AppDomainCore.Users.Entity;
 using AppDomainCore.Works.Entity;
 using Microsoft.EntityFrameworkCore;
@@ -103,10 +104,72 @@ namespace AppDataRepository.Experts
             expert1.User.Phone = expert.Phone;
             expert1.User.Photo = expert.Photo;
             expert1.User.ProvinceId = expert.CityId;
-            //expert1.Works = new List<Work>();
+			//expert1.Works = new List<Work>();
 
-            await _db.SaveChangesAsync(cancellationToken);
+			await _db.SaveChangesAsync(cancellationToken);
             return expert1;
+        }
+
+
+        public async Task<Expert> UpdateProfile(ExpertUpdateProfileDto expert, CancellationToken cancellationToken)
+        {
+            var expert1 = await _db.Experts.Include(x => x.User).FirstOrDefaultAsync(x => x.Id == expert.Id, cancellationToken);
+            if (expert1 == null) { throw new Exception("کامنت یافت نشد"); }
+
+            expert1.Id = expert.Id;
+            expert1.User.FirstName = expert.FirstName;
+            expert1.User.LastName = expert.LastName;
+            expert1.User.Address = expert.Address;
+            expert1.User.Phone = expert.Phone;
+            expert1.User.Photo = expert.Photo;
+            expert1.User.ProvinceId = expert.CityId;
+            expert1.Works = expert.Works;
+            expert1.User.Balance = expert.Balance;
+            expert1.User.Photo = expert.Photo;
+
+            if (expert1.Works == null)
+            {
+	            expert1.Works = new List<Work>();
+			}
+			if (expert.WorksId != null)
+            {
+	            expert1.Works.Clear();
+	            foreach (var woekId in expert.WorksId)
+	            {
+		            var work = await _db.Works
+			            .FirstOrDefaultAsync(x => x.Id == woekId, cancellationToken);
+		            if (work != null)
+		            {
+			            expert1.Works.Add(work);
+		            }
+	            }
+            }
+
+            _db.Experts.Update(expert1);
+			await _db.SaveChangesAsync(cancellationToken);
+            return expert1;
+        }
+
+
+
+
+        public async Task<ExpertUpdateProfileDto> GetUpdate(int id, CancellationToken cancellationToken)
+        {
+            var result = await _db.Experts.AsNoTracking()
+                .Include(x => x.User)
+                .Where(x => x.User.IsDelete == false && x.Id == id)
+                .Select(x => new ExpertUpdateProfileDto
+                {
+                    Id = x.Id,
+                    FirstName = x.User.FirstName,
+                    LastName = x.User.LastName,
+                    Balance = x.User.Balance,
+                    CityId = x.User.ProvinceId,
+                    Works = x.Works,
+                    City = x.User.Province,
+                    Photo = x.User.Photo
+                }).FirstOrDefaultAsync(cancellationToken);
+            return result;
         }
 
 

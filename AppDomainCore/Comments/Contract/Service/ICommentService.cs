@@ -14,5 +14,7 @@ namespace AppDomainCore.Comments.Contract.Service
         public Task<Comment> Add(Comment comment, CancellationToken cancellationToken);
         public Task<Comment> Update(Comment comment, CancellationToken cancellationToken);
         public Task<bool> Delete(int id, CancellationToken cancellationToken);
-    }
+        public Task<List<Comment>> GetUser(int Id, CancellationToken cancellationToken);
+
+	}
 }

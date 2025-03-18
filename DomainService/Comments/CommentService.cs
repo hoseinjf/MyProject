@@ -37,7 +37,15 @@ namespace DomainService.Comments
             return com;
         }
 
-        public async Task<List<Comment>> GetAll(CancellationToken cancellationToken)
+        public async Task<List<Comment>> GetUser(int Id, CancellationToken cancellationToken)
+        {
+	        var com = await _commentRepository.GetUser(Id, cancellationToken);
+	        if (com == null) throw new ArgumentNullException("موردی یافت نشد");
+	        return com;
+		}
+
+
+		public async Task<List<Comment>> GetAll(CancellationToken cancellationToken)
         {
             var com =await _commentRepository.GetAll( cancellationToken);
             if (com == null) throw new ArgumentNullException("موردی یافت نشد");

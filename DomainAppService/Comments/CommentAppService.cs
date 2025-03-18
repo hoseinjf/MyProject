@@ -31,7 +31,14 @@ namespace DomainAppService.Comments
             return await _commentService.Get(id, cancellationToken);
         }
 
-        public async Task<List<Comment>> GetAll(CancellationToken cancellationToken)
+        public async Task<List<Comment>> GetUser(int Id, CancellationToken cancellationToken)
+        {
+	        return await _commentService.GetUser(Id, cancellationToken);
+
+		}
+
+
+		public async Task<List<Comment>> GetAll(CancellationToken cancellationToken)
         {
             return await _commentService.GetAll(cancellationToken);
         }

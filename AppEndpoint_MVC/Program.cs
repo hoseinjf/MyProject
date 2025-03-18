@@ -212,6 +212,10 @@ try
 		name: "areas",
 		pattern: "{area:exists}/{controller=Panel}/{action=Index}/{id?}");
 
+	app.MapControllerRoute(
+		name: "areas",
+		pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");
+
 
 	app.MapControllerRoute(
 		name: "default",

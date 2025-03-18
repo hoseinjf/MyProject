@@ -1,4 +1,5 @@
-﻿using AppDomainCore.ExpertsRequests.Entity;
+﻿using AppDomainCore.ExpertsRequests.DTO;
+using AppDomainCore.ExpertsRequests.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,7 @@ namespace AppDomainCore.ExpertsRequests.Contract.AppService
         public Task<ExpertsRequest> Add(ExpertsRequest expertsRequest, CancellationToken cancellationToken);
         public Task<ExpertsRequest> Update(ExpertsRequest expertsRequest, CancellationToken cancellationToken);
         public Task<bool> Delete(int id, CancellationToken cancellationToken);
+        public Task<List<ExpertsRequest>> GetAllCustomerRequest(int id, CancellationToken cancellationToken);
+        public Task<List<ExpertsRequestDto>> GetAllExpert(int ExpertId, CancellationToken cancellationToken);
     }
 }

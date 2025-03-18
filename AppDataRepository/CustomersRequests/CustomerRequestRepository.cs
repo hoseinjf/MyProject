@@ -42,7 +42,10 @@ namespace AppDataRepository.CustomersRequests
 
         public async Task<CustomersRequest> Get(int id, CancellationToken cancellationToken)
         {
-            var request = await _db.CustomersRequests.Include(x => x.Work).Include(x => x.Work.Experts).Include(x => x.Customer.User).FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+            var request = await _db.CustomersRequests.Include(x => x.Work)
+                .Include(x => x.Work.Experts)
+                .Include(x => x.Customer.User)
+                .FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
             if (request == null) { throw new Exception("درخواستی یافت نشد"); }
 
             return request;
@@ -53,7 +56,17 @@ namespace AppDataRepository.CustomersRequests
             return await _db.CustomersRequests.Include(x => x.Work).Include(x => x.Work.Experts).Include(x => x.Customer.User).Include(x => x.Customer.User.Photo).ToListAsync(cancellationToken);
         }
 
-        public async Task<CustomersRequest> Update(CustomersRequest model, CancellationToken cancellationToken)
+        public async Task<List<CustomersRequest>> GetAllId(int id,CancellationToken cancellationToken)
+        {
+	        return await _db.CustomersRequests.Include(x => x.Work)
+		        .Include(x => x.Work.Experts)
+		        .Include(x => x.Customer.User)
+		        .Include(x => x.Customer.User.Photo)
+		        .Where(x=>x.CustomerId==id)
+		        .ToListAsync(cancellationToken);
+        }
+
+		public async Task<CustomersRequest> Update(CustomersRequest model, CancellationToken cancellationToken)
         {
             var customersRequest = await _db.CustomersRequests.FirstOrDefaultAsync(x => x.Id == model.Id, cancellationToken);
             if (customersRequest == null) { throw new Exception("درخواستی یافت نشد"); }

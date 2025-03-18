@@ -47,6 +47,7 @@ using AppDomainCore.Users.Entity;
 using AppDomainCore.Works.Contract.AppService;
 using AppDomainCore.Works.Contract.Repository;
 using AppDomainCore.Works.Contract.Service;
+using AppEndpoin_API.Filters;
 using DomainAppService.Account;
 using DomainAppService.Admins;
 using DomainAppService.Categorys;
@@ -86,7 +87,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddScoped<ApiFilter>();
 
 builder.Services.AddControllers()
 	.AddJsonOptions(x =>

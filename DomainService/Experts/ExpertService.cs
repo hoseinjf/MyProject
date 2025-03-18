@@ -50,5 +50,20 @@ namespace DomainService.Experts
             if (com == null) throw new ArgumentNullException("موردی یافت نشد");
             return com;
         }
+
+        public async Task<ExpertUpdateProfileDto> GetUpdate(int id, CancellationToken cancellationToken)
+        {
+            var com = await _expertRep.GetUpdate(id, cancellationToken);
+            if (com == null) throw new ArgumentNullException("موردی یافت نشد");
+            return com;
+        }
+
+        public async Task<Expert> UpdateProfile(ExpertUpdateProfileDto expert, CancellationToken cancellationToken)
+        {
+            var com = await _expertRep.UpdateProfile(expert, cancellationToken);
+            if (com == null) throw new ArgumentNullException("موردی یافت نشد");
+            return com;
+        }
+
     }
 }

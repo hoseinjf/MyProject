@@ -1,10 +1,10 @@
 ﻿@using AppDomainCore.Users.Entity
 @using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Mvc.TagHelpers
 @inject SignInManager<User> signInManager;
 
 @{
     var customerId = User.FindFirst("CustomerId")?.Value;
-    var expertId = User.FindFirst("ExpertId")?.Value;
 }
 
 <!DOCTYPE html>
@@ -43,11 +43,11 @@
 						<div class="nav-toggle"></div>
 						<div class="mobile_nav">
 							<ul>
-								<li>
-									<a asp-area="Account" asp-controller="Login" asp-action="Index" class="theme-cl fs-lg">
-										<i class="lni lni-user"></i>
-									</a>
-								</li>
+                                <li>
+									<a  asp-controller="Account" asp-action="Login" class="theme-cl fs-lg">
+                                        <i class="lni lni-user"></i>
+                                    </a>
+                                </li>
 								<li>
 									<a href="add-listing.html" class="crs_yuo12 w-auto text-white theme-bg">
 										<span class="embos_45"><i class="fas fa-plus ms-2"></i>افزودن آگهی</span>
@@ -73,8 +73,9 @@
 								<a href="javascript:void(0);">پنل کاربری</a>
 								<ul class="nav-dropdown nav-submenu">
 									<li><a asp-area="Customer" asp-controller="Dashboard" asp-action="Index"><i class="lni lni-dashboard ms-2"></i>داشبورد</a></li>
-									<li><a asp-area="Customer" asp-controller="MyListing" asp-action="Index"><i class="lni lni-files ms-2"></i>آگهی های من</a></li>
-                                    <li><a asp-area="Customer" asp-controller="AddToList" asp-action="Index" asp-route-Id="@customerId"></i>افزودن آگهی</a></li>
+									<li><a asp-area="Customer" asp-controller="MyList" asp-action="Index" asp-route-Id="@customerId"><i class="lni lni-files ms-2"></i>آگهی های من</a></li>
+									<li><a asp-area="Customer" asp-controller="AddToList" asp-action="Index" asp-route-Id="@customerId"></i>افزودن آگهی</a></li>
+									<li><a asp-area="Customer" asp-controller="Comment" asp-action="Index" asp-route-Id="@customerId"></i>کامنت</a></li>
 									<li>
 										<a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">خروج</a>
 

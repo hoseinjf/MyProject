@@ -14,5 +14,7 @@ namespace AppDomainCore.CustomersRequests.Contract.Repository
         public Task<CustomersRequest> Add(CustomersRequest customersRequest, CancellationToken cancellationToken);
         public Task<CustomersRequest> Update(CustomersRequest customersRequest, CancellationToken cancellationToken);
         public Task<bool> Delete(int id, CancellationToken cancellationToken);
+        public  Task<List<CustomersRequest>> GetAllId(int id, CancellationToken cancellationToken);
+
     }
 }

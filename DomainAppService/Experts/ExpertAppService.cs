@@ -1,5 +1,6 @@
 ﻿using AppDomainCore.Base;
 using AppDomainCore.Customers.Entity;
+using AppDomainCore.CustomersRequests.Enum;
 using AppDomainCore.Experts.Contract.AppService;
 using AppDomainCore.Experts.Contract.Service;
 using AppDomainCore.Experts.DTO;
@@ -56,6 +57,18 @@ namespace DomainAppService.Experts
                 };
             }
             return await _service.Update(expert,cancellationToken);
+        }
+
+        public async Task<ExpertUpdateProfileDto> GetUpdate(int id, CancellationToken cancellationToken)
+        {
+            return await _service.GetUpdate(id, cancellationToken);
+
+        }
+
+        public async Task<Expert> UpdateProfile(ExpertUpdateProfileDto expert, CancellationToken cancellationToken)
+        {
+            return await _service.UpdateProfile(expert, cancellationToken);
+
         }
     }
 }

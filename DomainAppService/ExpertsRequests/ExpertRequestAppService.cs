@@ -1,5 +1,6 @@
 ﻿using AppDomainCore.ExpertsRequests.Contract.AppService;
 using AppDomainCore.ExpertsRequests.Contract.Service;
+using AppDomainCore.ExpertsRequests.DTO;
 using AppDomainCore.ExpertsRequests.Entity;
 using System;
 using System.Collections.Generic;
@@ -36,7 +37,19 @@ namespace DomainAppService.ExpertsRequests
             return await _service.GetAll(cancellationToken);
         }
 
-        public async Task<ExpertsRequest> Update(ExpertsRequest expertsRequest, CancellationToken cancellationToken)
+        public async Task<List<ExpertsRequestDto>> GetAllExpert(int ExpertId, CancellationToken cancellationToken)
+        {
+            return await _service.GetAllExpert(ExpertId,cancellationToken);
+
+        }
+
+        public async Task<List<ExpertsRequest>> GetAllCustomerRequest(int id, CancellationToken cancellationToken)
+        {
+	        return await _service.GetAllCustomerRequest(id, cancellationToken);
+        }
+
+
+		public async Task<ExpertsRequest> Update(ExpertsRequest expertsRequest, CancellationToken cancellationToken)
         {
             return await _service.Update(expertsRequest,cancellationToken);
         }

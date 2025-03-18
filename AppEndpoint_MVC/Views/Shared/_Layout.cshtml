@@ -44,7 +44,7 @@
 						<div class="mobile_nav">
 							<ul>
 								<li>
-									<a asp-area="Account" asp-controller="Login" asp-action="Index" class="theme-cl fs-lg">
+                                    <a  asp-controller="Account" asp-action="Login" class="theme-cl fs-lg">
 										<i class="lni lni-user"></i>
 									</a>
 								</li>
@@ -71,9 +71,10 @@
 							<li>
 								<a href="javascript:void(0);">پنل کاربری</a>
 								<ul class="nav-dropdown nav-submenu">
-									<li><a asp-area="Customer" asp-controller="Dashboard" asp-action="Index"><i class="lni lni-dashboard ms-2"></i>داشبورد</a></li>
-									<li><a asp-area="Customer" asp-controller="MyListing" asp-action="Index"><i class="lni lni-files ms-2"></i>آگهی های من</a></li>
-									<li><a asp-area="Customer" asp-controller="AddListing" asp-action="Index"><i class="lni lni-add-files ms-2"></i>افزودن آگهی</a></li>
+									<li><a asp-area="Customer" asp-controller="Dashboard" asp-action="Index" asp-route-Id="@customerId"><i class="lni lni-dashboard ms-2"></i>داشبورد</a></li>
+									<li><a asp-area="Expert" asp-controller="Dashboard" asp-action="Index" asp-route-Id="@expertId"><i class="lni lni-dashboard ms-2"></i>داشبورد متخصص</a></li>
+@* 									<li><a asp-area="Customer" asp-controller="MyListing" asp-action="Index"><i class="lni lni-files ms-2"></i>آگهی های من</a></li>
+									<li><a asp-area="Customer" asp-controller="AddListing" asp-action="Index"><i class="lni lni-add-files ms-2"></i>افزودن آگهی</a></li> *@
 									<li>
 										<a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">خروج</a>
 

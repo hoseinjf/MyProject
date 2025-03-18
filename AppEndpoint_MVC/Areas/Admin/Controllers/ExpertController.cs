@@ -26,7 +26,7 @@ namespace AppEndpoint_MVC.Areas.Admin.Controllers
         }
 
 
-        public async Task<IActionResult> Index(List<Expert> experts, CancellationToken cancellationToken)
+        public async Task<IActionResult> Index(List<AppDomainCore.Experts.Entity.Expert> experts, CancellationToken cancellationToken)
         {
             experts = await _expertAppService.GetAll(cancellationToken);
             return View(experts);

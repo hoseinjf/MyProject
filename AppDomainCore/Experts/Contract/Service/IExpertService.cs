@@ -15,5 +15,8 @@ namespace AppDomainCore.Experts.Contract.Service
         public Task<Expert> Add(ExpertAddDto expert, CancellationToken cancellationToken);
         public Task<Expert> Update(ExpertAddDto expert, CancellationToken cancellationToken);
         public Task<bool> Delete(int id, CancellationToken cancellationToken);
+        public Task<ExpertUpdateProfileDto> GetUpdate(int id, CancellationToken cancellationToken);
+        public Task<Expert> UpdateProfile(ExpertUpdateProfileDto expert, CancellationToken cancellationToken);
+
     }
 }

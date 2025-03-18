@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace DomainService.CustomersRequests
@@ -47,7 +48,15 @@ namespace DomainService.CustomersRequests
             return com;
         }
 
-        public async Task<CustomersRequest> Update(CustomersRequest customersRequest, CancellationToken cancellationToken)
+        public async Task<List<CustomersRequest>> GetAllId(int id, CancellationToken cancellationToken)
+		{
+	        var com = await _repository.GetAllId(id,cancellationToken);
+	        if (com == null) throw new ArgumentNullException("موردی یافت نشد");
+	        return com;
+		}
+
+
+		public async Task<CustomersRequest> Update(CustomersRequest customersRequest, CancellationToken cancellationToken)
         {
             var com = await _repository.Update(customersRequest, cancellationToken);
             if (com == null) throw new ArgumentNullException("موردی یافت نشد");

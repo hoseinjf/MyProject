@@ -1,0 +1,173 @@
+﻿@using AppDomainCore.Users.Entity
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@inject SignInManager<User> signInManager;
+
+@{
+    var expertId = User.FindFirst("ExpertId")?.Value;
+}
+
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+	<!-- Meta Data -->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Goodup - قالب ثبت آگهی و دایرکتوری HTML</title>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="~/assets/img/favicon.png">
+
+	<!-- Custom CSS -->
+	<link href="~/assets/css/styles.css" rel="stylesheet">
+</head>
+
+<body dir="rtl">
+
+	<!-- Preloader -->
+	<div class="preloader"></div>
+
+	<!-- Main Wrapper -->
+	<div id="main-wrapper">
+
+		<!-- Top Header -->
+		<div class="header header-light dark-text">
+			<div class="container">
+				<nav id="navigation" class="navigation navigation-landscape">
+					<div class="nav-header">
+						<a class="nav-brand" href="#">
+							<img src="~/logoM.png" class="logo" alt="" />
+						</a>
+						<div class="nav-toggle"></div>
+						<div class="mobile_nav">
+                            <ul>
+                                <li>
+                                    <a  asp-controller="Account" asp-action="Login" class="theme-cl fs-lg">
+                                        <i class="lni lni-user"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="add-listing.html" class="crs_yuo12 w-auto text-white theme-bg">
+                                        <span class="embos_45"><i class="fas fa-plus ms-2"></i>افزودن آگهی</span>
+                                    </a>
+                                </li>
+                            </ul>
+						</div>
+					</div>
+					<div class="nav-menus-wrapper" style="transition-property: none;">
+						<ul class="nav-menu">
+							<li class="active">
+								<a asp-area="" asp-controller="Home" asp-action="Index">صفحه اصلی</a>
+
+							</li>
+							<li>
+								<a href="javascript:void(0);">آگهی</a>
+								<ul class="nav-dropdown nav-submenu">
+
+									<li><a href="author-detail.html">جزئیات آگهی دهنده</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="javascript:void(0);">پنل کاربری</a>
+								<ul class="nav-dropdown nav-submenu">
+                                    <li><a asp-area="Expert" asp-controller="Dashboard" asp-action="Index"><i class="lni lni-dashboard ms-2"></i>داشبورد</a></li>
+
+                                    <li><a asp-area="Expert" asp-controller="Dashboard" asp-action="Index" asp-route-Id="@expertId"><i class="lni lni-dashboard ms-2"></i>داشبورد</a></li> 
+                                    
+@*                                     <li><a asp-area="Expert" asp-controller="OrdersList" asp-action="Index" asp-route-Id="@expertId"><i class="lni lni-files ms-2"></i>آگهی ها</a></li> 
+ *@                                    
+                                    <li><a asp-area="Expert" asp-controller="Jobs" asp-action="Index" asp-route-Id="@expertId">کار ها </a></li> 
+                                    <li><a asp-area="Expert" asp-controller="UpdateProfile" asp-action="Index" asp-route-Id="@expertId">آپدیت </a></li>
+
+                                    <li>
+										<a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">خروج</a>
+
+									</li>
+									<li><a href="dashboard-wallet.html"><i class="lni lni-mastercard ms-2"></i>کیف پول</a></li>
+									<li><a href="dashboard-my-profile.html"><i class="lni lni-user ms-2"></i>حساب من</a></li>
+								</ul>
+							</li>
+
+						</ul>
+						<ul class="nav-menu nav-menu-social align-to-left">
+							<li>
+								@if (User.Identity.IsAuthenticated)
+								{
+									<a asp-area="Expert" asp-controller="Dashboard" asp-action="Index" asp-route-id="@expertId" class="theme-cl fs-lg">
+										<i class="lni lni-user"></i>
+									</a>
+								}
+								else
+								{
+									<a asp-controller="Account" asp-action="Login" class="ft-bold">
+										<i class="fas fa-sign-in-alt ms-1 theme-cl"></i>ورود
+									</a>
+								}
+							</li>
+							<li class="add-listing">
+								<a href="add-listing.html">
+									<i class="fas fa-plus ms-2"></i>افزودن آگهی
+								</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<!-- End Navigation -->
+		<div class="clearfix"></div>
+
+        @RenderBody()
+    </div>
+    <!-- =============================== Dashboard Header ========================== -->
+    <!-- footer -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="py-3">© 2022 Goodup ارائه شده در سایت <a href="https://rtl-theme.com/">راست چین</a></div>
+        </div>
+    </div>
+
+    </div>
+
+    </div>
+    <!-- ======================= dashboard Detail End ======================== -->
+
+    <a id="tops-button" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
+
+
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="~/assets/js/jquery.min.js"></script>
+    <script src="~/assets/js/popper.min.js"></script>
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/slick.js"></script>
+    <script src="~/assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/assets/js/dropzone.js"></script>
+    <script src="~/assets/js/counterup.js"></script>
+    <script src="~/assets/js/lightbox.js"></script>
+    <script src="~/assets/js/moment.min.js"></script>
+    <script src="~/assets/js/daterangepicker.js"></script>
+    <script src="~/assets/js/lightbox.js"></script>
+    <script src="~/assets/js/jQuery.style.switcher.js"></script>
+    <script src="~/assets/js/custom.js"></script>
+
+    <!-- Morris.js charts -->
+    <script src="assets/js/plugins/raphael/raphael.min.js"></script>
+    <script src="assets/js/plugins/morris.js/morris.min.js"></script>
+
+    <!-- Custom Chart JavaScript -->
+    <script src="assets/js/plugins/dashboard-2.js"></script>
+    <!-- ============================================================== -->
+    <!-- This page plugins -->
+    <!-- ============================================================== -->
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

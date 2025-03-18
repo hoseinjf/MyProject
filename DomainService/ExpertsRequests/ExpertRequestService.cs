@@ -1,6 +1,7 @@
 ﻿using AppDomainCore.Experts.Entity;
 using AppDomainCore.ExpertsRequests.Contract.Repository;
 using AppDomainCore.ExpertsRequests.Contract.Service;
+using AppDomainCore.ExpertsRequests.DTO;
 using AppDomainCore.ExpertsRequests.Entity;
 using System;
 using System.Collections.Generic;
@@ -42,6 +43,21 @@ namespace DomainService.ExpertsRequests
             if (item == null) throw new ArgumentNullException("موردی یافت نشد");
             return item;
         }
+
+        public async Task<List<ExpertsRequest>> GetAllCustomerRequest(int id, CancellationToken cancellationToken)
+        {
+	        var item = await _repository.GetAllCustomerRequest(id,cancellationToken);
+	        if (item == null) throw new ArgumentNullException("موردی یافت نشد");
+	        return item;
+		}
+
+        public async Task<List<ExpertsRequestDto>> GetAllExpert(int ExpertId, CancellationToken cancellationToken)
+        {
+            var item = await _repository.GetAllExpert(ExpertId, cancellationToken);
+            if (item == null) throw new ArgumentNullException("موردی یافت نشد");
+            return item;
+        }
+
 
         public async Task<ExpertsRequest> Update(ExpertsRequest expertsRequest, CancellationToken cancellationToken)
         {
